@@ -1,0 +1,4 @@
+﻿He utilizado los siguientes recursos en este proyecto:
+
+Guía principal para la arquitectura de la app: 
+	https://github.com/panique/php-mvc 
