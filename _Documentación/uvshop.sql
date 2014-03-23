@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-03-2014 a las 17:12:38
+-- Tiempo de generación: 23-03-2014 a las 03:47:41
 -- Versión del servidor: 5.5.36
 -- Versión de PHP: 5.4.25
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `uvshop`
 --
+CREATE DATABASE IF NOT EXISTS `uvshop` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE `uvshop`;
 
 -- --------------------------------------------------------
 
@@ -26,19 +28,13 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `categoria`
 --
 
+DROP TABLE IF EXISTS `categoria`;
 CREATE TABLE IF NOT EXISTS `categoria` (
   `id_categoria` varchar(4) NOT NULL,
-  `id_padre` varchar(4) NOT NULL,
-  `nombre` varchar(20) NOT NULL
+  `id_padre` varchar(4) DEFAULT NULL,
+  `nombre` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `categoria`
---
-
-INSERT INTO `categoria` (`id_categoria`, `id_padre`, `nombre`) VALUES
-('1', '', 'Ollas'),
-('2', '', 'Cuchillos');
 
 -- --------------------------------------------------------
 
@@ -46,10 +42,13 @@ INSERT INTO `categoria` (`id_categoria`, `id_padre`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `compra`
 --
 
+DROP TABLE IF EXISTS `compra`;
 CREATE TABLE IF NOT EXISTS `compra` (
-  `id_prod` int(11) NOT NULL,
-  `id_factura` varchar(4) NOT NULL,
-  `cant_prod` int(11) NOT NULL
+  `id_prod` varchar(10) DEFAULT NULL,
+  `id_factura` varchar(4) DEFAULT NULL,
+  `cant_prod` int(11) NOT NULL,
+  KEY `id_prod` (`id_prod`),
+  KEY `id_factura` (`id_factura`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -58,12 +57,14 @@ CREATE TABLE IF NOT EXISTS `compra` (
 -- Estructura de tabla para la tabla `factura`
 --
 
+DROP TABLE IF EXISTS `factura`;
 CREATE TABLE IF NOT EXISTS `factura` (
   `id_factura` varchar(5) NOT NULL,
   `id_cliente` varchar(40) NOT NULL,
   `fecha` date NOT NULL,
-  `metodo_pago` varchar(3) NOT NULL,
-  `cantidad_productos` int(11) NOT NULL
+  `cantidad_productos` int(11) NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  KEY `id_cliente` (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -72,57 +73,69 @@ CREATE TABLE IF NOT EXISTS `factura` (
 -- Estructura de tabla para la tabla `imagen`
 --
 
+DROP TABLE IF EXISTS `imagen`;
 CREATE TABLE IF NOT EXISTS `imagen` (
-  `id_prod` varchar(20) NOT NULL,
+  `id_prod` varchar(10) NOT NULL,
   `ruta` varchar(40) NOT NULL,
   `ancho` int(11) NOT NULL,
   `largo` int(11) NOT NULL,
-  `extension` varchar(6) NOT NULL
+  `extension` varchar(6) NOT NULL,
+  KEY `id_prod` (`id_prod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `imagen`
---
-
-INSERT INTO `imagen` (`id_prod`, `ruta`, `ancho`, `largo`, `extension`) VALUES
-('01', 'puke-rainbows', 0, 0, 'jpg'),
-('02', 'Mandarina-004', 0, 0, 'jpg'),
-('03', 'dobbybambola', 0, 0, 'jpg');
 
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `prodpromo`
+-- Estructura de tabla para la tabla `metodo_pago`
 --
-CREATE TABLE IF NOT EXISTS `prodpromo` (
-`cod_producto` varchar(20)
-,`valor` decimal(10,0)
-);
+
+DROP TABLE IF EXISTS `metodo_pago`;
+CREATE TABLE IF NOT EXISTS `metodo_pago` (
+  `id_factura` varchar(5) NOT NULL,
+  `id_pago` varchar(40) NOT NULL,
+  `fecha` date NOT NULL,
+  `tipo` varchar(3) NOT NULL,
+  `cuotas` int(11) NOT NULL,
+  `monto` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_pago`),
+  KEY `id_factura` (`id_factura`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `precio`
+--
+
+DROP TABLE IF EXISTS `precio`;
+CREATE TABLE IF NOT EXISTS `precio` (
+  `id_precio` int(11) NOT NULL AUTO_INCREMENT,
+  `cod_producto` varchar(20) DEFAULT NULL,
+  `fecha_ini` date NOT NULL,
+  `fecha_fin` date NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id_precio`),
+  KEY `cod_producto` (`cod_producto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `producto`
 --
 
+DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
-  `codigo` varchar(10) NOT NULL,
+  `id_prod` varchar(10) NOT NULL DEFAULT '',
   `nombre` varchar(30) NOT NULL,
   `empresa_fab` varchar(20) NOT NULL,
   `descripcion` text NOT NULL,
-  `iva` tinyint(4) NOT NULL
+  `iva` tinyint(4) NOT NULL,
+  `id_categoria` varchar(4) DEFAULT NULL,
+  `unidades` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_prod`),
+  KEY `id_categoria` (`id_categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `producto`
---
-
-INSERT INTO `producto` (`codigo`, `nombre`, `empresa_fab`, `descripcion`, `iva`) VALUES
-('01', 'Carlos', 'Mi mama', 'Soy una mala persona', 10),
-('02', 'Cristian', 'Mi mama', 'Es una pÃ©sima persona', 1),
-('03', 'Mauricio', 'DoÃ±a mama de Mauro', 'Una buena persona', 5),
-('04', 'Lau', 'Mama Lau', 'Es malaaaaaaaaa', 10),
-('05', 'Lau2', 'Mama Lau', 'Es maaaaaaaaaala', 10),
-('05', 'Lau3', 'Mama Lau', 'Es mala', 10);
 
 -- --------------------------------------------------------
 
@@ -130,42 +143,14 @@ INSERT INTO `producto` (`codigo`, `nombre`, `empresa_fab`, `descripcion`, `iva`)
 -- Estructura de tabla para la tabla `promocion`
 --
 
+DROP TABLE IF EXISTS `promocion`;
 CREATE TABLE IF NOT EXISTS `promocion` (
-  `cod_producto` varchar(20) NOT NULL,
+  `cod_producto` varchar(20) DEFAULT NULL,
   `fecha_ini` date NOT NULL,
   `fecha_fin` date NOT NULL,
   `valor` decimal(10,0) NOT NULL,
-  `porcetaje_red` smallint(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `promocion`
---
-
-INSERT INTO `promocion` (`cod_producto`, `fecha_ini`, `fecha_fin`, `valor`, `porcetaje_red`) VALUES
-('01', '2014-03-09', '2014-03-11', '2000', 10);
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `promosdeldia`
---
-CREATE TABLE IF NOT EXISTS `promosdeldia` (
-`nombre` varchar(30)
-,`ruta` varchar(40)
-,`extension` varchar(6)
-,`descripcion` text
-,`valor` decimal(10,0)
-);
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `stock`
---
-
-CREATE TABLE IF NOT EXISTS `stock` (
-  `id_prod` varchar(20) NOT NULL,
-  `cantidad` int(11) NOT NULL
+  `porcetaje_red` smallint(6) NOT NULL,
+  KEY `cod_producto` (`cod_producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -174,6 +159,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `nombre` varchar(25) NOT NULL,
   `apellidos` varchar(30) NOT NULL,
@@ -181,26 +167,56 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id` varchar(20) NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `fecha_cumple` date NOT NULL,
-  `email` varchar(20) NOT NULL
+  `email` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+--
+-- Restricciones para tablas volcadas
+--
 
 --
--- Estructura para la vista `prodpromo`
+-- Filtros para la tabla `compra`
 --
-DROP TABLE IF EXISTS `prodpromo`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `prodpromo` AS select `promocion`.`cod_producto` AS `cod_producto`,`promocion`.`valor` AS `valor` from `promocion` where (now() between `promocion`.`fecha_ini` and `promocion`.`fecha_fin`);
-
--- --------------------------------------------------------
+ALTER TABLE `compra`
+  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`id_prod`) REFERENCES `producto` (`id_prod`),
+  ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`);
 
 --
--- Estructura para la vista `promosdeldia`
+-- Filtros para la tabla `factura`
 --
-DROP TABLE IF EXISTS `promosdeldia`;
+ALTER TABLE `factura`
+  ADD CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `producto` (`id_prod`);
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `promosdeldia` AS select `producto`.`nombre` AS `nombre`,`imagen`.`ruta` AS `ruta`,`imagen`.`extension` AS `extension`,`producto`.`descripcion` AS `descripcion`,`prodpromo`.`valor` AS `valor` from ((`prodpromo` join `producto`) join `imagen`) where ((`prodpromo`.`cod_producto` = `producto`.`codigo`) and (`producto`.`codigo` = `imagen`.`id_prod`));
+--
+-- Filtros para la tabla `imagen`
+--
+ALTER TABLE `imagen`
+  ADD CONSTRAINT `imagen_ibfk_1` FOREIGN KEY (`id_prod`) REFERENCES `producto` (`id_prod`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `metodo_pago`
+--
+ALTER TABLE `metodo_pago`
+  ADD CONSTRAINT `metodo_pago_ibfk_1` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`);
+
+--
+-- Filtros para la tabla `precio`
+--
+ALTER TABLE `precio`
+  ADD CONSTRAINT `precio_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`id_prod`);
+
+--
+-- Filtros para la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`);
+
+--
+-- Filtros para la tabla `promocion`
+--
+ALTER TABLE `promocion`
+  ADD CONSTRAINT `promocion_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`id_prod`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

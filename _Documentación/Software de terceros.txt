@@ -2,3 +2,6 @@
 
 Guía principal para la arquitectura de la app: 
 	https://github.com/panique/php-mvc 
+
+Para el manejo de imagenes
+	easyphpthumbnail.class
