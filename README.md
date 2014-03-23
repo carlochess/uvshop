@@ -5,9 +5,19 @@ A simple PHP e-commerce app
 
 ## Instalación
 
-Abre, en un navegador, localhost/phpmyadmin e importa la biblioteca que estara en la carpeta _Instalación
-
-
+Abre un navegador y ve a la siguiente dirección 
 ```
-Prueba código
+"localhost/phpmyadmin"
 ```
+importa el archivo .sql (que se encuentra en "_Documentación").
+
+Luego, en tu navegador, abre otra pestaña a la siguiente dirección 
+```
+"localhost/uvshop"
+```
+
+Enhorabuena, ya tendras nuestra aplicación funcionando en tu servidor local.
+
+## Permisos
+
+Si estas en Linux, recuerda otorgale el permiso 755 a la carpeta "imagenes/"
