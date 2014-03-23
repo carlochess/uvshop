@@ -5,6 +5,7 @@
  */
 class Controlador
 {
+	/* no implmentado */
 	protected $login;
     function __construct(){
 		//require_once 'login.php';

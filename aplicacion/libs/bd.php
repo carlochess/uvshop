@@ -31,7 +31,7 @@ class MySQL {
 	 * *******************/
 	
 	// Conecta a la BD
-	private function conectar(){
+	private function /* bool */ conectar(){
 		$options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 		try{
 			$this->db = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS, $options);
@@ -47,13 +47,13 @@ class MySQL {
 	 * ******************/
 	
 	// Ejecuta una consulta en Mysql
-	function ejecutarConsultaSelect($query){
+	function /* array(stdClass) */ ejecutarConsultaSelect($query){
 		$query = $this->db->prepare($query);
         $query->execute();
 		$this->filasAfectadas = $query->rowCount();
 		return $query->fetchAll();
 	}
-	function ejecutarConsultaI($q){
+	function /* void */ ejecutarConsultaI($q){
 		try 
 		{
 			$query = $this->db->prepare($q);
@@ -65,18 +65,18 @@ class MySQL {
 	}
 	
 	// Consulta de insercion 
-	function insertar($query){
+	function /* void */ insertar($query){
 		$filasAfectadas = $this->db->exec($query);
 	}
 	
 	// Retorna el número de filas del resultado de una
 	// consulta.
-	function contarFilasAfectadas(){
+	function /* int */ contarFilasAfectadas(){
 		return $this->filasAfectadas;
 	}
 	
 	// Cierra la conexión
-	function cerrarConexion(){
+	function /* void */ cerrarConexion(){
 		$this->db = null;
 	}
 }

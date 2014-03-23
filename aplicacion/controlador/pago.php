@@ -1,13 +1,17 @@
 <?php
+/**
+* Clase encargada de las transacciones y la adquisción de productos
+*/
 class Pago extends Controlador
 {
-	// Constructor clase producto
+	// Constructor clase Pago
 	function __construct(){}
-	/*
 	
+	/*
+	* Función encargada de desplegar la información concerniente
+	* a lo que lleva el carrito.
 	*/
-	// 
-	function index()
+	function /* void */ index()
 	{
 		if(isset($_COOKIE['carritoCod']) && !empty($_COOKIE['carritoCod']))
 		{
@@ -23,11 +27,16 @@ class Pago extends Controlador
 		}
 		else
 		{
-			echo "Nada por aquí, nada por allá";
+			header('Location: '.URL);
 		}
 	}
-	
-	function modos()
+	/**
+	* Nota: 'modos' Se refiere a "modos de pago"
+	* Habiendo seleccionado los items a comprar, es hora de 
+	* especificar los medios de pago, las cuotas y los montos
+	* 
+	*/
+	function /* void */ modos()
 	{
 		if(isset($_POST) && count($_POST)>0)
 		{

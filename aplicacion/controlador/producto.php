@@ -84,7 +84,6 @@ class Producto extends Controlador
 	}
 	/** 
 	* Función encargada de actualizar un producto 
-	* TODO : actualizar imagen
 	*/
 	function actualizarProd()
 	{

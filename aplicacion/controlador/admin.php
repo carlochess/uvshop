@@ -7,8 +7,11 @@
 			//	header('Location: index.php');
 		}
 		
-		// manejador home
-		function index()
+		/** 
+		* Función que despliega la página base del modulo de
+		* administración.
+		*/
+		function /* void */ index()
 		{
 			require('aplicacion/vista/Admin/header.php');
 			echo '<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -19,7 +22,11 @@
 			require('aplicacion/vista/Admin/footer.php');
 		}
 		
-		function producto()
+		/** 
+		* Función que despliega la página para la administración
+		* de productos.
+		*/
+		function /* void */ producto()
 		{
 			$modelprod = $this->loadModel("modelProd");
 			$productos = $modelprod->getProductos();
@@ -29,7 +36,11 @@
 			require('aplicacion/vista/Admin/footer.php');
 		}
 		
-		function promociones()
+		/** 
+		* Función que despliega la página para la administración
+		* de promociones de los productos.
+		*/
+		function /* void */ promociones()
 		{
 			$modelpromo = $this->loadModel("modelPromo");
 			$promociones = $modelpromo->getPromociones();
@@ -39,7 +50,12 @@
 			require('aplicacion/vista/Admin/footer.php');
 		}
 		
-		function precio($id=null)
+		/** 
+		* Función que despliega la página para la administración
+		* de precios de los productos.
+		* @param array() $id el producto que será afectado
+		*/
+		function /* void */ precio($id=null)
 		{
 			if(isset($id))
 			{
@@ -60,8 +76,10 @@
 				require('aplicacion/vista/Admin/footer.php');
 			}
 		}
-		
-		function agregarpromo()
+		/**
+		* Función encargada de agregar una promoción 
+		*/
+		function /* void */ agregarpromo()
 		{
 			$id_item = $_POST['idItem'];
 			$f_inic = $_POST['f_inicio'];
@@ -73,7 +91,10 @@
 			header('Location: '.URL.'admin/promociones');
 		}
 		
-		function editarpromo()
+		/**
+		* Función encargada de editar una promoción 
+		*/
+		function /* void */ editarpromo()
 		{
 			$id_item = $_POST['idItem'];
 			$f_inic = $_POST['f_inicio'];
@@ -85,7 +106,10 @@
 			header('Location: '.URL.'admin/promociones');
 		}
 		
-		function eliminarpromo($id)
+		/**
+		* Función encargada de eliminar una promoción 
+		*/
+		function /* void */ eliminarpromo($id)
 		{
 			$modelpromo = $this->loadModel("modelPromo");
 			$modelpromo->eliminarPromocion($id[0]);
@@ -94,9 +118,9 @@
 		}
 		//---
 		/**
-		* Función que agrega un precio a la tabla de precios.
+		* Función que agrega un precio a la tabla.
 		*/
-		function agregarprecio($id)
+		function /* void */ agregarprecio($id)
 		{
 			$f_inic = $_POST['f_inicio'];
 			$f_fin = $_POST['f_finalizacion'];
@@ -109,7 +133,7 @@
 		/**
 		* 	Función que edita los datos del precio de un producto
 		*/
-		function editarprecio($id)
+		function /* void */ editarprecio($id)
 		{
 			$id_precio = $_POST['id_precio'];
 			$f_inic = $_POST['f_inicio'];
@@ -123,7 +147,7 @@
 		/**
 		* Función que elimina el precio según identificación del mismo y el item al cual pertenece
 		*/
-		function eliminarprecio($id)
+		function /* void */ eliminarprecio($id)
 		{
 			$modelprecio = $this->loadModel("modelPrecio");
 			$modelprecio->eliminarPrecio($id[0]);

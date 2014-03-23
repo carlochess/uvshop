@@ -1,21 +1,24 @@
 <?php
+
+/**
+* Clase encargada del manejo del buscador del sitio.
+*/
 class Buscador extends Controlador
 {
-	// Constructor clase producto
+	// Constructor clase buscador
 	function __construct(){}
 	
-	// 
-	function index()
+	/* 
+	*  Si no hay información para buscar, vuelve a la home
+	*/
+	function /* void */ index()
 	{
-		echo "10 Jabon 40000<br/>";
-		echo "20 Shampoo 40000<br/>";
-		echo "30 Pañal 40000<br/>";
-		echo "40 Acondicionador 40000<br/>";
+		header('Location: '.URL);
 	}
 	
 	// Función que se encarga de controlar 
 	// y desplegar la información de la busqueda
-	function buscar()
+	function /* void */ buscar()
 	{
 		$nombre=$_POST['nombre'];
 		if(isset($nombre))

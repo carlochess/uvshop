@@ -39,6 +39,10 @@
 	
 }
 
+.remover{
+	padding-left:40px;
+}
+
 #carrito{
 	overflow: auto;
 	height: 400px;

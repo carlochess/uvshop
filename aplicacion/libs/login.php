@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * TODO: NO IMPLEMENTADA AUN
  * Clase login
  * maneja el log-in y el log-out del usuario
  */

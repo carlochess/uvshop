@@ -49,9 +49,9 @@ $(function () {
 	// Función que,agrega una X si el mouse esta sobre algún objeto del carrito
 	$(document).on({
 		mouseenter: function () {
-			$(this).append('<b class="remove">X</b>');
+			$(this).append('<b class="remover">X</b>');
 			
-			$(".remove").on( "click", function(){
+			$(".remover").on( "click", function(){
 				$(this).closest("li").remove();
 				$(this).closest(".divider").remove();
 			});

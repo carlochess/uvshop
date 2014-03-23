@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Uvshop
 {
     /** @var controlador = sustantivo */
@@ -47,7 +45,7 @@ class Uvshop
     /**
      * Recibir y separar la URL
      */
-    private function separarUrl()
+    private /* void */ function separarUrl()
     {
         if (isset($_GET['url'])) {
             // separa la url
