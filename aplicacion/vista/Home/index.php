@@ -72,31 +72,37 @@
 				<a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>">
 					<img 
 					   class="img-circle"
-					   src="<?php echo URL.'imagenes/'.$prod->ruta.'x200.'.$prod->extension; ?>" 
-					   alt="Generic placeholder image"
+					   src="<?php echo URL.'imagenes/'.$prod->ruta.'x200.jpg'; ?>" 
 					>
 				</a>
 			  <h2><a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>"><?php echo $prod->nombre; ?></a></h2>
 			  <p><?php echo $prod->descripcion; ?></p>
+			  <p><strong><?php echo $prod->precio; ?><string></p>
 			  <p><a class="btn btn-default" href="#" role="button">Ver mas &raquo;</a></p>
 			</div>
 		<?php } ?>
 		
       </div>
 	<hr class="featurette-divider">
-	<!-- ==================================================   Info  ================================================== -->
+	<!-- ==================================================   Promociones  ================================================== -->
       <h1 class="page-header">Promociones</h1>
 		<?php foreach ($promos as $prod) { ?>
 			<div class="row featurette">
 			<div class="col-md-7">
-			  <h2 class="featurette-heading"> <?php echo $prod->nombre; ?> <span class="text-muted"><?php echo $prod->valor; ?></span></h2>
+			  <h1 class="featurette-heading"> <?php echo $prod->nombre; ?></h1>
+			  <p><h2> <?php echo $prod->valor*((100-$prod->porcetaje_red)/100); ?></h2></p>
 			  <p class="lead"><?php echo $prod->descripcion; ?></p>
 			</div>
 			<div class="col-md-5">
-			  <img class="featurette-image img-responsive" src="<?php echo URL.'imagenes/'.$prod->ruta.'x400.'.$prod->extension; ?>" alt="Generic placeholder image">
+				<div style="position: relative; left: 0; top: 0;">
+				  <img class="featurette-image img-responsive" src="<?php echo URL.'imagenes/'.$prod->id_prod.'x400.jpg'; ?>" style="position: relative; top: 0; left: 0;"/>
+				  <div class="numeroCirculo" style="position: absolute; top: 20px; left: 300px;">-<?php echo $prod->porcetaje_red; ?>%</div>
+				</div>
 			</div>
 		  </div>
 		<?php } ?>
 
       <hr class="featurette-divider">
 	<!-- ==================================================   Footer  ================================================== -->
+
+	

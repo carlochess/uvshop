@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<title>Index</title> <!-- Variable titulos -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo URL; ?>public/producto/carrito.css" rel="stylesheet">
 	<link href="<?php echo URL; ?>public/carousel.css" rel="stylesheet">
   </head>
 <!-- NAVBAR ================================================== -->
@@ -37,26 +37,36 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav pull-right" style="padding-right:20px;">
-					<?php if($this->estaConectado){ ?>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<ul>
+								<li class="notification-container">
+									<i class="fa fa-shopping-cart fa-lg"></i>
+									<span class="notification-counter">0</span>
+								</li>
+							</ul>
+						</a>
+						<ul class="dropdown-menu" id="carrito">
+						<li class="divider"></li>
+						<li><a href="#">Comprar</a></li>
+					  </ul>
+					</li>
 					<li><a href="/users/sign_up">Registrarse</a></li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Entrar <strong class="caret"></strong></a>
 						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-						<form method="post" action="index.php" name="loginform" style="padding:20px;">
-							<label for="login_input_username">Usuario</label>
-							<input id="login_input_username" class="form-control" type="text" name="login_ususario"  required />
+							<form method="post" action="index.php" name="loginform" style="padding:20px;">
+								<label for="login_input_username">Usuario</label>
+								<input id="login_input_username" class="form-control" type="text" name="login_ususario"  required />
 
-							<label for="login_input_password">Password</label>
-							<input id="login_input_password" class="form-control" type="password" name="pass_ususario" autocomplete="off" required />
+								<label for="login_input_password">Password</label>
+								<input id="login_input_password" class="form-control" type="password" name="pass_ususario" autocomplete="off" required />
 
-							<input type="submit" class="btn-primary" name="login" value="Log in" />
-						</form>
+								<input type="submit" class="btn-primary" name="login" value="Log in" />
+							</form>
 						</div>
 					</li>
-					<?php } else { ?>
-					<li><a href="index.php?logout">Salir</a></li>
-					<?php } ?>
 				</ul>
             </div>
           </div>

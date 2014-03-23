@@ -2,7 +2,7 @@
 	class Admin extends Controlador
 	{
 		public function __construct(){
-			$login = new Login();
+			//$login = new Login();
 			//if(!$login->estaConectado())
 			//	header('Location: index.php');
 		}
@@ -39,6 +39,28 @@
 			require('aplicacion/vista/Admin/footer.php');
 		}
 		
+		function precio($id=null)
+		{
+			if(isset($id))
+			{
+				$id = $id[0];
+				$modelprecio = $this->loadModel("modelPrecio");
+				$precios = $modelprecio->getPrecios($id);
+				$modelprecio->terminarConexion();
+				require('aplicacion/vista/Admin/header.php');
+				require('aplicacion/vista/Admin/precioId.php');
+				require('aplicacion/vista/Admin/footer.php');
+			}else
+			{
+				$modelprod = $this->loadModel("modelPrecio");
+				$productos = $modelprod->getPrecios();
+				$modelprod->terminarConexion();
+				require('aplicacion/vista/Admin/header.php');
+				require('aplicacion/vista/Admin/precio.php');
+				require('aplicacion/vista/Admin/footer.php');
+			}
+		}
+		
 		function agregarpromo()
 		{
 			$id_item = $_POST['idItem'];
@@ -69,6 +91,44 @@
 			$modelpromo->eliminarPromocion($id[0]);
 			$modelpromo->terminarConexion();
 			header('Location: '.URL.'admin/promociones');
+		}
+		//---
+		/**
+		* Función que agrega un precio a la tabla de precios.
+		*/
+		function agregarprecio($id)
+		{
+			$f_inic = $_POST['f_inicio'];
+			$f_fin = $_POST['f_finalizacion'];
+			$precio = $_POST['precio'];
+			$modelprecio = $this->loadModel("modelPrecio");
+			$modelprecio->agregarPrecio($id[0], $f_inic,$f_fin,$precio);
+			$modelprecio->terminarConexion();
+			header('Location: '.URL.'admin/precio/'.$id[0]);
+		}
+		/**
+		* 	Función que edita los datos del precio de un producto
+		*/
+		function editarprecio($id)
+		{
+			$id_precio = $_POST['id_precio'];
+			$f_inic = $_POST['f_inicio'];
+			$f_fin = $_POST['f_finalizacion'];
+			$precio = $_POST['precio'];
+			$modelprecio = $this->loadModel("modelPrecio");
+			$modelprecio->actualizarPrecio($id_precio, $f_inic,$f_fin,$precio);
+			$modelprecio->terminarConexion();
+			header('Location: '.URL.'admin/precio/'.$id[0]);
+		}
+		/**
+		* Función que elimina el precio según identificación del mismo y el item al cual pertenece
+		*/
+		function eliminarprecio($id)
+		{
+			$modelprecio = $this->loadModel("modelPrecio");
+			$modelprecio->eliminarPrecio($id[0]);
+			$modelprecio->terminarConexion();
+			header('Location: '.URL.'admin/precio/'.$id[1]);
 		}
 	}
 ?>

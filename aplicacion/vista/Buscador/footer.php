@@ -1,7 +1,9 @@
+	
 	<div id="footer" style="margin:40px; background-color:black;">
       <div class="container">
-        <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+        
       </div>
     </div>
+	<script type="text/javascript" src="<?php echo URL; ?>public/producto/carrito.js"></script>
   </body>
 </html>

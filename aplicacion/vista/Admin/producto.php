@@ -31,7 +31,14 @@
 							  <div class="form-group">
 								<label for="exampleInputPassword1">Descripcion</label>
 								<textarea class="form-control" rows="3" id="descripcion" name="descProd" placeholder="Ingresa una descripcion"></textarea>
-
+							  </div>
+							  <div class="form-group">
+								<label for="exampleInputPassword1">Unidades</label>
+								<input type="text" class="form-control" id="unidades" placeholder="Ingresa la cantidad disponible" name="unidadesProd">
+							  </div>
+							  <div class="form-group">
+								<label for="exampleInputPassword1">Categoria</label>
+								<input type="text" class="form-control" id="categoria" placeholder="Ingresa la categoria" name="categoriaProd">
 							  </div>
 							  <div class="form-group">
 								<label for="exampleInputPassword1">Iva</label>
@@ -47,7 +54,6 @@
       </div>
       <div class="modal-footer">
         
-        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
       </div>
 		</div>
 	  </div>
@@ -73,30 +79,39 @@
 				</button>
 				</div>
 			</div>
+
 			<div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-				  <!-- SELECT `codigo`, `nombre`, `empresa_fab`, `descripcion`, `iva` FROM `producto` WHERE 1 -->
+				  <th>Imagen</th>
                   <th>Codigo</th>
                   <th>Nombre</th>
                   <th>Empresa Fabricante</th>
                   <th>Descripción</th>
                   <th>IVA</th>
+				  <th>Unidades</th>
+				  <th>Categoria</th>
 				  <th>Acción</th>
                 </tr>
               </thead>
               <tbody>
 			  <?php foreach($productos as $producto){ ?>
                 <tr>
-                  <td class="codigo"><?php echo $producto->codigo ?></td>
+				  <td class="codigo"><img src="<?php echo URL.'imagenes/'.$producto->id_prod.'x50.jpg'; ?>"/></td>
+                  <td class="codigo"><?php echo $producto->id_prod ?></td>
                   <td class="nombre"><?php echo $producto->nombre ?></td>
                   <td class="empresa_fab"><?php echo $producto->empresa_fab ?></td>
                   <td class="descripcion"><?php echo $producto->descripcion ?></td>
                   <td class="iva"><?php echo $producto->iva ?></td>
+				  <td class="unidades"><?php echo $producto->unidades ?></td>
+				  <td class="categoria"><?php echo $producto->id_categoria ?></td>
 				  <td>
-					<a href="<?php echo URL."producto/eliminarprod/".$producto->codigo ?>">
+					<a href="<?php echo URL."producto/eliminarprod/".$producto->id_prod ?>">
 						<img src="<?php echo URL;?>imagenes/cruz_roja.png" />
+					</a>
+					<a href="<?php echo URL."admin/precio/".$producto->id_prod ?>">
+						<img src="<?php echo URL;?>imagenes/precio-icon.png" />
 					</a>
 					<img class="boton" src="<?php echo URL;?>imagenes/edit.png" />
 				  </td>
@@ -132,14 +147,17 @@
 				$('#empresa_fab').val('');
 				$('#descripcion').val('');
 				$('#iva').val('');
+				$('#unidades').val('');
+				$('#categoria').val('');
 			});
-			
-		   $(".boton").click(function(){
+		    $(".boton").click(function(){
 				var $linea = $(this).closest('tr');
 				var $id = $linea.find(".codigo").text();
 				var $nombre = $linea.find(".nombre").text();
 				var $empresa_fab = $linea.find(".empresa_fab").text();
 				var $descripcion = $linea.find(".descripcion").text();
+				var $unidades = $linea.find(".unidades").text();
+				var $categoria = $linea.find(".categoria").text();
 				var $iva = $linea.find(".iva").text();
 				$('#formulario').attr('action', '<?php echo URL.'producto/actualizarProd' ?>');
 				$('#myModalLabel').text('Editar');
@@ -149,8 +167,9 @@
 				$('#empresa_fab').val($empresa_fab);
 				$('#descripcion').val($descripcion);
 				$('#iva').val($iva);
+				$('#unidades').val($unidades);
+				$('#categoria').val($categoria);
 				$('#myModal').modal();
 			});
-
 		}); 
 	</script>

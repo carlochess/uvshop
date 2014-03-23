@@ -20,15 +20,15 @@
 				<div class="row">
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-						  <img class="img-thumbnail" src="<?php echo (isset($prod->ruta))? URL.'imagenes/'.$prod->ruta.'x400.'.$prod->extension : "holder.js/300x300";?>">
+						  <img class="img-thumbnail" src="<?php echo (isset($prod->ruta))? URL.'imagenes/'.$prod->id_prod.'x400.jpg' : "holder.js/300x300";?>">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<p> Nombre: <?php echo $prod->nombre; ?> </p>
 						<p> Empresa fabricante: <?php echo $prod->empresa_fab; ?> </p>
 						<p> Iva: <?php echo $prod->iva; ?> </p>
-						<p> Codigo:  <?php echo $prod->codigo; ?> </p>
-						<button class="btn btn-primary">Comprar</button>
+						Codigo:<p id="codigo"><?php echo $prod->id_prod; ?></p>
+						<button id="agregarCarrito" class="btn btn-primary">Comprar</button>
 					</div>
 				</div>
 				<div class="panel panel-default">
@@ -43,7 +43,7 @@
 						<a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>">
 							<img 
 							   class="img-thumbnail"
-							   src="<?php echo URL.'imagenes/'.$prod->ruta.'x200.'.$prod->extension; ?>" 
+							   src="<?php echo URL.'imagenes/'.$prod->id_prod.'x200.jpg'; ?>" 
 							   alt="Generic placeholder image"
 							>
 						</a>

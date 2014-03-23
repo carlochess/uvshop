@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<script src="<?php echo URL; ?>public/producto/holder.js"></script>
-	
-    <title>Producto</title>
+    <title>Pago</title>
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link href="<?php echo URL; ?>public/producto/carrito.css" rel="stylesheet">
+	<link href="<?php echo URL; ?>public/pagos/estilo.css" rel="stylesheet">
   </head>
   <body>
   <div class="navbar-inverse navbar-static-top" role="navigation">
@@ -38,8 +37,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-				<ul class="nav navbar-nav navbar-right" style="padding-right:60px">
-					<li class="dropdown">
+				<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<ul>
 								<li class="notification-container">
@@ -53,7 +51,6 @@
 						<li><a href="#">Comprar</a></li>
 					  </ul>
 					</li>
-				</ul>
 				<li><a href="./">Cuenta</a></li>
 				<li><a href="../navbar-static-top/">Salir</a></li>
             </ul>

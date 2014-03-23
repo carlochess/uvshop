@@ -1,33 +1,32 @@
 	
 <?php
-	
+	include_once('easyphpthumbnail.class.php');
 	class Imagen
 	{
 		var $nombreImagen;
-		function hacerMiniatura($src, $dest, $desired_width) {
-
-			$source_image = imagecreatefromjpeg($src);
-			$width = imagesx($source_image);
-			$height = imagesy($source_image);
-			
-			$desired_height = $desired_width;
-			
-			$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
-			
-			imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
-			
-			imagejpeg($virtual_image, $dest);
+		var $extensionImagen;
+		
+		function hacerMiniatura($src, $nombre, $longitud, $desired_width) {//$extension
+			$extension='jpg';
+			$thumb = new easyphpthumbnail;
+			 $thumb -> Thumbheight = $desired_width;
+			 $thumb -> Thumbwidth = $desired_width;
+			 $thumb -> Thumblocation = 'imagenes/';
+			 $thumb -> Thumbprefix = '';
+			 $thumb -> Thumbsaveas = $extension;
+			 $thumb -> Thumbfilename = $nombre.$longitud.$extension;
+			 $thumb -> Createthumb($src,'file');
 		}
 		
-		function guardarImagen()
+		function guardarImagen($codigoProd)
 		{
+			$allowedExts = array("jpeg", "jpg","gif", "png");
+			$allowedTypes = array("image/jpeg", "image/jpg","image/pjpeg","image/gif","image/x-png","image/png");
 			if ($_FILES['file']['size']>0 )
 			{
-				$allowedExts = array("jpeg", "jpg");//"gif", "png"
-				$allowedTypes = array("image/jpeg", "image/jpg","image/pjpeg");//"image/gif","image/x-png","image/png"
 				$temp = explode(".", $_FILES["file"]["name"]);
-				$extension = end($temp);
-				$type = $_FILES["file"]["type"];
+				$extension = strtolower (end($temp));
+				$type = strtolower($_FILES["file"]["type"]);
 				if (in_array($type, $allowedTypes) && ($_FILES["file"]["size"] < 1000000) && in_array($extension, $allowedExts))
 				{
 					if ($_FILES["file"]["error"] > 0)
@@ -37,7 +36,7 @@
 					else
 					{
 						$carpeta = "imagenes/";
-						$nombreIMG = $_FILES["file"]["name"];
+						$nombreIMG = $codigoProd.'.'.$extension;
 						$v = $carpeta.$nombreIMG ;
 						$path_parts = pathinfo($v);
 						$nombre = $path_parts['dirname'].'/'.$path_parts['filename'];
@@ -50,19 +49,18 @@
 						}
 						
 						move_uploaded_file($_FILES["file"]["tmp_name"],$v );
-						
-						$this->hacerMiniatura($v ,$nombre.'x400.'.$path_parts['extension'], 400);
-						$this->hacerMiniatura($v ,$nombre.'x200.'.$path_parts['extension'], 200);
-						$this->hacerMiniatura($v ,$nombre.'x50.'.$path_parts['extension'], 50);
-						$this->nombreImagen = $path_parts['filename'];
-						//echo "Imagen creada";
+						$this->hacerMiniatura($v ,$codigoProd,'x400.', 400);
+						$this->hacerMiniatura($v ,$codigoProd,'x200.', 200);
+						$this->hacerMiniatura($v ,$codigoProd,'x50.', 50);
+						$this->nombreImagen = $nombreIMG;
+						$this->extensionImagen = $extension;
 						return true;
 					}
 				}
 				else
 				{
 				    echo "Archivo invalido <br>";
-					echo "Extension: ".$_FILES["file"]["type"]." <br>";
+					echo "Extension: ".$_FILES["file"]["type"].' y '.$extension." <br>";
 					echo "tamanno: ".$_FILES["file"]["size"]."<br>";
 					echo "<a href=Configuracion.html>Volver</a>";
 				}
@@ -73,6 +71,9 @@
 		{
 			return $this->nombreImagen;
 		}
-		
+		function getExtensionImg()
+		{
+			return $this->extensionImagen;
+		}
 	}
 ?>

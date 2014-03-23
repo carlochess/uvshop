@@ -19,8 +19,8 @@
 		<table>
 		<?php foreach($resBusqueda as $res){ ?>
 			<tr>
-				<td> <img src="<?php echo URL.'imagenes/'.$res->ruta ;?>x200.jpg" /> </td>
-				<td> <a href="<?php echo URL.'producto/info/'.$res->codigo ;?>"> <?php echo $res->nombre; ?> </a></td>
+				<td> <img src="<?php echo URL.'imagenes/'.$res->id_prod ;?>x200.jpg" /> </td>
+				<td> <a href="<?php echo URL.'producto/info/'.$res->id_prod ;?>"> <?php echo $res->nombre; ?> </a></td>
 			</tr>
 		<?php } ?>
 		</table>

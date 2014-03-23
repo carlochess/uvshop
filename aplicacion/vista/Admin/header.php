@@ -62,9 +62,10 @@
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Ventas</a></li>
-            <li><a href="">Pagos</a></li>
+            <li><a href="">Metodos de Pago</a></li>
           </ul>
 		  <ul class="nav nav-sidebar">
+			<li><a href="<?php echo URL.'admin/categorias';?>">Categorias</a></li>
             <li><a href="<?php echo URL.'admin/producto';?>">Productos</a></li>
 			<li><a href="<?php echo URL.'admin/promociones';?>">Promociones</a></li>
           </ul>

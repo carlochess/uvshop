@@ -26,13 +26,20 @@ class ModelHome
 	/** Retorna las ofertas de día */
 	function getOfertas()
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT * FROM promosdeldia');
+		$sql = "SELECT promocion.cod_producto, promocion.fecha_ini, promocion.fecha_fin, precio.valor AS valor, porcetaje_red, producto.id_prod AS id_prod,producto.nombre AS nombre, producto.descripcion  AS descripcion
+FROM promocion, producto, precio
+WHERE 
+promocion.cod_producto = producto.id_prod AND
+producto.id_prod=precio.cod_producto AND 
+now() between promocion.fecha_ini and promocion.fecha_fin AND
+now() between precio.fecha_ini and precio.fecha_fin";
+		return $this->oMySQL->ejecutarConsultaSelect($sql);
 	}
 	
 	/** Retorna N objetos aleatorios */
 	function getProdAleatorios()
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT id_prod, nombre, descripcion,empresa_fab,iva,ruta,extension FROM producto INNER JOIN imagen ON imagen.id_prod = producto.codigo ORDER BY RAND() LIMIT 3 ');
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod AS id_prod, nombre, descripcion,empresa_fab,iva, producto.id_prod AS ruta,precio.valor AS precio  FROM producto,precio WHERE producto.id_prod=precio.cod_producto ORDER BY RAND() LIMIT 3 ');
 	}
 	
 	function terminarConexion()

@@ -59,22 +59,28 @@ class Producto extends Controlador
 	function agregarProd()
 	{
 		require_once('imagen.php');
+		require('validador.php');
 		$controladorImg = new Imagen();
-		if($controladorImg->guardarImagen())
+		$valid = new validador();
+		$agregadoExito = false;
+		$codigo = $valid->test_input($_POST["idProd"]);
+		$nombreP = $valid->test_input($_POST["nProd"]);
+		$empresa_fab = $valid->test_input($_POST["empProd"]);
+		$descripcion = $valid->test_input($_POST["descProd"]);
+		$iva = $valid->test_input($_POST["ivaProd"]);
+		
+		if($controladorImg->guardarImagen($codigo))
 		{
-			require('validador.php');
-			$valid = new validador();
-			$codigo = $valid->test_input($_POST["idProd"]);
-			$nombreP = $valid->test_input($_POST["nProd"]);
-			$empresa_fab = $valid->test_input($_POST["empProd"]);
-			$descripcion = $valid->test_input($_POST["descProd"]);
-			$iva = $valid->test_input($_POST["ivaProd"]);
-			
 			$modelprod = $this->loadModel("modelProd");
-			$modelprod->agregarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,$controladorImg->getNombreImg());
+			$agregadoExito = $modelprod->agregarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,
+													$controladorImg->getNombreImg(),$controladorImg->getExtensionImg());
 			$modelprod->terminarConexion();
-			header('Location: '.URL.'/admin/productos');
 		}
+		else
+		{
+			echo "Error al agregar imagen";
+		}
+		header('Location: '.URL.'/admin/precio/'.$codigo);
 	}
 	/** 
 	* Función encargada de actualizar un producto 
@@ -93,12 +99,10 @@ class Producto extends Controlador
 		$iva = $valid->test_input($_POST["ivaProd"]);
 		
 		$modelprod = $this->loadModel("modelProd");
-		$imagen = ($controladorImg->guardarImagen())? $controladorImg->getNombreImg() : null;
+		$imagen = ($controladorImg->guardarImagen($codigo))? $controladorImg->getNombreImg() : null;
 		$modelprod->actualizarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,$imagen);
 		$modelprod->terminarConexion();
 		header('Location: '.URL.'/admin/producto');
 	}
-	
-	
 }
 ?>
