@@ -40,12 +40,12 @@
 }
 
 .remover{
-	padding-left:40px;
+	padding-left:20px;
 }
 
 #carrito{
 	overflow: auto;
-	height: 400px;
+	height: 70px;
 }
 #carrito::-webkit-scrollbar-thumb{
 background-color:#B03C3F;

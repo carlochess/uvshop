@@ -4,9 +4,8 @@
 			<div class="container">
 				<ol>
 				<li>formatear el valor de un producto "2000" -> "$2.000"</li>
-				<li> Categorias no estan presentes a lo largo de la home</li>
+				<li>[SQL] Hay un problema al utilizar la fución now() y el operador between.
 				<li> Eliminar productos de "Carrito"</li>
-				<li> Ver todos los productos del carrito </li>
 				<li> <b>Recordar siempre cambiar las direcciónes en /public/poducto/carrito.js</b> </li>
 				</ol>
 			</div>

@@ -68,12 +68,13 @@ class Producto extends Controlador
 		$empresa_fab = $valid->test_input($_POST["empProd"]);
 		$descripcion = $valid->test_input($_POST["descProd"]);
 		$iva = $valid->test_input($_POST["ivaProd"]);
+		$categoria = $valid->test_input($_POST["categoriaProd"]);
+		$unidades = $valid->test_input($_POST["unidadesProd"]);
 		
 		if($controladorImg->guardarImagen($codigo))
 		{
 			$modelprod = $this->loadModel("modelProd");
-			$agregadoExito = $modelprod->agregarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,
-													$controladorImg->getNombreImg(),$controladorImg->getExtensionImg());
+			$agregadoExito = $modelprod->agregarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades);
 			$modelprod->terminarConexion();
 		}
 		else
@@ -96,10 +97,11 @@ class Producto extends Controlador
 		$empresa_fab = $valid->test_input($_POST["empProd"]);
 		$descripcion = $valid->test_input($_POST["descProd"]);
 		$iva = $valid->test_input($_POST["ivaProd"]);
+		$categoria = $valid->test_input($_POST["categoriaProd"]);
+		$unidades = $valid->test_input($_POST["unidadesProd"]);
 		
 		$modelprod = $this->loadModel("modelProd");
-		$imagen = ($controladorImg->guardarImagen($codigo))? $controladorImg->getNombreImg() : null;
-		$modelprod->actualizarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,$imagen);
+		$modelprod->actualizarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades);
 		$modelprod->terminarConexion();
 		header('Location: '.URL.'/admin/producto');
 	}

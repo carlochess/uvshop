@@ -78,7 +78,7 @@
 			  <h2><a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>"><?php echo $prod->nombre; ?></a></h2>
 			  <p><?php echo $prod->descripcion; ?></p>
 			  <p><strong><?php echo $prod->precio; ?><string></p>
-			  <p><a class="btn btn-default" href="#" role="button">Ver mas &raquo;</a></p>
+			  <p><a class="btn btn-default" href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>" role="button">Ver mas &raquo;</a></p>
 			</div>
 		<?php } ?>
 		

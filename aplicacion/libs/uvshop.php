@@ -33,6 +33,7 @@ class Uvshop
             } else {
                 // Vuelve a la página principal
                 $this->url_controlador->index();
+				//echo "sadasd";
             }
         } else {
             // Url invalida, redirigir a Home

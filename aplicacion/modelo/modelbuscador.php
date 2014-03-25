@@ -17,6 +17,16 @@ class ModelBuscador
 		return $this->oMySQL->ejecutarConsultaSelect('SELECT nombre, producto.id_prod as id_prod, ruta FROM producto,imagen WHERE producto.id_prod = imagen.id_prod AND nombre LIKE "%'.$nombre.'%";');
 	}
 	
+	function buscarInfoCategoria($categoria)
+	{
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT id_prod, nombre, descripcion, categoria FROM producto WHERE categoria="'.$categoria.'"');
+	}
+	
+	function numResultados()
+	{
+		return $this->oMySQL->contarFilasAfectadas();
+	}
+	
 	function terminarConexion()
 	{
 		$this->oMySQL->cerrarConexion();

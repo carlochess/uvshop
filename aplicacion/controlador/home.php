@@ -5,12 +5,13 @@
 */	
 class Home extends Controlador
 {
-		/** AUN NO IMPLEMENTADA **/
-		var $estaConectado;
+	private $home;
+	private $categorias;
 		public function __construct()
 		{
-			//parent::__construct();
-			$this->estaConectado = true;
+			$this->home = $this->loadModel("modelHome");
+			// recibe las super-categorias
+			$this->categorias = $this->home->getCategorias();
 		}
 		
 		/**
@@ -19,15 +20,13 @@ class Home extends Controlador
 		*/
 		function /*void*/ index()
 		{
-			$home = $this->loadModel("modelHome");
 			// recibe 4 productos aleatorios
-			$productosAleatorios = $home->getProdAleatorios();
+			$productosAleatorios = $this->home->getProdAleatorios();
 			// recibe todas las promos del día
-			$promos = $home->getOfertas();
-			// recibe las super-categorias
-			$categorias = $home->getCategorias();
+			$promos = $this->home->getOfertas();
+			$categorias = $this->categorias;
 			// Cierra la conexión a la base de datos
-			$home->terminarConexion();
+			$this->home->terminarConexion();
 			
 			require('aplicacion/vista/Home/header.php');
 			require('aplicacion/vista/Home/index.php');
@@ -39,6 +38,8 @@ class Home extends Controlador
 		*/
 		function /*void*/ about()
 		{
+			$this->home->terminarConexion();
+			$categorias = $this->categorias;
 			require('aplicacion/vista/Home/header.php');
 			require('aplicacion/vista/Home/about.php');
 			require('aplicacion/vista/Home/footer.php');

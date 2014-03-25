@@ -11,10 +11,10 @@ class ModelHome
 		
 		$this->oMySQL = new MySQL();
 	}
-	/** Retorna las categorias en las que se clasifican los productos */
-	function getCategorias()
+	/** Retorna las categorías que agrupan a los producto */
+	function /* array(stdObject) */ getCategorias()
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT * FROM categoria WHERE id_padre=""');
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT DISTINCT categoria FROM producto WHERE 1');
 	}
 	
 	/**Retorna los productos mas vendidos */

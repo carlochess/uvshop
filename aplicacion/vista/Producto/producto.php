@@ -20,7 +20,7 @@
 				<div class="row">
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-						  <img class="img-thumbnail" src="<?php echo (isset($prod->ruta))? URL.'imagenes/'.$prod->id_prod.'x400.jpg' : "holder.js/300x300";?>">
+						  <img class="img-thumbnail" src="<?php echo URL.'imagenes/'.$prod->id_prod.'x400.jpg';?>">
 						</div>
 					</div>
 					<div class="col-md-6">

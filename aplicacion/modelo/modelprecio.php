@@ -8,7 +8,7 @@ class ModelPrecio
 	/*  */
 	function __construct()
 	{
-		require 'aplicacion/libs/bd.php';
+		require_once 'aplicacion/libs/bd.php';
 		$this->oMySQL = new MySQL();
 	}
 	/** Agrega un precio a la base de datos*/

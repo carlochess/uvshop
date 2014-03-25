@@ -35,11 +35,13 @@
                 <li><a href="<?php echo URL.'home/about';?>">Acerca de</a></li>
                 <li><a href="<?php echo URL.'home/contact';?>">Contactos</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-						<li><a href="#">Ninguna </a></li>
-                  </ul>
-                </li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<?php if(isset($categorias)){ foreach($categorias as $cat){ ?>
+								<li><a href="<?php echo URL.'buscador/categoria/'.$cat->categoria;?>"><?php echo $cat->categoria; ?> </a></li>
+							<?php }} ?>
+						</ul>
+					</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 				<ul class="nav navbar-nav navbar-right" style="padding-right:60px">

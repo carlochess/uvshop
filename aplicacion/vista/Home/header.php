@@ -30,8 +30,8 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<?php foreach($categorias as $categoria){ ?>
-							<li><a href="#"><?php echo $categoria->nombre; ?> </a></li>
+							<?php foreach($categorias as $cat){ ?>
+								<li><a href="<?php echo URL.'buscador/categoria/'.str_replace(' ','_',$cat->categoria);?>"><?php echo $cat->categoria; ?> </a></li>
 							<?php } ?>
 						</ul>
 					</li>

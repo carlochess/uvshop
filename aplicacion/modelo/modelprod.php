@@ -14,10 +14,9 @@ class ModelProd
 	/** Toda la info del producto */
 	function getInforProd($id)
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod AS id_prod, precio.valor AS precio, nombre, descripcion, empresa_fab, iva, ruta, extension 
-		FROM producto,imagen,precio 
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod AS id_prod, precio.valor AS precio, nombre, descripcion, empresa_fab, iva
+		FROM producto,precio 
 		WHERE 
-		producto.id_prod = imagen.id_prod AND
 		producto.id_prod = precio.cod_producto AND
 		now() between precio.fecha_ini and precio.fecha_fin AND
 		producto.id_prod="'.$id.'"');
@@ -27,7 +26,7 @@ class ModelProd
 	function getProductos()
 	{/*return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod, nombre, empresa_fab, descripcion, iva,precio.valor AS precio
 		FROM producto,precio WHERE now() between precio.fecha_ini and precio.fecha_fin AND	producto.id_prod = precio.cod_producto');*/
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod, nombre, empresa_fab, descripcion, iva, unidades, id_categoria
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod, nombre, empresa_fab, descripcion, iva, unidades, categoria
 		FROM producto');
 	}
 	
@@ -53,29 +52,19 @@ class ModelProd
 	/**
 	* Función que agrega un producto a la base de datos
 	*/
-	function agregarProducto($id_prod,$nombreP,$empresa_fab,$descripcion,$iva,$IMG,$IMGext)
+	function agregarProducto($id_prod,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades)
 	{
-			$v = "/".$_FILES["file"]["name"] ;
-			$path_parts = pathinfo($v);
-			$IMG =  $path_parts['filename'];
-			$sql = 'INSERT INTO producto(id_prod, nombre, empresa_fab, descripcion, iva) VALUES ("'.$id_prod.'","'.$nombreP.'","'.$empresa_fab.'","'.$descripcion.'",'.$iva.' )';
-			$this->oMySQL->ejecutarConsultaI($sql);
-			$sql = 'INSERT INTO imagen(id_prod, ruta, ancho, largo, extension) VALUES ("'.$id_prod.'","'.$IMG.'",0,0,"'.$IMGext.'")';
-			$this->oMySQL->ejecutarConsultaI($sql);
+		$sql = 'INSERT INTO producto(id_prod, nombre, empresa_fab, descripcion, iva, categoria,unidades) 
+		VALUES ("'.$id_prod.'","'.$nombreP.'","'.$empresa_fab.'","'.$descripcion.'",'.$iva.',"'.$categoria.'",'.$unidades.')';
+		$this->oMySQL->ejecutarConsultaI($sql);
 	}
 	/**
 	* Función que actualiza un producto de la base de datos
 	*/
-	function actualizarProducto($id_prod,$nombreP,$empresa_fab,$descripcion,$iva, $IMG)
+	function actualizarProducto($id_prod,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades)
 	{
-			$sql = 'UPDATE producto SET nombre="'.$nombreP.'",empresa_fab="'.$empresa_fab.'",descripcion="'.$descripcion.'",iva='.$iva.' WHERE id_prod="'.$id_prod.'"';
-			$this->oMySQL->ejecutarConsultaI($sql);
-			if(isset($IMG))
-			{
-				$sql = 'UPDATE imagen SET ruta="'.$IMG.'" WHERE id_prod="'.$id_prod.'"';
-				$this->oMySQL->ejecutarConsultaI($sql);
-			}
-			echo $sql;
+		$sql = 'UPDATE producto SET nombre="'.$nombreP.'",empresa_fab="'.$empresa_fab.'",descripcion="'.$descripcion.'",iva='.$iva.',categoria="'.$categoria.'",unidades='.$unidades.' WHERE id_prod="'.$id_prod.'"';
+		$this->oMySQL->ejecutarConsultaI($sql);
 	}
 	
 	/**

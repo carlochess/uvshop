@@ -29,16 +29,16 @@
 								<input type="text" class="form-control" id="empresa_fab" placeholder="Ingresa la empresa fabricante" name="empProd">
 							  </div>
 							  <div class="form-group">
+								<label for="exampleInputPassword1">Categoria</label>
+								<input type="text" class="form-control" id="categoria" placeholder="Ingresa la categoria" name="categoriaProd">
+							  </div>
+							  <div class="form-group">
 								<label for="exampleInputPassword1">Descripcion</label>
 								<textarea class="form-control" rows="3" id="descripcion" name="descProd" placeholder="Ingresa una descripcion"></textarea>
 							  </div>
 							  <div class="form-group">
 								<label for="exampleInputPassword1">Unidades</label>
 								<input type="text" class="form-control" id="unidades" placeholder="Ingresa la cantidad disponible" name="unidadesProd">
-							  </div>
-							  <div class="form-group">
-								<label for="exampleInputPassword1">Categoria</label>
-								<input type="text" class="form-control" id="categoria" placeholder="Ingresa la categoria" name="categoriaProd">
 							  </div>
 							  <div class="form-group">
 								<label for="exampleInputPassword1">Iva</label>
@@ -105,7 +105,7 @@
                   <td class="descripcion"><?php echo $producto->descripcion ?></td>
                   <td class="iva"><?php echo $producto->iva ?></td>
 				  <td class="unidades"><?php echo $producto->unidades ?></td>
-				  <td class="categoria"><?php echo $producto->id_categoria ?></td>
+				  <td class="categoria"><?php echo $producto->categoria ?></td>
 				  <td>
 					<a href="<?php echo URL."producto/eliminarprod/".$producto->id_prod ?>">
 						<img src="<?php echo URL;?>imagenes/cruz_roja.png" />
