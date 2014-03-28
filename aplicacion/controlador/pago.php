@@ -54,13 +54,41 @@ class Pago extends Controlador
 			{
 				$total += floatval($detalleProducto->precio)*intval($cantidades[$i]);++$i;
 			}
-			
 			require('aplicacion/vista/Pagos/header.php');
 			require('aplicacion/vista/Pagos/modo.php');
 			require('aplicacion/vista/Pagos/footer.php');
 		}
 		else{
 			header('Location: '.URL);
+		}
+	}
+	
+	function /*void*/ finalizar()
+	{
+		$metodosPago = json_decode($_POST['metodosFIN']);
+		$productos = json_decode($_POST['prodFIN']);
+		if(count($metodosPago) > 3 && count($productos) > 1)
+		{
+			$metodosPago = array_slice($metodosPago,3,count($metodosPago));
+			$productos = array_slice($productos,1,count($productos));
+			$modelpago = $this->loadModel("modelPago");
+			// 1. valido los productos y sus cantidades
+			// 2. valido los métodos de pago
+			// 3. Inserto un registro en 'factura'
+			$modelpago->agregarFactura('01',date("Y/m/d"),count($productos));
+			// 4. recibo el id de la factura
+			$id_factura = intval($modelpago->getIDfactura());
+			// 5. inserto los productos (como compras) en la base de datos
+			foreach($productos as $producto)
+			{
+				$modelpago->agregarCompra($producto->id,$id_factura,$producto->Cantidad);
+			}
+			// 6. inserto los métodos de pago 
+			foreach($metodosPago as $metododePago)
+			{
+				$modelpago->agregarMetodo($id_factura,$metododePago->Medio_de_pago,$metododePago->Numero_de_cuotas,$metododePago->monto);
+			}
+			echo "Exito ".$id_factura;
 		}
 	}
 	

@@ -75,6 +75,12 @@ class MySQL {
 		return $this->filasAfectadas;
 	}
 	
+	// Retorna el id de la última inserción 
+	// ver http://es.wikipedia.org/wiki/ACID
+	function /* string */ getLastID(){
+		return $this->db->lastInsertId();
+	}
+	
 	// Cierra la conexión
 	function /* void */ cerrarConexion(){
 		$this->db = null;

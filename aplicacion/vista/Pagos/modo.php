@@ -14,76 +14,66 @@
 		</div>
 		<div class="col-md-3"></div>
 	</div>
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-		<div style="margin-botton:20px;">
+	<div class="row" style="padding-right: 50px;">
+		<div class="col-md-4">
+			<h1 class="page-header"> Resumen </h1>
+				<table id="productos" class="table table-hover">
+					<tr>
+						<th> id </th>
+						<th> Nombre </th>
+						<th> Cantidad </th>
+					<tr>
+					<?php $i =0; foreach($detallesProductos as $producto) { ?>
+					<tr>
+						<td> <?php echo $producto->id_prod; ?> </td>
+						<td> <?php echo $producto->nombre; ?> </td>
+						<td> <?php echo $cantidades[$i]; $i++;?> </td>
+					</tr>
+					<?php } ?>
+				</table>
+		</div>	
+		<div class="col-md-8">
 			<h1 class="page-header"> Recibo de pago </h1>
 				Total <p id="Restan"> <?php echo $total; ?> </p>
 				Restan <p id="Total"> <?php echo $total; ?> </p>
 
-				<table id="agregar" border="2px">
+				<table id="agregar" class="table">
 					<tr>
 						<th> ¿eliminar? </th>
-						<th> Medio de pago </th>
-						<th> Número de cuotas </th>
+						<th> Medio_de_pago </th>
+						<th> Numero_de_cuotas </th>
 						<th> monto </th>
 					<tr>
 					<tr>
 						<td> </td>
 						<td> 
-							<select id="mPago">
+							<select id="mPago"  class="form-control">
 								<option value="tarjeta" selected="selected"> Tarjeta </option>    
 								<option value="efectivo"> Efectivo </option>
 							</select>
 						</td>
 						<td> 
-							<input id="nCuotas" type="text" value="22" />
+							<input class="form-control"  id="nCuotas" type="text" value="22" />
 						</td>
-						<td> <input id="monto" type="text" value="22" /> </td>
-						<td> <button id="bAgregar"> Agregar </button> </td>
+						<td> <input class="form-control"  id="monto" type="text" value="22" /> </td>
+						<td> <button id="bAgregar" class="btn btn-info"> Agregar </button> </td>
 					<tr>
 				</table>
+				
+				<table id="agregados" class="table">
+				
 		</div>
+		<div>
             <p class="text-right">
-				<a href="<?php echo URL.'pago/' ?>">
-					<button class= "btn btn-alert"  type="submit" id="pagar"> << Volver </button>
-				</a>
-				<button class= "btn btn-success"  type="submit" id="pagar"> Pagar >> </button>
+				<form action="<?php echo URL.'pago/finalizar'; ?>" method="post">
+					<a href="<?php echo URL.'pago/' ?>">
+						<button class= "btn btn-alert" id="volver"> << Volver </button>
+					</a>
+					<input type="hidden" id="id" name="metodosFIN" value="">
+					<input type="hidden" id="id2" name="prodFIN" value="">
+					<button class= "btn btn-success"  type="submit" id="pagar"> Pagar >> </button>
+				<form>
 			</p>
+		</div>
 	</div>
 </div>
-<script>
-$(document).ready(function(){
-	$("#mPago").change(function(){
-    var $mPago = $(this).val();
-    switch($mPago){
-        case 'efectivo':
-            $("#nCuotas").val("1");
-            $("#nCuotas").prop('disabled', true);
-            break;
-        case 'tarjeta':
-           $("#nCuotas").prop('disabled',false);
-           break;
-    }
-	});
-	$("#bAgregar").click(function(){
-		var $mPago = $("#mPago").val();
-		var $nCuotas = parseInt($("#nCuotas").val());
-		var $monto = parseFloat($("#monto").val());
-		var $total = parseFloat($("#Total").text());
-		var $img = '<img class="eliminar" src="http://resilientteenagers.com/wp-content/uploads/2012/08/Redcross-e1345890664918.png" />';
-		if(($monto*$nCuotas) >0 && $monto*$nCuotas <= $total){
-			var $resto = $total-$monto*$nCuotas;
-			$("#agregar tr:last").after('<tr><td>'+$img+'</td><td>'+$mPago+' </td><td class="nCuotas">'+$nCuotas+' </td> <td class="monto">'+$monto+' </td></tr>');
-			$("#Total").text($resto);        
-		}
-	});
-	$(document).on( 'click', '.eliminar', function(){
-		var $linea = $(this).closest('tr');
-		var $nCuotas = parseInt($linea.find(".nCuotas").text());
-		var $monto = parseFloat($linea.find(".monto").text());
-		var $total = parseFloat($("#Total").text());
-		$("#Total").text($nCuotas*$monto+$total);    
-		$linea.remove();
-	});
-});
-</script>
