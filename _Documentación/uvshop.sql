@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2014 a las 03:47:41
+-- Tiempo de generación: 28-03-2014 a las 15:41:03
 -- Versión del servidor: 5.5.36
 -- Versión de PHP: 5.4.25
 
@@ -25,27 +25,13 @@ USE `uvshop`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria`
---
-
-DROP TABLE IF EXISTS `categoria`;
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `id_categoria` varchar(4) NOT NULL,
-  `id_padre` varchar(4) DEFAULT NULL,
-  `nombre` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `compra`
 --
 
 DROP TABLE IF EXISTS `compra`;
 CREATE TABLE IF NOT EXISTS `compra` (
   `id_prod` varchar(10) DEFAULT NULL,
-  `id_factura` varchar(4) DEFAULT NULL,
+  `id_factura` int(4) DEFAULT NULL,
   `cant_prod` int(11) NOT NULL,
   KEY `id_prod` (`id_prod`),
   KEY `id_factura` (`id_factura`)
@@ -59,13 +45,13 @@ CREATE TABLE IF NOT EXISTS `compra` (
 
 DROP TABLE IF EXISTS `factura`;
 CREATE TABLE IF NOT EXISTS `factura` (
-  `id_factura` varchar(5) NOT NULL,
+  `id_factura` int(5) NOT NULL AUTO_INCREMENT,
   `id_cliente` varchar(40) NOT NULL,
   `fecha` date NOT NULL,
   `cantidad_productos` int(11) NOT NULL,
   PRIMARY KEY (`id_factura`),
-  KEY `id_cliente` (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `factura_ibfk_1` (`id_cliente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 -- --------------------------------------------------------
 
@@ -91,15 +77,14 @@ CREATE TABLE IF NOT EXISTS `imagen` (
 
 DROP TABLE IF EXISTS `metodo_pago`;
 CREATE TABLE IF NOT EXISTS `metodo_pago` (
-  `id_factura` varchar(5) NOT NULL,
-  `id_pago` varchar(40) NOT NULL,
-  `fecha` date NOT NULL,
+  `id_factura` int(5) NOT NULL,
+  `id_pago` int(40) NOT NULL AUTO_INCREMENT,
   `tipo` varchar(3) NOT NULL,
   `cuotas` int(11) NOT NULL,
   `monto` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_pago`),
   KEY `id_factura` (`id_factura`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -116,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `precio` (
   `valor` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id_precio`),
   KEY `cod_producto` (`cod_producto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
@@ -131,10 +116,10 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `empresa_fab` varchar(20) NOT NULL,
   `descripcion` text NOT NULL,
   `iva` tinyint(4) NOT NULL,
-  `id_categoria` varchar(4) DEFAULT NULL,
+  `categoria` varchar(25) DEFAULT NULL,
   `unidades` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_prod`),
-  KEY `id_categoria` (`id_categoria`)
+  KEY `id_categoria` (`categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -179,14 +164,13 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Filtros para la tabla `compra`
 --
 ALTER TABLE `compra`
-  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`id_prod`) REFERENCES `producto` (`id_prod`),
-  ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`);
+  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `factura`
 --
 ALTER TABLE `factura`
-  ADD CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `producto` (`id_prod`);
+  ADD CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `producto` (`id_prod`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `imagen`
@@ -198,19 +182,13 @@ ALTER TABLE `imagen`
 -- Filtros para la tabla `metodo_pago`
 --
 ALTER TABLE `metodo_pago`
-  ADD CONSTRAINT `metodo_pago_ibfk_1` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`);
+  ADD CONSTRAINT `metodo_pago_ibfk_1` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `precio`
 --
 ALTER TABLE `precio`
   ADD CONSTRAINT `precio_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`id_prod`);
-
---
--- Filtros para la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`);
 
 --
 -- Filtros para la tabla `promocion`
