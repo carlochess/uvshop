@@ -37,14 +37,5 @@ $(document).ready(function(){
 		var prod = $('#productos').tableToJSON();//
 		$("#id").val(JSON.stringify(medPago));
 		$("#id2").val(JSON.stringify(prod));
-		/*var datos = { TablaPagos : medPago , TablaProductos : prod};
-		$.ajax({
-			type: "POST",
-			url: "http://127.0.0.1/uvshop/pago/finalizar",
-			data:  datos,
-			success: function (response) {
-				alert(response);
-			}
-		});*/
 	});
 });

@@ -6,10 +6,10 @@ class ModelLogin
 	/* Clase encargada de las consultas a la bd*/
 	public $oMySQL;
 	
-	function __construct()
+	function __construct(MySQL $db)
 	{
-		require 'aplicacion/libs/bd.php';
-		$this->oMySQL = new MySQL();
+		
+		$this->oMySQL = $db;
 	}
 	
 	/** Toda la info del producto */

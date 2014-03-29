@@ -77,7 +77,7 @@
 				</a>
 			  <h2><a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>"><?php echo $prod->nombre; ?></a></h2>
 			  <p><?php echo $prod->descripcion; ?></p>
-			  <p><strong><?php echo $prod->precio; ?><string></p>
+			  <p>$<span class="precio"> <?php echo $prod->precio; ?> </span></p>
 			  <p><a class="btn btn-default" href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>" role="button">Ver mas &raquo;</a></p>
 			</div>
 		<?php } ?>
@@ -90,7 +90,7 @@
 			<div class="row featurette">
 			<div class="col-md-7">
 			  <h1 class="featurette-heading"> <?php echo $prod->nombre; ?></h1>
-			  <p><h2> <?php echo $prod->valor*((100-$prod->porcetaje_red)/100); ?></h2></p>
+			  <p><h2 class="precio"> <?php echo $prod->valor*((100-$prod->porcetaje_red)/100); ?></h2></p>
 			  <p class="lead"><?php echo $prod->descripcion; ?></p>
 			</div>
 			<div class="col-md-5">

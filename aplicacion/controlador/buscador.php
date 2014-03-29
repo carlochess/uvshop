@@ -7,6 +7,7 @@ class Buscador extends Controlador
 {
 	// Constructor clase buscador
 	function __construct(){
+		parent::__construct();
 	}
 	
 	/* 
@@ -51,4 +52,3 @@ class Buscador extends Controlador
 		}
 	}
 }
-?>

@@ -6,10 +6,10 @@ class ModelPago
 	/* Clase encargada de las consultas a la bd*/
 	public $oMySQL;
 	/*  */
-	function __construct()
+	function __construct(MySQL $db)
 	{
-		require_once 'aplicacion/libs/bd.php';
-		$this->oMySQL = new MySQL();
+		
+		$this->oMySQL = $db;
 	}
 	
 	/** Agrega una factura a la base de datos*/

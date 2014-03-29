@@ -8,6 +8,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+	<script type="text/javascript" src="<?php echo URL; ?>public/jquery.number.min.js"></script>
 	<script type="text/javascript" src="<?php echo URL; ?>public/producto/carrito.js"></script>
 	<script>
 		$(function() {
@@ -18,6 +19,8 @@
 		  $('.dropdown input, .dropdown label').click(function(e) {
 			e.stopPropagation();
 		  });
+		  
+		  $('.precio').number( true, 0 );
 		});
 	</script>
   </body>

@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Clase base controladores
  */
@@ -7,9 +8,11 @@ class Controlador
 {
 	/* no implmentado */
 	protected $login;
+	private $oMySQL;
     function __construct(){
-		//require_once 'login.php';
+		require 'bd.php';
 		//$this->login = new Login();
+		$this->oMySQL = new MySQL();
 	}
     /**
      * Carga el modelo según el nombre.
@@ -19,6 +22,6 @@ class Controlador
     public function loadModel($model_name)
     {
         require 'aplicacion/modelo/' . strtolower($model_name) . '.php';
-        return new $model_name();
+        return new $model_name($this->oMySQL);
     }
 }

@@ -8,12 +8,9 @@
     <meta name="author" content="">
 
     <title>Administrador</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link href="<?php echo URL.'public/admin/dashboard.css'; ?>" rel="stylesheet">
-	<script src="<?php echo URL; ?>public/producto/holder.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link href="<?php echo URL.'public/admin/dashboard.css'; ?>" rel="stylesheet">
 	<style>
 		.modal {
 			width: 80%; /* respsonsive width */
@@ -21,6 +18,9 @@
 			margin-right:auto; 
 		}
 	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="<?php echo URL; ?>public/producto/holder.js"></script>
   </head>
 
   <body> 
@@ -56,19 +56,19 @@
 		<!-- Barra lateral -->
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="<?php echo URL.'admin/';?>">Información</a></li>
-            <li><a href="#">Reportes</a></li>
-            <li><a href="#">Exportar</a></li>
+            <li id="informacion"><a href="<?php echo URL.'admin/';?>">Información</a></li>
+            <li id="reportes"><a href="#">Reportes</a></li>
+            <li id="exportar"><a href="#">Exportar</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Ventas</a></li>
+            <li id="ventas"><a href="<?php echo URL.'admin/ventas';?>">Ventas</a></li>
           </ul>
 		  <ul class="nav nav-sidebar">
-            <li><a href="<?php echo URL.'admin/producto';?>">Productos</a></li>
-			<li><a href="<?php echo URL.'admin/promociones';?>">Promociones</a></li>
+            <li id="productos"><a href="<?php echo URL.'admin/producto';?>">Productos</a></li>
+			<li id="promociones"><a href="<?php echo URL.'admin/promociones';?>">Promociones</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Clientes</a></li>
+            <li id="clientes"><a href="">Clientes</a></li>
           </ul>
 		  
         </div>

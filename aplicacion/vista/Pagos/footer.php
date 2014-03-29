@@ -10,5 +10,11 @@
 	<script src="<?php echo URL; ?>public/holder.js"></script>
 	<script src="<?php echo URL; ?>public/producto/carrito.js"></script>
 	<script src="<?php echo URL; ?>public/pagos/modosPago.js"></script>
+	<script type="text/javascript" src="<?php echo URL; ?>public/jquery.number.min.js"></script>
+	<script>
+		$(function(){
+			$('.precio').number( true, 0 );
+		});
+	</script>
   </body>
 </html>

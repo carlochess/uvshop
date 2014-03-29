@@ -1,15 +1,15 @@
 
 <?php
-require_once 'aplicacion/libs/bd.php';
+
 class ModelHome
 {
 	/* Clase encargada de las consultas a la bd*/
-	public $oMySQL;
+	private $oMySQL;
 	
-	function __construct()
+	function __construct(MySQL $db)
 	{
 		
-		$this->oMySQL = new MySQL();
+		$this->oMySQL = $db;
 	}
 	/** Retorna las categorías que agrupan a los producto */
 	function /* array(stdObject) */ getCategorias()

@@ -24,11 +24,18 @@
 						</div>
 					</div>
 					<div class="col-md-6">
+						<p> Codigo:<span id="codigo"><?php echo $prod->id_prod; ?></span>
 						<p> Nombre: <?php echo $prod->nombre; ?> </p>
 						<p> Empresa fabricante: <?php echo $prod->empresa_fab; ?> </p>
-						<p> Iva: <?php echo $prod->iva; ?> </p>
-						Codigo:<p id="codigo"><?php echo $prod->id_prod; ?></p>
-						<button id="agregarCarrito" class="btn btn-primary">Comprar</button>
+						<p> Iva: <?php echo $prod->iva; ?>% </p>
+						<!-- precio -->
+						<p> Precio: <span class="precio"><?php echo $precio->valor; ?> </span> </p>
+						<!-- promocion -->
+						<?php if(isset($promocion)){ ?>
+							<p> Promocion: <?php echo $promocion->porcetaje_red; ?>% </p>
+						<?php } ?>
+						<button id="agregarCarrito" class="btn btn-primary">Agregar al carrito</button>
+						<a href="<?php echo URL.'pago/'; ?>"><button id="agregarCarrito" class="btn btn-success">Pagar</button></a>
 					</div>
 				</div>
 				<div class="panel panel-default">

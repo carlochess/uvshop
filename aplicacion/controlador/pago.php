@@ -5,7 +5,7 @@
 class Pago extends Controlador
 {
 	// Constructor clase Pago
-	function __construct(){}
+	function __construct(){parent::__construct();}
 	
 	/*
 	* Función encargada de desplegar la información concerniente
@@ -65,32 +65,44 @@ class Pago extends Controlador
 	
 	function /*void*/ finalizar()
 	{
-		$metodosPago = json_decode($_POST['metodosFIN']);
-		$productos = json_decode($_POST['prodFIN']);
-		if(count($metodosPago) > 3 && count($productos) > 1)
+		if(isset($_POST['metodosFIN']) && $_POST['prodFIN'])
 		{
-			$metodosPago = array_slice($metodosPago,3,count($metodosPago));
-			$productos = array_slice($productos,1,count($productos));
-			$modelpago = $this->loadModel("modelPago");
-			// 1. valido los productos y sus cantidades
-			// 2. valido los métodos de pago
-			// 3. Inserto un registro en 'factura'
-			$modelpago->agregarFactura('01',date("Y/m/d"),count($productos));
-			// 4. recibo el id de la factura
-			$id_factura = intval($modelpago->getIDfactura());
-			// 5. inserto los productos (como compras) en la base de datos
-			foreach($productos as $producto)
+			$metodosPago = json_decode($_POST['metodosFIN']);
+			$productos = json_decode($_POST['prodFIN']);
+			if(count($metodosPago) > 3 && count($productos) > 1)
 			{
-				$modelpago->agregarCompra($producto->id,$id_factura,$producto->Cantidad);
+				$metodosPago = array_slice($metodosPago,3,count($metodosPago));
+				$productos = array_slice($productos,1,count($productos));
+				$modelpago = $this->loadModel("modelPago");
+				// 1. valido los productos y sus cantidades
+				
+				// 2. valido los métodos de pago
+				
+				// 3. Inserto un registro en 'factura'
+				$modelpago->agregarFactura('01',date("Y/m/d"),count($productos));
+				// 4. recibo el id de la factura
+				$id_factura = intval($modelpago->getIDfactura());
+				// 5. inserto los productos (como compras) en la base de datos
+				foreach($productos as $producto)
+				{
+					$modelpago->agregarCompra($producto->id,$id_factura,$producto->Cantidad);
+				}
+				// 6. inserto los métodos de pago 
+				foreach($metodosPago as $metododePago)
+				{
+					$modelpago->agregarMetodo($id_factura,$metododePago->Medio_de_pago,$metododePago->Numero_de_cuotas,$metododePago->monto);
+				}
+				$modelpago->terminarConexion();
+				require('aplicacion/vista/Pagos/header.php');
+				require('aplicacion/vista/Pagos/finalizar.php');
+				require('aplicacion/vista/Pagos/footer.php');
 			}
-			// 6. inserto los métodos de pago 
-			foreach($metodosPago as $metododePago)
-			{
-				$modelpago->agregarMetodo($id_factura,$metododePago->Medio_de_pago,$metododePago->Numero_de_cuotas,$metododePago->monto);
+			else{
+				header('Location: '.URL);
 			}
-			echo "Exito ".$id_factura;
+		}
+		else{
+			header('Location: '.URL);
 		}
 	}
-	
 }
-?>

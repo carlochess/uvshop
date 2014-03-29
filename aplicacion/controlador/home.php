@@ -9,6 +9,7 @@ class Home extends Controlador
 	private $categorias;
 		public function __construct()
 		{
+			parent::__construct();
 			$this->home = $this->loadModel("modelHome");
 			// recibe las super-categorias
 			$this->categorias = $this->home->getCategorias();
@@ -45,4 +46,3 @@ class Home extends Controlador
 			require('aplicacion/vista/Home/footer.php');
 		}
 	}
-?>

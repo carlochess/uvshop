@@ -6,10 +6,10 @@ class ModelPrecio
 	/* Clase encargada de las consultas a la bd*/
 	public $oMySQL;
 	/*  */
-	function __construct()
+	function __construct(MySQL $db)
 	{
-		require_once 'aplicacion/libs/bd.php';
-		$this->oMySQL = new MySQL();
+		
+		$this->oMySQL = $db;
 	}
 	/** Agrega un precio a la base de datos*/
 	function /*void*/ agregarPrecio($id_item,$f_inic,$f_fin,$precio)
@@ -22,6 +22,12 @@ class ModelPrecio
 	function /* array(stdObject) */ getPrecios($id)
 	{
 		return $this->oMySQL->ejecutarConsultaSelect('SELECT id_precio, fecha_ini, fecha_fin, valor FROM precio WHERE cod_producto="'.$id.'"');
+	}
+	
+	/** Retorna el precio de un producto para el día de hoy (no importa cuando sea leido esto) */
+	function /* array(stdObject) */ getPrecioHoy($id)
+	{
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT id_precio, fecha_ini, fecha_fin, valor FROM precio WHERE cod_producto="'.$id.'" AND now() BETWEEN fecha_ini AND fecha_fin');
 	}
 	
 	/** Elimina el precio de un producto

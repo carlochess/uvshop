@@ -6,10 +6,10 @@ class ModelBuscador
 	/* Clase encargada de las consultas a la bd*/
 	public $oMySQL;
 	
-	function __construct()
+	function __construct(MySQL $db)
 	{
-		require 'aplicacion/libs/bd.php';
-		$this->oMySQL = new MySQL();
+		
+		$this->oMySQL = $db;
 	}
 	/** Retorna la busqueda de los productos relacionados a la palabra clave*/
 	function buscarInfoProd($nombre)

@@ -1,10 +1,9 @@
 <?php
 	class Admin extends Controlador
 	{
+		public $categoria;
 		public function __construct(){
-			//$login = new Login();
-			//if(!$login->estaConectado())
-			//	header('Location: index.php');
+			parent::__construct();
 		}
 		
 		/** 
@@ -13,6 +12,7 @@
 		*/
 		function /* void */ index()
 		{
+			$this->categoria = "informacion";
 			require('aplicacion/vista/Admin/header.php');
 			echo '<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			<h1 class="page-header">Dashboard</h1>
@@ -23,11 +23,34 @@
 		}
 		
 		/** 
+		* Función que despliega la página de ventas
+		*/
+		function /* void */ ventas($id=null)
+		{
+			$this->categoria = "ventas";
+			$modelFacturas = $this->loadModel("modelFactura");
+			if(isset($id))
+			{
+				$productos = $modelFacturas->getFactura($id[0]);
+				require('aplicacion/vista/Admin/header.php');
+				require('aplicacion/vista/Admin/detallesVenta.php');
+				require('aplicacion/vista/Admin/footer.php');
+			}else{
+				$facturas = $modelFacturas->getFacturas();
+				require('aplicacion/vista/Admin/header.php');
+				require('aplicacion/vista/Admin/ventas.php');
+				require('aplicacion/vista/Admin/footer.php');
+			}
+			$modelFacturas->terminarConexion();
+		}
+		
+		/** 
 		* Función que despliega la página para la administración
 		* de productos.
 		*/
 		function /* void */ producto()
 		{
+			$this->categoria = "productos";
 			$modelprod = $this->loadModel("modelProd");
 			$productos = $modelprod->getProductos();
 			$modelprod->terminarConexion();
@@ -42,6 +65,7 @@
 		*/
 		function /* void */ promociones()
 		{
+			$this->categoria = "promociones";
 			$modelpromo = $this->loadModel("modelPromo");
 			$promociones = $modelpromo->getPromociones();
 			$modelpromo->terminarConexion();
@@ -57,6 +81,7 @@
 		*/
 		function /* void */ precio($id=null)
 		{
+			$this->categoria = "productos";
 			if(isset($id))
 			{
 				$id = $id[0];
@@ -155,4 +180,3 @@
 			header('Location: '.URL.'admin/precio/'.$id[1]);
 		}
 	}
-?>

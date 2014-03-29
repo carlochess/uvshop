@@ -1,8 +1,11 @@
 <?php
 class Producto extends Controlador
 {
+	private $categorias;
 	// Constructor clase producto
-	function __construct(){}
+	function __construct(){
+		parent::__construct();
+	}
 	
 	// 
 	function index()
@@ -25,7 +28,13 @@ class Producto extends Controlador
 			{
 				$prod = $info[0];
 				$ind = $this->loadModel("modelHome");
-				// recibe 4 productos aleatorios
+				$modPromocion = $this->loadModel("modelPromo");
+				$modPrecio = $this->loadModel("modelPrecio");
+				
+				$promocion = $modPromocion->getPromocion($prod->id_prod);
+				$promocion = (isset($promocion) && count($promocion)==1)? $promocion[0] : null;
+				$precio = $modPrecio->getPrecioHoy($prod->id_prod);
+				$precio = (isset($precio) && !empty($precio))? $precio[0] : null;
 				$productosAleatorios = $ind->getProdAleatorios();
 				require('aplicacion/vista/Producto/header.php');
 				require('aplicacion/vista/Producto/producto.php');
@@ -106,4 +115,3 @@ class Producto extends Controlador
 		header('Location: '.URL.'/admin/producto');
 	}
 }
-?>
