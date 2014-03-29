@@ -3,21 +3,22 @@ uvshop
 
 A simple PHP e-commerce app
 
-## Instalación
+## Instalaciï¿½n
 
-Abre un navegador y ve a la siguiente dirección 
+Abre un navegador y ve a la siguiente direcciï¿½n 
 ```
 "localhost/phpmyadmin"
 ```
-importa el archivo .sql (que se encuentra en "_Documentación").
+importa el archivo .sql (que se encuentra en "_Documentaciï¿½n").
 
-Luego, en tu navegador, abre otra pestaña a la siguiente dirección 
+Luego, en tu navegador, abre otra pestaï¿½a a la siguiente direcciï¿½n 
 ```
 "localhost/uvshop"
 ```
 
-Enhorabuena, ya tendras nuestra aplicación funcionando en tu servidor local.
+Enhorabuena, ya tendras nuestra aplicaciï¿½n funcionando en tu servidor local.
 
 ## Permisos
 
 Si estas en Linux, recuerda otorgale el permiso 755 a la carpeta "imagenes/"
+hola soy cristian...
