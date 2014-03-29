@@ -104,5 +104,19 @@
 
       <hr class="featurette-divider">
 	<!-- ==================================================   Footer  ================================================== -->
-
+	<h1 class="page-header">Los mas vendidos</h1>
+	<table class="table">
+		<tr>
+			<td> id_Producto </td>
+			<td> veces comprado en Facturas </td>
+			<td> veces comprado </td>
+		</tr>
+	<?php foreach ($masVendidos as $vendidos) { ?>
+		<tr>
+			<td>  <?php echo $vendidos->id_prod; ?></td>
+			<td>  <?php echo $vendidos->veces; ?></td>
+			<td>  <?php echo $vendidos->cantidad; ?></td>
+		</tr>
+	<?php } ?>
+	</table>
 	

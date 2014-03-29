@@ -26,6 +26,7 @@ class Home extends Controlador
 			// recibe todas las promos del día
 			$promos = $this->home->getOfertas();
 			$categorias = $this->categorias;
+			$masVendidos = $this->home->getMasVendidos();
 			// Cierra la conexión a la base de datos
 			$this->home->terminarConexion();
 			

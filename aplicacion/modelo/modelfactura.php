@@ -15,7 +15,7 @@ class ModelFactura
 	/** Devuelve todas las facturas de la base de datos*/
 	function /*array(stdObject)*/ getFacturas()
 	{
-		$sql = 'SELECT `id_factura`, `id_cliente`, `fecha`, `cantidad_productos` FROM `factura` LIMIT 1';
+		$sql = 'SELECT `id_factura`, `id_cliente`, `fecha`, `cantidad_productos` FROM `factura`';
 		return $this->oMySQL->ejecutarConsultaSelect($sql);
 	}
 	
@@ -24,7 +24,7 @@ class ModelFactura
 	*/
 	function /*array(stdObject)*/ getFactura($id)
 	{
-		$sql = 'SELECT id_prod, cant_prod FROM compra WHERE id_factura='.$id.' LIMIT 1';
+		$sql = 'SELECT id_prod, cant_prod FROM compra WHERE id_factura='.$id;
 		return $this->oMySQL->ejecutarConsultaSelect($sql);
 	}
 	
