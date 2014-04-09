@@ -12,7 +12,7 @@ class Controlador
     function __construct(){
 		require 'bd.php';
 		//$this->login = new Login();
-		$this->oMySQL = new MySQL();
+		$this->oMySQL = MySQL::getBD();
 	}
     /**
      * Carga el modelo según el nombre.

@@ -18,14 +18,13 @@ class ModelProd
 		FROM producto,precio 
 		WHERE 
 		producto.id_prod = precio.cod_producto AND
-		now() between precio.fecha_ini and precio.fecha_fin AND
-		producto.id_prod="'.$id.'"');
+		CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin AND
+		producto.id_prod="'.$id.'" LIMIT 1');
 	}
 	
 	/** Toda la info del producto */
 	function getProductos()
-	{/*return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod, nombre, empresa_fab, descripcion, iva,precio.valor AS precio
-		FROM producto,precio WHERE now() between precio.fecha_ini and precio.fecha_fin AND	producto.id_prod = precio.cod_producto');*/
+	{
 		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod, nombre, empresa_fab, descripcion, iva, unidades, categoria
 		FROM producto');
 	}
@@ -78,9 +77,10 @@ class ModelProd
 			$clausulaWhere .= ('id_prod="'.$item.'" OR ');
 		}
 		$clausulaWhere = substr($clausulaWhere, 0, strrpos($clausulaWhere, 'OR', 0));
-		$sql = 'SELECT id_prod,nombre,empresa_fab,descripcion,iva,precio.valor AS precio 
-FROM producto INNER JOIN precio ON producto.id_prod = precio.cod_producto
-WHERE now() between precio.fecha_ini and precio.fecha_fin AND '
+		$sql = 'SELECT id_prod,nombre,empresa_fab,descripcion,iva,precio.valor AS precio, Prod.porcetaje_red AS descuento
+FROM (SELECT * FROM producto LEFT JOIN (SELECT * FROM promocion WHERE CAST(now() AS DATE) between promocion.fecha_ini and promocion.fecha_fin) AS  promocion on producto.id_prod = promocion.cod_producto) AS Prod
+	 INNER JOIN precio on Prod.id_prod = precio.cod_producto 
+WHERE CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin  AND '
 		.$clausulaWhere. " ORDER BY id_prod ASC";
 		
 		return $this->oMySQL->ejecutarConsultaSelect($sql);

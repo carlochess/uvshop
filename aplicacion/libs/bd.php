@@ -1,7 +1,7 @@
 <?php
 
 class MySQL {
-	
+	protected static $mysql;
 	var $lastError; // El último error
 	var $lastQuery;	// Mantiene la última consulta
 	var $filasAfectadas; // número de filas afectadas en un Ins
@@ -17,12 +17,11 @@ class MySQL {
 	 * Constructor       *
 	 * *******************/
 	
-	function __construct($database='uvshop', $username= 'root', $password= 'Univalle', $hostname='localhost', $port=3306){
-		$this->database = $database;
-		$this->username = $username;
-		$this->password = $password;
-		$this->hostname = $hostname.':'.$port;
-		
+	private function __construct(){
+		//$this->database = DB_USER;
+		//$this->username = $username;
+		//$this->password = $password;
+		//$this->hostname = $hostname.':'.$port;
 		$this->conectar();
 	}
 	
@@ -45,6 +44,13 @@ class MySQL {
 	/* ******************
 	 * Funciones públicas *
 	 * ******************/
+	
+	public static function getBD(){
+		if (null === static::$mysql) {
+            static::$mysql = new static;
+        }
+        return static::$mysql;
+	}
 	
 	// Ejecuta una consulta en Mysql
 	function /* array(stdClass) */ ejecutarConsultaSelect($query){

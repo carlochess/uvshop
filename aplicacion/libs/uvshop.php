@@ -1,5 +1,16 @@
 <?php
 
+class ControladorFactory{
+	public static function factory($nombre){
+		if (file_exists('aplicacion/controlador/' . $nombre . '.php')) {
+            require 'aplicacion/controlador/' . $nombre . '.php';
+            return new $nombre();
+        } else {
+            return NULL;
+        }
+	}
+}
+
 class Uvshop
 {
     /** @var controlador = sustantivo */
@@ -17,11 +28,9 @@ class Uvshop
 		//if($login->estaConectado())
 		//	echo "Estas logeado";
         // verifica si el controlador existe
-        if (file_exists('aplicacion/controlador/' . $this->url_controlador . '.php')) {
-			// Si lo hace, entonces carga el contenido
-            require 'aplicacion/controlador/' . $this->url_controlador . '.php';
-            $this->url_controlador = new $this->url_controlador();
-
+        $this->url_controlador = ControladorFactory::factory($this->url_controlador);
+		//var_dump($this->url_controlador);
+		if(!is_null($this->url_controlador)){
             // verifica si el método, dentro del controlador, existe.
             if (method_exists($this->url_controlador, $this->url_accion)) {
 				// Llama al método seleccionado
@@ -64,3 +73,4 @@ class Uvshop
         }
     }
 }
+?>
