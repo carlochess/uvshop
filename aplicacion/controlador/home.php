@@ -19,7 +19,7 @@ class Home extends Controlador
 		* Función encargada de desplegar la página
 		* Principal de la aplicación
 		*/
-		function /*void*/ index()
+		function /*void*/ index($json=null)
 		{
 			// recibe 4 productos aleatorios
 			$productosAleatorios = $this->home->getProdAleatorios();
@@ -29,10 +29,16 @@ class Home extends Controlador
 			$masVendidos = $this->home->getMasVendidos();
 			// Cierra la conexión a la base de datos
 			$this->home->terminarConexion();
-			
-			require('aplicacion/vista/Home/header.php');
-			require('aplicacion/vista/Home/index.php');
-			require('aplicacion/vista/Home/footer.php');
+			if(count($json) == 1  && $json[0] == "true")
+			{
+				echo json_encode($productosAleatorios);
+			}
+			else
+			{
+				require('aplicacion/vista/Home/header.php');
+				require('aplicacion/vista/Home/index.php');
+				require('aplicacion/vista/Home/footer.php');
+			}
 		}
 		/**
 		* Función encargada de desplegar la información

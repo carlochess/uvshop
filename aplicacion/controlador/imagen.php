@@ -1,6 +1,6 @@
 	
 <?php
-	include_once('easyphpthumbnail.class.php');
+	include_once('/aplicacion/libs/easyphpthumbnail.class.php');
 	class Imagen
 	{
 		var $nombreImagen;

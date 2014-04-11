@@ -31,11 +31,12 @@ class Uvshop
         $this->url_controlador = ControladorFactory::factory($this->url_controlador);
 		//var_dump($this->url_controlador);
 		if(!is_null($this->url_controlador)){
-            // verifica si el método, dentro del controlador, existe.
+			// verifica si el método, dentro del controlador, existe.
             if (method_exists($this->url_controlador, $this->url_accion)) {
 				// Llama al método seleccionado
-                if (isset($this->url_parametros)) {
-                    $this->url_controlador->{$this->url_accion}($this->url_parametros);
+				if (isset($this->url_parametros)) {
+					//print_r($this->url_parametros);
+					$this->url_controlador->{$this->url_accion}($this->url_parametros);
                 } else {
                     $this->url_controlador->{$this->url_accion}();
                 }

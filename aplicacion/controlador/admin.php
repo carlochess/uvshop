@@ -179,4 +179,74 @@
 			$modelprecio->terminarConexion();
 			header('Location: '.URL.'admin/precio/'.$id[1]);
 		}
+		
+		/**
+		* Función encargada de desplegar la página de configuración de reportes
+		*/
+		function /* void */ reportes()
+		{
+			$this->categoria = "reportes";
+			require('aplicacion/vista/Admin/header.php');
+			require('aplicacion/vista/Admin/reportes.php');
+			require('aplicacion/vista/Admin/footer.php');
+		}
+		
+		/**
+		 TODO
+		*/
+		function /* void */ generarReporte($str=null)
+		{
+			require('aplicacion/libs/pdf/fpdf.php');
+			$pdf = new FPDF();
+			$pdf->SetTitle("Reporte");
+			$pdf->AddPage();
+			$pdf->SetFont('Arial','B',16);
+			//--
+			$arreglo = array("top20mas", "topClientes", "top20menos","totalVentasProd","totalVentasFab","clientesCumpleanno","bajasExistencias","recaudoIva");
+			$n = count($arreglo);
+			for($i =0; $i < $n ; $i++)
+			{
+				if(isset($_POST[$arreglo[$i]]) && $_POST[$arreglo[$i]]=="on")
+				{
+					if(method_exists($this, $arreglo[$i])){
+						$str = $this->$arreglo[$i]();
+						$pdf->Cell(40,10,$str);
+						$pdf->Ln();
+					}
+				}
+			}
+			$pdf->Output();
+		}
+		function top20mas()
+		{
+			return "Top 20: Mas Vendidos";
+		}
+		function topClientes()
+		{
+			return "Top Clientes";
+		}
+		function top20menos()
+		{
+			return "Top 20: Menos Vendidos";
+		}
+		function totalVentasProd()
+		{
+			return "Total Ventas Prod";
+		}
+		function totalVentasFab()
+		{
+			return "Total Ventas Fabricante";
+		}
+		function clientesCumpleanno()
+		{
+			return "Clientes Cumpleanno";
+		}
+		function bajasExistencias()
+		{
+			return "Bajas Existencias";
+		}
+		function recaudoIva()
+		{
+			return "Recaudo Iva";
+		}
 	}

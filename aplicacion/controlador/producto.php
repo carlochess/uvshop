@@ -36,9 +36,16 @@ class Producto extends Controlador
 				$precio = $modPrecio->getPrecioHoy($prod->id_prod);
 				$precio = (isset($precio) && !empty($precio))? $precio[0] : null;
 				$productosAleatorios = $ind->getProdAleatorios();
-				require('aplicacion/vista/Producto/header.php');
-				require('aplicacion/vista/Producto/producto.php');
-				require('aplicacion/vista/Producto/footer.php');
+				if(count($id) == 2  && $id[1] == "true")
+				{
+					echo json_encode($info);
+				}
+				else
+				{
+					require('aplicacion/vista/Producto/header.php');
+					require('aplicacion/vista/Producto/producto.php');
+					require('aplicacion/vista/Producto/footer.php');
+				}
 			}
 			else
 			{

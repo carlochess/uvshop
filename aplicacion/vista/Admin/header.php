@@ -57,7 +57,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li id="informacion"><a href="<?php echo URL.'admin/';?>">Información</a></li>
-            <li id="reportes"><a href="#">Reportes</a></li>
+            <li id="reportes"><a href="<?php echo URL.'admin/reportes';?>">Reportes</a></li>
             <li id="exportar"><a href="#">Exportar</a></li>
           </ul>
           <ul class="nav nav-sidebar">
