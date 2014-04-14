@@ -14,12 +14,12 @@ class ModelProd
 	/** Toda la info del producto */
 	function getInforProd($id)
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod AS id_prod, precio.valor AS precio, nombre, descripcion, empresa_fab, iva
-		FROM producto,precio 
+		return $this->oMySQL->ejecutarConsultaSelect('
+		SELECT producto.id_prod AS id_prod, nombre, descripcion, empresa_fab, iva
+		FROM producto
 		WHERE 
-		producto.id_prod = precio.cod_producto AND
-		CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin AND
-		producto.id_prod="'.$id.'" LIMIT 1');
+		producto.id_prod="'.$id.'" LIMIT 1'
+		);
 	}
 	
 	/** Toda la info del producto */
@@ -92,7 +92,6 @@ WHERE CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin  AND '
 	function cantidadInicial($items)
 	{
 		$arr = array();
-		//print_r($items);
 		for($i =0; $i< count($items); $i++)
 		{	
 			if($items[$i] != '-1')

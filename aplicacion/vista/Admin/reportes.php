@@ -29,6 +29,7 @@
 						<label>
 							<input type="checkbox" name="totalVentasProd"> Total de ventas de un producto particular en los últimos 6 meses.
 						</label>
+						<input type="text" name="producto"/>
 					</div>
 					<div class="checkbox">
 						<label>

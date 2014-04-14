@@ -1,6 +1,6 @@
 <?php
 
-
+include_once  'bd.php';
 /**
  * Clase base controladores
  */
@@ -10,8 +10,7 @@ class Controlador
 	protected $login;
 	private $oMySQL;
     function __construct(){
-		require 'bd.php';
-		//$this->login = new Login();
+		
 		$this->oMySQL = MySQL::getBD();
 	}
     /**

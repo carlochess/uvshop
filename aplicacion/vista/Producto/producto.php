@@ -29,13 +29,18 @@
 						<p> Empresa fabricante: <?php echo $prod->empresa_fab; ?> </p>
 						<p> Iva: <?php echo $prod->iva; ?>% </p>
 						<!-- precio -->
-						<p> Precio: <span class="precio"><?php echo $precio->valor; ?> </span> </p>
+						<?php if(isset($precio)){ ?>
+							<p> Precio: <span class="precio"> <?php echo $precio->valor; ?> </span> </p>
+						<?php } ?>
 						<!-- promocion -->
 						<?php if(isset($promocion)){ ?>
 							<p> Promocion: <?php echo $promocion->porcetaje_red; ?>% </p>
 						<?php } ?>
-						<button id="agregarCarrito" class="btn btn-primary">Agregar al carrito</button>
-						<a href="<?php echo URL.'pago/'; ?>"><button id="agregarCarrito" class="btn btn-success">Pagar</button></a>
+						<!-- botones -->
+						<?php if(isset($precio)){ ?>
+							<button id="agregarCarrito" class="btn btn-primary">Agregar al carrito</button>
+							<a href="<?php echo URL.'pago/'; ?>"><button id="pagar" class="btn btn-success">Pagar</button></a>
+						<?php }?>
 					</div>
 				</div>
 				<div class="panel panel-default">

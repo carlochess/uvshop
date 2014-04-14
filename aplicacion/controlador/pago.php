@@ -38,6 +38,7 @@ class Pago extends Controlador
 	*/
 	function /* void */ modos()
 	{
+		print_r($_POST);
 		if(isset($_POST) && count($_POST)>0)
 		{
 			$modelprod = $this->loadModel("modelProd");
@@ -47,23 +48,30 @@ class Pago extends Controlador
 				$ids[] = $_POST[$i];
 				$cantidades[] = $_POST[$i+1];
 			}
-			$detallesProductos = $modelprod->infoProductos($ids);
-			$total = 0;$i=0;
-			
-			foreach ($detallesProductos as $detalleProducto)
+			print_r($ids);
+			if(count($ids) > 0)
 			{
-				$total += floatval($detalleProducto->precio)*intval($cantidades[$i]);++$i;
+				$detallesProductos = $modelprod->infoProductos($ids);
+				$total = 0;$i=0;
+				
+				foreach ($detallesProductos as $detalleProducto)
+				{
+					$total += floatval($detalleProducto->precio)*intval($cantidades[$i]);++$i;
+				}
+				require('aplicacion/vista/Pagos/header.php');
+				require('aplicacion/vista/Pagos/modo.php');
+				require('aplicacion/vista/Pagos/footer.php');
 			}
-			require('aplicacion/vista/Pagos/header.php');
-			require('aplicacion/vista/Pagos/modo.php');
-			require('aplicacion/vista/Pagos/footer.php');
+			else{
+				header('Location: '.URL);
+			}
 		}
 		else{
 			header('Location: '.URL);
 		}
 	}
 	
-	function /*void*/ finalizar()
+	function /* void */ confirmar()
 	{
 		if(isset($_POST['metodosFIN']) && $_POST['prodFIN'])
 		{
@@ -72,6 +80,38 @@ class Pago extends Controlador
 			if(count($metodosPago) > 3 && count($productos) > 1)
 			{
 				$metodosPago = array_slice($metodosPago,3,count($metodosPago));
+				$productos = array_slice($productos,1,count($productos));
+				
+				// 1. valido los productos y sus cantidades
+				
+				// 2. valido los métodos de pago
+				
+				require('aplicacion/vista/Pagos/header.php');
+				require('aplicacion/vista/Pagos/confirmar.php');
+				require('aplicacion/vista/Pagos/footer.php');
+			}
+			else{
+				//header('Location: '.URL.'pago/modos');
+				print_r($metodosPago);
+				echo ' <br/>';
+				print_r($productos);
+			}
+		}
+		else{
+			//header('Location: '.URL.'pago/modos');
+		}
+	}
+	
+	
+	function /*void*/ finalizar()
+	{
+		if(isset($_POST['metodosFIN']) && $_POST['prodFIN'])
+		{
+			$metodosPago = json_decode($_POST['metodosFIN']);
+			$productos = json_decode($_POST['prodFIN']);
+			if(count($metodosPago) > 1 && count($productos) > 1)
+			{
+				$metodosPago = array_slice($metodosPago,1,count($metodosPago));
 				$productos = array_slice($productos,1,count($productos));
 				$modelpago = $this->loadModel("modelPago");
 				// 1. valido los productos y sus cantidades
@@ -90,15 +130,19 @@ class Pago extends Controlador
 				// 6. inserto los métodos de pago 
 				foreach($metodosPago as $metododePago)
 				{
-					$modelpago->agregarMetodo($id_factura,$metododePago->Medio_de_pago,$metododePago->Numero_de_cuotas,$metododePago->monto);
+					$modelpago->agregarMetodo($id_factura,$metododePago->Medio_de_pago,$metododePago->Numero_de_cuotas,$metododePago->Monto);
 				}
 				$modelpago->terminarConexion();
+				unset($_COOKIE['carritoCod']);
+				setcookie('carritoCod', null, -1, '/');
+				// 7. borrar los elementos del carrito
 				require('aplicacion/vista/Pagos/header.php');
 				require('aplicacion/vista/Pagos/finalizar.php');
 				require('aplicacion/vista/Pagos/footer.php');
 			}
 			else{
-				header('Location: '.URL);
+				print_r($metodosPago);
+				print_r($productos);
 			}
 		}
 		else{

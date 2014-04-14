@@ -16,7 +16,6 @@
 	</div>
 	
 	<div class="container">
-		<h1 class="page-header"> Ticket: </h1><small> <?php echo $id_factura;?> </small>
 		<h1 class="page-header"> Detalles Productos: </h1>
 		<table id="productos" class="table table-hover">
 			<tr>
@@ -30,29 +29,38 @@
 				<td> <img src="<?php echo URL.'imagenes/'.$producto->id.'x50.jpg'; ?>" /> </td>
 				<td> <?php echo $producto->id; ?> </td>
 				<td> <?php echo $producto->Nombre; ?> </td>
-				<td> <?php echo $producto->Cantidad ;?> </td>
+				<td> <?php echo $producto->Cantidad; ?> </td>
 			</tr>
 			<?php } ?>
 		</table>
 		<h1 class="page-header"> Detalles formas de pago: </h1>
-		<table id="productos" class="table table-hover">
+		<table id="agregar" class="table table-hover">
 			<tr>
+				<th> # </th>
 				<th> Medio_de_pago </th>
 				<th> Numero_de_cuotas </th>
 				<th> Monto </th>
 			<tr>
 			<?php $i =0; foreach($metodosPago as $metododePago) { ?>
 			<tr>
+				<td> <?php echo "->" ?> </td>
 				<td> <?php echo $metododePago->Medio_de_pago; ?> </td>
 				<td> <?php echo $metododePago->Numero_de_cuotas; ?> </td>
-				<td> <?php echo $metododePago->Monto;?> </td>
+				<td> <?php echo $metododePago->monto;?> </td>
 			</tr>
 			<?php } ?>
 		</table>
-		<div>
-			<a href="<?php echo URL ?>">
-				<button class= "btn btn-alert" id="volver"> Salir </button>
+	</div>
+	<div>
+        <p class="text-center">
+			<a href="<?php echo URL.'pago/modos' ?>">
+				<button class= "btn btn-alert" id="volver"> << Volver </button>
 			</a>
-		</div>
+			<form action="<?php echo URL.'pago/finalizar'; ?>" method="post">
+				<input type="hidden" id="id" name="metodosFIN" value="">
+				<input type="hidden" id="id2" name="prodFIN" value="">
+				<button class= "btn btn-success"  type="submit" id="pagar"> Pagar >> </button>
+			<form>
+		</p>
 	</div>
 </div>

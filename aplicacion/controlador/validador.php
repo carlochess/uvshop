@@ -17,8 +17,8 @@
 			$data = trim($data);
 			$data = stripslashes($data);
 			$data = htmlspecialchars($data);
-			$data = filter_var($a, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-			$data = filter_var($a, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+			$data = filter_var($data, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+			$data = filter_var($data, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 			return $data;
 		}
 	}

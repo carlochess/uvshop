@@ -1,7 +1,7 @@
 <?php
 
 class MySQL {
-	protected static $mysql;
+	static private $mysql;
 	var $lastError; // El último error
 	var $lastQuery;	// Mantiene la última consulta
 	var $filasAfectadas; // número de filas afectadas en un Ins
@@ -46,10 +46,10 @@ class MySQL {
 	 * ******************/
 	
 	public static function getBD(){
-		if (null === static::$mysql) {
-            static::$mysql = new static;
+		if (self::$mysql == null) {
+			self::$mysql = new MySQL();
         }
-        return static::$mysql;
+        return self::$mysql;
 	}
 	
 	// Ejecuta una consulta en Mysql

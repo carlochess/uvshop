@@ -54,6 +54,7 @@
 						$this->hacerMiniatura($v ,$codigoProd,'x50.', 50);
 						$this->nombreImagen = $nombreIMG;
 						$this->extensionImagen = $extension;
+						echo "Exito";
 						return true;
 					}
 				}
@@ -65,6 +66,7 @@
 					echo "<a href=Configuracion.html>Volver</a>";
 				}
 			}
+			echo "Fracaso";
 			return false;
 		}
 		function getNombreImg()

@@ -24,7 +24,7 @@ class Producto extends Controlador
 		{
 			$modelprod = $this->loadModel("modelProd");
 			$info = $modelprod->getInforProd($id[0]);
-			if($modelprod->getNumProd()==1)
+			if($modelprod->getNumProd()>=1)
 			{
 				$prod = $info[0];
 				$ind = $this->loadModel("modelHome");
@@ -108,6 +108,7 @@ class Producto extends Controlador
 		require_once('imagen.php');
 		$valid = new validador();
 		$controladorImg = new Imagen();
+		
 		$codigo = $valid->test_input($_POST["idProd"]);
 		$nombreP = $valid->test_input($_POST["nProd"]);
 		$empresa_fab = $valid->test_input($_POST["empProd"]);
@@ -115,7 +116,7 @@ class Producto extends Controlador
 		$iva = $valid->test_input($_POST["ivaProd"]);
 		$categoria = $valid->test_input($_POST["categoriaProd"]);
 		$unidades = $valid->test_input($_POST["unidadesProd"]);
-		
+		$controladorImg->guardarImagen($codigo);
 		$modelprod = $this->loadModel("modelProd");
 		$modelprod->actualizarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades);
 		$modelprod->terminarConexion();

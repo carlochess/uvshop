@@ -3,6 +3,9 @@
 			<h1 class="page-header">Acerca de nosotros</h1>
 			<div class="container">
 				<ol>
+				<li> En uvshop/pago/, si elimino cualquier elemento, entonces el programa falla </li>
+				<li> En reportes->top20mens, no los organiza en forma descendente</li>
+				<li> Es necesario mejorar la apariencia gráfica del reporte </li>
 				<li> Falta aplicar los descuentos a la hora de hacer la factura </li>
 				<li> Falta validar los campos (Que id_producto no contenga espacios, que no inserten apostrofes por ejemplo) </li>
 				<li> Al recargar la página de la última instancia de el módulo de pago, se reenvia el fomulario, generando un nuevo pago </li>
