@@ -19,12 +19,14 @@
 			<h1 class="page-header"> Resumen </h1>
 				<table id="productos" class="table table-hover">
 					<tr>
+						<th> imagen </th>
 						<th> id </th>
 						<th> Nombre </th>
 						<th> Cantidad </th>
 					<tr>
 					<?php $i =0; foreach($detallesProductos as $producto) { ?>
 					<tr>
+						<td> <img src="<?php echo URL.'imagenes/'.$producto->id_prod.'x50.jpg'; ?>" /> </td>
 						<td> <?php echo $producto->id_prod; ?> </td>
 						<td> <?php echo $producto->nombre; ?> </td>
 						<td> <?php echo $cantidades[$i]; $i++;?> </td>
@@ -65,10 +67,10 @@
 		</div>
 		<div>
             <p class="text-right">
-				<form action="<?php echo URL.'pago/finalizar'; ?>" method="post">
-					<a href="<?php echo URL.'pago/' ?>">
-						<button class= "btn btn-alert" id="volver"> << Volver </button>
-					</a>
+				<a href="<?php echo URL.'pago/' ?>">
+					<button class= "btn btn-alert" id="volver"> << Volver </button>
+				</a>
+				<form action="<?php echo URL.'pago/confirmar'; ?>" method="post">
 					<input type="hidden" id="id" name="metodosFIN" value="">
 					<input type="hidden" id="id2" name="prodFIN" value="">
 					<button class= "btn btn-success"  type="submit" id="pagar"> Pagar >> </button>

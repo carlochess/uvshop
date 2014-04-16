@@ -22,14 +22,15 @@
 			<tr>
 				<th> imagen </th>
 				<th> id </th>
+				<th> Nombre </th>
 				<th> Cantidad </th>
 			<tr>
 			<?php foreach($productos as $producto) { ?>
 			<tr>
 				<td> <img src="<?php echo URL.'imagenes/'.$producto->id.'x50.jpg'; ?>" /> </td>
 				<td> <?php echo $producto->id; ?> </td>
-				<td> <?php echo $producto->id; ?> </td>
-				<td> <?php echo $producto->Cantidad; ?> </td>
+				<td> <?php echo $producto->Nombre; ?> </td>
+				<td> <?php echo $producto->Cantidad ;?> </td>
 			</tr>
 			<?php } ?>
 		</table>
@@ -44,9 +45,14 @@
 			<tr>
 				<td> <?php echo $metododePago->Medio_de_pago; ?> </td>
 				<td> <?php echo $metododePago->Numero_de_cuotas; ?> </td>
-				<td> <?php echo $metododePago->monto;?> </td>
+				<td> <?php echo $metododePago->Monto;?> </td>
 			</tr>
 			<?php } ?>
 		</table>
+		<div>
+			<a href="<?php echo URL ?>">
+				<button class= "btn btn-alert" id="volver"> Salir </button>
+			</a>
+		</div>
 	</div>
 </div>

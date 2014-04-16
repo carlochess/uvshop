@@ -1,6 +1,6 @@
 	
 <?php
-	include_once('easyphpthumbnail.class.php');
+	include_once('/aplicacion/libs/easyphpthumbnail.class.php');
 	class Imagen
 	{
 		var $nombreImagen;
@@ -54,6 +54,7 @@
 						$this->hacerMiniatura($v ,$codigoProd,'x50.', 50);
 						$this->nombreImagen = $nombreIMG;
 						$this->extensionImagen = $extension;
+						echo "Exito";
 						return true;
 					}
 				}
@@ -65,6 +66,7 @@
 					echo "<a href=Configuracion.html>Volver</a>";
 				}
 			}
+			echo "Fracaso";
 			return false;
 		}
 		function getNombreImg()

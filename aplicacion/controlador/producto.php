@@ -24,7 +24,7 @@ class Producto extends Controlador
 		{
 			$modelprod = $this->loadModel("modelProd");
 			$info = $modelprod->getInforProd($id[0]);
-			if($modelprod->getNumProd()==1)
+			if($modelprod->getNumProd()>=1)
 			{
 				$prod = $info[0];
 				$ind = $this->loadModel("modelHome");
@@ -36,9 +36,16 @@ class Producto extends Controlador
 				$precio = $modPrecio->getPrecioHoy($prod->id_prod);
 				$precio = (isset($precio) && !empty($precio))? $precio[0] : null;
 				$productosAleatorios = $ind->getProdAleatorios();
-				require('aplicacion/vista/Producto/header.php');
-				require('aplicacion/vista/Producto/producto.php');
-				require('aplicacion/vista/Producto/footer.php');
+				if(count($id) == 2  && $id[1] == "true")
+				{
+					echo json_encode($info);
+				}
+				else
+				{
+					require('aplicacion/vista/Producto/header.php');
+					require('aplicacion/vista/Producto/producto.php');
+					require('aplicacion/vista/Producto/footer.php');
+				}
 			}
 			else
 			{
@@ -101,6 +108,7 @@ class Producto extends Controlador
 		require_once('imagen.php');
 		$valid = new validador();
 		$controladorImg = new Imagen();
+		
 		$codigo = $valid->test_input($_POST["idProd"]);
 		$nombreP = $valid->test_input($_POST["nProd"]);
 		$empresa_fab = $valid->test_input($_POST["empProd"]);
@@ -108,7 +116,7 @@ class Producto extends Controlador
 		$iva = $valid->test_input($_POST["ivaProd"]);
 		$categoria = $valid->test_input($_POST["categoriaProd"]);
 		$unidades = $valid->test_input($_POST["unidadesProd"]);
-		
+		$controladorImg->guardarImagen($codigo);
 		$modelprod = $this->loadModel("modelProd");
 		$modelprod->actualizarProducto($codigo,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades);
 		$modelprod->terminarConexion();

@@ -49,6 +49,12 @@
 												<td> Valor unitario </td>
 												<td class="valor"><?php echo $producto->precio; ?></td>
 											</tr>
+											<?php if($producto->descuento != null) { ?>
+												<tr>
+													<td> Descuento </td>
+													<td class="descuento"><?php echo $producto->descuento; ?></td>
+												</tr>
+											<?php } ?>
 											<tr>
 												<td> cantidad </td>
 												<td><input type="text" class="cantidad" name="<?php echo $i;$i++; ?>" value="<?php echo $cantidadInit[($producto->id_prod)]; ?>" /> </td>

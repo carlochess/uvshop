@@ -47,6 +47,22 @@ $(function () {
 		$("#carrito").append('<li class="verMas"><a href="http://127.0.0.1/uvshop/pago/">Ver mas</a></li>');
 		
 	}
+	
+	$("#pagar").click(function(){
+		var $data = $("#codigo").text();
+		
+		if($.cookie("carritoCod"))
+		{
+			var $cookieCod = JSON.parse($.cookie("carritoCod")).trim();
+			$.cookie("carritoCod", JSON.stringify($cookieCod+' '+$data), { expires: 7, path: '/' });
+		}
+		else
+		{
+			$.cookie("carritoCod", JSON.stringify($data), { expires: 7, path: '/' });
+		}
+		rederCarrito();
+	});
+	
 	// Cuando hacen click en el botón "Comprar"
 	$("#agregarCarrito").click(function(){
 		var $data = $("#codigo").text();

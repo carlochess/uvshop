@@ -1,7 +1,22 @@
 ﻿He utilizado los siguientes recursos en este proyecto:
 
-Guía principal para la arquitectura de la app: 
+Guía principal para la arquitectura mvc: 
 	https://github.com/panique/php-mvc 
 
 Para el manejo de imagenes
 	easyphpthumbnail.class
+
+Para los pfd
+	fpdf.com
+
+Para los gráficos
+	pchart.com
+
+Libreria javascript
+	jquery
+
+manejo de cookies
+	jquery-cookie
+
+css 
+	bootstrap

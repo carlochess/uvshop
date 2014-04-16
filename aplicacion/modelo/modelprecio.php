@@ -27,7 +27,7 @@ class ModelPrecio
 	/** Retorna el precio de un producto para el día de hoy (no importa cuando sea leido esto) */
 	function /* array(stdObject) */ getPrecioHoy($id)
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT id_precio, fecha_ini, fecha_fin, valor FROM precio WHERE cod_producto="'.$id.'" AND now() BETWEEN fecha_ini AND fecha_fin');
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT id_precio, fecha_ini, fecha_fin, valor FROM precio WHERE cod_producto="'.$id.'" AND CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin ');
 	}
 	
 	/** Elimina el precio de un producto

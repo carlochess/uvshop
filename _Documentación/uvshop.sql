@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-03-2014 a las 21:18:24
+-- Tiempo de generación: 14-04-2014 a las 08:23:25
 -- Versión del servidor: 5.5.36
 -- Versión de PHP: 5.4.25
 
@@ -33,6 +33,9 @@ CREATE TABLE IF NOT EXISTS `compra` (
   `id_prod` varchar(10) DEFAULT NULL,
   `id_factura` int(4) DEFAULT NULL,
   `cant_prod` int(11) NOT NULL,
+  `valor` decimal(10,0) NOT NULL,
+  `iva` tinyint(4) NOT NULL,
+  `porcetaje_red` smallint(6) NOT NULL,
   KEY `id_prod` (`id_prod`),
   KEY `id_factura` (`id_factura`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -49,9 +52,11 @@ CREATE TABLE IF NOT EXISTS `factura` (
   `id_cliente` varchar(40) NOT NULL,
   `fecha` date NOT NULL,
   `cantidad_productos` int(11) NOT NULL,
+  `valor` decimal(10,0) NOT NULL,
+  `iva` tinyint(4) NOT NULL,
   PRIMARY KEY (`id_factura`),
   KEY `factura_ibfk_1` (`id_cliente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 -- --------------------------------------------------------
 
@@ -84,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `metodo_pago` (
   `monto` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_pago`),
   KEY `id_factura` (`id_factura`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 -- --------------------------------------------------------
 
@@ -100,8 +105,8 @@ CREATE TABLE IF NOT EXISTS `precio` (
   `fecha_fin` date NOT NULL,
   `valor` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id_precio`),
-  KEY `cod_producto` (`cod_producto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  KEY `precio_ibfk_1` (`cod_producto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
 
@@ -188,7 +193,7 @@ ALTER TABLE `metodo_pago`
 -- Filtros para la tabla `precio`
 --
 ALTER TABLE `precio`
-  ADD CONSTRAINT `precio_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`id_prod`);
+  ADD CONSTRAINT `precio_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`id_prod`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `promocion`

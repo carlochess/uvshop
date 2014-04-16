@@ -34,7 +34,7 @@ $(document).ready(function(){
 	
 	$("#pagar").click(function(){
 		var medPago = $('#agregar').tableToJSON({ignoreColumns: [0]});
-		var prod = $('#productos').tableToJSON();//
+		var prod = $('#productos').tableToJSON({ignoreColumns: [0]});//
 		$("#id").val(JSON.stringify(medPago));
 		$("#id2").val(JSON.stringify(prod));
 	});
