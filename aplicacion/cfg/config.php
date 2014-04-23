@@ -11,4 +11,4 @@ define('DB_NAME', 'uvshop');
 define('DB_HOST', 'localhost');
 define('DB_TYPE', 'mysql');
 
-?>
+?> 
