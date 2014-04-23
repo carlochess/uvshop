@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
 			<div id="agregar">
-			  <form  role="form" method="post" action="<?php echo URL ?>admin/agregarprecio" id="formulario">
+			  <form  role="form" method="post" action="<?php echo URL ?>precio/agregarprecio" id="formulario">
 				<div class="form-group">
 					<input type="hidden" id="id" name="id_precio">
 				</div>
@@ -76,7 +76,7 @@
                   <td class="fecha_fin"><?php echo $precio->fecha_fin; ?></td>
                   <td class="precio"><?php echo $precio->valor; ?></td>
 				  <td>
-					<a href="<?php echo URL."admin/eliminarprecio/".$precio->id_precio.'/'.$id; ?>">
+					<a href="<?php echo URL."precio/eliminarprecio/".$precio->id_precio.'/'.$id; ?>">
 						<img class="eliminar" src="<?php echo URL;?>imagenes/cruz_roja.png" />
 					</a>
 					<img class="boton" src="<?php echo URL;?>imagenes/edit.png" />
@@ -96,7 +96,7 @@
 		$("#add").click(function(){
 			$('#myModalLabel').text('Agregar');
 			$('#boton').text('Agregar');
-			$('#formulario').attr('action', '<?php echo URL.'admin/agregarprecio/' .$id;?>');
+			$('#formulario').attr('action', '<?php echo URL.'precio/agregarprecio/' .$id;?>');
 			$('#myModal').modal();
 			$('#precio').val('');
 			$('#fecha_ini').val('');
@@ -115,7 +115,7 @@
 			$('#precio').val($precio);
 			$('#myModalLabel').text('Editar');
 			$('#boton').text('Editar');
-			$('#formulario').attr('action', '<?php echo URL.'admin/editarprecio/' .$id; ?>');
+			$('#formulario').attr('action', '<?php echo URL.'precio/editarprecio/' .$id; ?>');
 			$('#myModal').modal();
 		});
 	});

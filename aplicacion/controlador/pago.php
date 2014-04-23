@@ -38,7 +38,7 @@ class Pago extends Controlador
 	*/
 	function /* void */ modos()
 	{
-		print_r($_POST);
+		
 		if(isset($_POST) && count($_POST)>0)
 		{
 			$modelprod = $this->loadModel("modelProd");
@@ -48,7 +48,6 @@ class Pago extends Controlador
 				$ids[] = $_POST[$i];
 				$cantidades[] = $_POST[$i+1];
 			}
-			print_r($ids);
 			if(count($ids) > 0)
 			{
 				$detallesProductos = $modelprod->infoProductos($ids);

@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('America/Bogota');
 // Carga la configuración
 require 'aplicacion/cfg/config.php';
 

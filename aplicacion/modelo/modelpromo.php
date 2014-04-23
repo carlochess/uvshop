@@ -27,7 +27,9 @@ class ModelPromo
 	/** retorna las promociones de un producto para este día */
 	function getPromocion($id)
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT cod_producto, fecha_ini, fecha_fin, porcetaje_red FROM promocion WHERE cod_producto="'.$id.'" AND now() BETWEEN fecha_ini AND fecha_fin');
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT cod_producto, fecha_ini, fecha_fin, porcetaje_red 
+		FROM promocion 
+		WHERE cod_producto="'.$id.'" AND CAST(now() AS DATE) between promocion.fecha_ini and promocion.fecha_fin');
 	}
 	
 	/** recibe todas las promociones */
