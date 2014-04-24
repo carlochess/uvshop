@@ -3,7 +3,7 @@
 /**
 * Clase encargada de el control de la página principal
 */	
-class Home extends Controlador
+class Home extends Controlador// implements Control
 {
 	private $home;
 	private $categorias;

@@ -25,10 +25,21 @@ class Buscador extends Controlador
 		$nombre=$_POST['nombre'];
 		if(isset($nombre))
 		{
+			$i = rand(0,10);
+			if($i <6)
+			{
+				include("Levenshtein.php");
+				echo "Levenshtein";
+				$var = new Levenshtein();
+			}
+			else
+			{
+				include("Ingenua.php");
+				$var = new Ingenua();
+			}
 			$categoria = array();
-			$modelprod = $this->loadModel("modelbuscador");
-			$resBusqueda = $modelprod->buscarInfoProd($nombre[0]);
-			$numResBusqueda = $modelprod->numResultados();
+			$resBusqueda = $var->buscar($nombre);
+			$numResBusqueda = count($resBusqueda);
 			require('aplicacion/vista/Buscador/header.php');
 			require('aplicacion/vista/Buscador/index.php');
 			require('aplicacion/vista/Buscador/footer.php');

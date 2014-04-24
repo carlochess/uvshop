@@ -55,7 +55,7 @@ class MySQL {
 	// Ejecuta una consulta en Mysql
 	function /* array(stdClass) */ ejecutarConsultaSelect($query){
 		$query = $this->db->prepare($query);
-                $query->execute();
+        $query->execute();
 		$this->filasAfectadas = $query->rowCount();
 		return $query->fetchAll();
 	}

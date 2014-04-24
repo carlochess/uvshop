@@ -14,7 +14,13 @@ class ModelBuscador
 	/** Retorna la busqueda de los productos relacionados a la palabra clave*/
 	function buscarInfoProd($nombre)
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT nombre, producto.id_prod as id_prod, ruta FROM producto,imagen WHERE producto.id_prod = imagen.id_prod AND nombre LIKE "%'.$nombre.'%";');
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT nombre, producto.id_prod as id_prod FROM producto WHERE nombre LIKE "%'.$nombre.'%";');
+	}
+	
+	/** Toda la info de todos los producto */
+	function getProductos()
+	{
+		return $this->oMySQL->ejecutarConsultaSelect('SELECT nombre, producto.id_prod as id_prod FROM producto');
 	}
 	
 	function buscarInfoCategoria($categoria)

@@ -1,4 +1,5 @@
 <?php
+//include("'aplicacion/controlador/Control.php");
 	class ControladorFactory{
 		public static function factory($nombre){
 			if (file_exists('aplicacion/controlador/' . $nombre . '.php')) {
