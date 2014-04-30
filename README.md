@@ -22,3 +22,5 @@ Enhorabuena, ya tendras nuestra aplicación funcionando en tu servidor local.
 
 Si estas en Linux, recuerda otorgale el permiso 755 a la carpeta "imagenes/"
 hola soy cristian...
+
+Daniel Lopez - 1133435
