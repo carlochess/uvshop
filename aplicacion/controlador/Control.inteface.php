@@ -11,7 +11,7 @@ interface Control
   /** Aggregations: */
 
   /** Compositions: */
-	public void function index();
+	public function index();
 
 
 

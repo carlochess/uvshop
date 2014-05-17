@@ -1,7 +1,7 @@
 uvshop
 ======
 
-A simple PHP e-commerce app
+Una aplicación simple para el comercio electronico
 
 ## Instalación
 
@@ -11,7 +11,7 @@ Abre un navegador y ve a la siguiente dirección
 ```
 importa el archivo .sql (que se encuentra en "_Documentación").
 
-Luego, en tu navegador, abre otra pestaña a la siguiente dirección 
+Luego, en tu navegador, abre otra pestaña para la siguiente dirección 
 ```
 "localhost/uvshop"
 ```
