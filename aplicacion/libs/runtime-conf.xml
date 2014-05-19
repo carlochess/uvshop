@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <propel> 
+    <datasources default="uvshop">
+      <datasource id="uvshop">
+        <adapter>mysql</adapter> <!-- sqlite, mysql, myssql, oracle, or pgsql -->
+        <connection>
+          <dsn>mysql:host=localhost;dbname=uvshop</dsn>
+          <user>root</user>
+          <password>Univalle</password>
+        </connection>
+      </datasource>
+    </datasources>
+    <log>
+      <logger name="defaultLogger">
+        <type>stream</type>
+        <path>/var/log/propel.log</path>
+        <level>300</level>
+      </logger>
+    </log>
+  </propel>
+</config>
+
