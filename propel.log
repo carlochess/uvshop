@@ -1,0 +1,2 @@
+[2014-05-19 04:04:29] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Adios' for key 'PRIMARY' [] []
+[2014-05-19 04:05:41] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Adios' for key 'PRIMARY' [] []

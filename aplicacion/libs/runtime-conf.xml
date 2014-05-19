@@ -3,7 +3,7 @@
   <propel> 
     <datasources default="uvshop">
       <datasource id="uvshop">
-        <adapter>mysql</adapter> <!-- sqlite, mysql, myssql, oracle, or pgsql -->
+        <adapter>mysql</adapter>
         <connection>
           <dsn>mysql:host=localhost;dbname=uvshop</dsn>
           <user>root</user>
@@ -14,7 +14,7 @@
     <log>
       <logger name="defaultLogger">
         <type>stream</type>
-        <path>/var/log/propel.log</path>
+        <path>propel.log</path>
         <level>300</level>
       </logger>
     </log>

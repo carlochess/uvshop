@@ -22,14 +22,22 @@ require_once 'aplicacion/libs/vendor/autoload.php';
 require_once 'aplicacion/libs/generated-conf/config.php';
 
 $producto = new Producto();
-$producto->setIdProd('Field');
+$producto->setIdProd('Adios');
 $producto->setNombre('Cristian'); 
 $producto->setEmpresaFab('Hola');
 $producto->setDescripcion('Ninguna');
 $producto->setIva(20);
 $producto->setCategoria('Idiotas');
 $producto->setUnidades(1);
-$producto->save();
+try{
+    $producto->save();
+}  catch (PDOException $ex){
+    echo 'Error al insertar';
+}
+catch (Exception $ex) {
+    echo 'Error al insertar';
+}
+
 
 // iniciar la tienda virtual
 //$app = new Uvshop();

@@ -15,5 +15,4 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Propel' => array($vendorDir . '/propel/propel/src'),
-    'Monolog' => array($vendorDir . '/monolog/monolog/src'),
 );

@@ -13,6 +13,6 @@ $serviceContainer->setConnectionManager('uvshop', $manager);
 $serviceContainer->setDefaultDatasource('uvshop');
 $serviceContainer->setLoggerConfiguration('defaultLogger', array (
   'type' => 'stream',
-  'path' => '/var/log/propel.log',
+  'path' => 'propel.log',
   'level' => '300',
 ));
