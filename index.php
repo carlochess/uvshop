@@ -10,12 +10,16 @@ require 'aplicacion/libs/uvshop.php';
 
 // Carga el controlador 
 require 'aplicacion/libs/controlador.php';
+
+// configurar autoloading
+require 'aplicacion/libs/vendor/autoload.php';
+
+// configurar Propel
+require 'aplicacion/libs/generated-conf/config.php';
 /*
 if (file_exists('vendor/autoload.php')) {
     require 'vendor/autoload.php';
 }*/
-
-
 
 // iniciar la tienda virtual
 $app = new Uvshop();

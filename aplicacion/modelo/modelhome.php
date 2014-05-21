@@ -12,9 +12,9 @@ class ModelHome
 	/* Clase encargada de las consultas a la bd*/
 	private $oMySQL;
 	
-	function __construct(/*MySQL*/ $db)
+	function __construct(MySQL $db=null)
 	{
-            $this->oMySQL = $db;
+            //$this->oMySQL = $db;
 	}
 	/** Retorna las categorías que agrupan a los producto */
 	function /* array(stdObject) */ getCategorias()
@@ -53,15 +53,50 @@ now() between precio.fecha_ini and precio.fecha_fin";
 		return $this->oMySQL->ejecutarConsultaSelect($sql);
 	}
 	
+	function arrayToObject( $array ){
+	  foreach( $array as $key => $value ){
+		if( is_array( $value ) ) $array[ $key ] = arrayToObject( $value );
+	  }
+	  return (object) $array;
+	}
+
 	/** Retorna N objetos aleatorios */
 	function getProdAleatorios()
 	{
-            $consulta = \Base\ProductoQuery::create()
-                    ->joinPrecio()
-                    ->select("*")
+            $consulta = \Base\PrecioQuery::create()
+                    //->useProductoQuery()
+                    //->endUse()
+                    //->orderBy("RAND()")
+                    
+                    ->joinWith('Precio.Producto')
+                    ->select("Producto.IdProd")
+                    ->withColumn("Producto.IdProd", 'id_prod')
+                    ->withColumn("Producto.nombre", 'nombre')
+                    ->withColumn("Producto.descripcion", 'descripcion')
+                    ->withColumn("Producto.empresa_fab", 'empresa_fab')
+                    ->withColumn("Producto.iva", 'iva')
+                    ->withColumn("Precio.valor", 'precio')
+                    ->limit(3)
+                    ->addAscendingOrderByColumn("rand()")
+                    
+                    
+                    //->addAsColumn(, 'Producto.nombre')
+                    //->addAsColumn("", 'Producto.descripcion')
+                    
+                    //->addAsColumn("", 'Producto.empresa_fab')
+                    //->addAsColumn("iva", 'Producto.iva')
                     ->find();
-            return $consulta->toArray();
-            //return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod AS id_prod, nombre, descripcion,empresa_fab,iva, producto.id_prod AS ruta,precio.valor AS precio  FROM producto,precio WHERE producto.id_prod=precio.cod_producto ORDER BY RAND() LIMIT 3 ');
+			//$arregloObj = $this->arrayToObject($consulta->toArray());
+			$arregloObj = (object) $consulta->toArray();
+            return $arregloObj[0]->nombre;
+            /*$con = Propel\Runtime\Propel::getWriteConnection(\Map\PrecioTableMap::DATABASE_NAME);
+            $sql = "SELECT producto.id_prod AS id_prod, nombre, descripcion,empresa_fab,iva, producto.id_prod AS ruta,precio.valor AS precio  "
+                    . "FROM producto,precio WHERE producto.id_prod=precio.cod_producto "
+                    . "ORDER BY RAND() "
+                    . "LIMIT 3";
+            $stmt = $con->prepare($sql);
+            return $stmt->execute();*/
+            //return $this->oMySQL->ejecutarConsultaSelect(' ');
 	}
 	
 	/** Retorna los 10 productos mas vendidos*/
@@ -84,13 +119,11 @@ now() between precio.fecha_ini and precio.fecha_fin";
 		$this->oMySQL->cerrarConexion();
 	}
 }
-
 function main()
 {
-    $objHome = new ModelHome(NULL);
+    $objHome = new ModelHome();
     print_r($objHome->getProdAleatorios());
 }
 
 main();
-
 ?>
