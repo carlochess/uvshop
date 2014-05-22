@@ -1,6 +1,10 @@
 
 <?php
+// configurar autoloading
+require_once '../libs/vendor/autoload.php';
 
+// configurar Propel
+require_once '../libs/generated-conf/config.php';
 class ModelProd
 {
 	/* Clase encargada de las consultas a la bd*/
@@ -14,19 +18,29 @@ class ModelProd
 	/** Toda la info del producto */
 	function getInforProd($id)
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('
+                $producto=  \Base\ProductoQuery::create()
+                        ->select(array("id_prod","nombre","descripcion","empresa_fab","iva"))
+                        ->filterByIdProd(id)
+                        ->find();
+                return $producto;
+	/*	return $this->oMySQL->ejecutarConsultaSelect('
 		SELECT producto.id_prod AS id_prod, nombre, descripcion, empresa_fab, iva
 		FROM producto
 		WHERE 
 		producto.id_prod="'.$id.'" LIMIT 1'
 		);
+         */
 	}
 	
 	/** Toda la info del producto */
 	function getProductos()
 	{
-		return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod, nombre, empresa_fab, descripcion, iva, unidades, categoria
-		FROM producto');
+                $producto=  \Base\ProductoQuery::create()
+                        ->select(array("id_prod","nombre","empresa_fab","descripcion","iva","unidades","categoria"))
+                        ->find();
+                return $producto;
+	//	return $this->oMySQL->ejecutarConsultaSelect('SELECT producto.id_prod, nombre, empresa_fab, descripcion, iva, unidades, categoria
+	//	FROM producto');
 	}
 	
 	/** Las filas afectadas en la consuta SQL */
@@ -42,8 +56,11 @@ class ModelProd
 	{
 		if(isset($id))
 		{
-			$sql = 'DELETE FROM producto WHERE id_prod="'.$id.'"';
-			$this->oMySQL->ejecutarConsultaI($sql);
+                        $producto = ProductoQuery::create()
+                                ->findOneByIdProd($id);
+                        $producto->delete();
+			//$sql = 'DELETE FROM producto WHERE id_prod="'.$id.'"';
+			//$this->oMySQL->ejecutarConsultaI($sql);
 		}
 		header('Location: '.URL.'admin/producto');
 	}
@@ -53,17 +70,32 @@ class ModelProd
 	*/
 	function agregarProducto($id_prod,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades)
 	{
-		$sql = 'INSERT INTO producto(id_prod, nombre, empresa_fab, descripcion, iva, categoria,unidades) 
-		VALUES ("'.$id_prod.'","'.$nombreP.'","'.$empresa_fab.'","'.$descripcion.'",'.$iva.',"'.$categoria.'",'.$unidades.')';
-		$this->oMySQL->ejecutarConsultaI($sql);
+                $producto=new Producto();
+                $producto->setIdProd($id_prod);
+                $producto->setNombre($nombreP);
+                $producto->setEmpresaFab($empresa_fab);
+                $producto->setDescripcion($descripcion);
+                $producto->setIva($iva);
+                $producto->setCategoria($categoria);
+                $producto->setUnidades($unidades);
+                $producto->save();
+            
+	//	$sql = 'INSERT INTO producto(id_prod, nombre, empresa_fab, descripcion, iva, categoria,unidades) 
+	//	VALUES ("'.$id_prod.'","'.$nombreP.'","'.$empresa_fab.'","'.$descripcion.'",'.$iva.',"'.$categoria.'",'.$unidades.')';
+	//	$this->oMySQL->ejecutarConsultaI($sql);
 	}
 	/**
 	* Función que actualiza un producto de la base de datos
 	*/
 	function actualizarProducto($id_prod,$nombreP,$empresa_fab,$descripcion,$iva,$categoria,$unidades)
-	{
-		$sql = 'UPDATE producto SET nombre="'.$nombreP.'",empresa_fab="'.$empresa_fab.'",descripcion="'.$descripcion.'",iva='.$iva.',categoria="'.$categoria.'",unidades='.$unidades.' WHERE id_prod="'.$id_prod.'"';
-		$this->oMySQL->ejecutarConsultaI($sql);
+	{       
+            \Base\ProductoQuery::create()
+                 ->filterByIdProd($id_prod)
+                 ->update(array('nombre' =>$nombreP, 'empresa_fab'=>$empresa_fab
+                    ,'descripcion'=>$descripcion,'iva'=>$iva,'categoria'=>$categoria,'unidades'=>$unidades));  
+     
+		//$sql = 'UPDATE producto SET nombre="'.$nombreP.'",empresa_fab="'.$empresa_fab.'",descripcion="'.$descripcion.'",iva='.$iva.',categoria="'.$categoria.'",unidades='.$unidades.' WHERE id_prod="'.$id_prod.'"';
+		//$this->oMySQL->ejecutarConsultaI($sql);
 	}
 	
 	/**
@@ -77,13 +109,18 @@ class ModelProd
 			$clausulaWhere .= ('id_prod="'.$item.'" OR ');
 		}
 		$clausulaWhere = substr($clausulaWhere, 0, strrpos($clausulaWhere, 'OR', 0));
-		$sql = 'SELECT id_prod,nombre,empresa_fab,descripcion,iva,precio.valor AS precio, Prod.porcetaje_red AS descuento
+                $producto=  \Base\ProductoQuery::create()
+                        ->select(array("id_prod","nombre","empresa_fab","descripcion","iva",
+                            "precio","porcetaje","unidades","categoria"))
+                        ->find(); 
+                
+/*		$sql = 'SELECT id_prod,nombre,empresa_fab,descripcion,iva,precio.valor AS precio, Prod.porcetaje_red AS descuento
 FROM (SELECT * FROM producto LEFT JOIN (SELECT * FROM promocion WHERE CAST(now() AS DATE) between promocion.fecha_ini and promocion.fecha_fin) AS  promocion on producto.id_prod = promocion.cod_producto) AS Prod
 	 INNER JOIN precio on Prod.id_prod = precio.cod_producto 
 WHERE CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin  AND '
 		.$clausulaWhere. " ORDER BY id_prod ASC";
 		
-		return $this->oMySQL->ejecutarConsultaSelect($sql);
+*/		return $this->oMySQL->ejecutarConsultaSelect($sql);
 	}
 	
 	/**

@@ -15,8 +15,12 @@ class ModelFactura
 	/** Devuelve todas las facturas de la base de datos*/
 	function /*array(stdObject)*/ getFacturas()
 	{
-		$sql = 'SELECT `id_factura`, `id_cliente`, `fecha`, `cantidad_productos` FROM `factura`';
-		return $this->oMySQL->ejecutarConsultaSelect($sql);
+                $consulta=  \Base\FacturaQuery::create()
+                        ->select(array("id_factura","id_cliente","fecha","cantidad_productos"))
+                        ->find();
+                return $consulta;
+		//$sql = 'SELECT `id_factura`, `id_cliente`, `fecha`, `cantidad_productos` FROM `factura`';
+		//return $this->oMySQL->ejecutarConsultaSelect($sql);
 	}
 	
 	/** Devuelve los elementos comprados en factura
@@ -24,8 +28,14 @@ class ModelFactura
 	*/
 	function /*array(stdObject)*/ getFactura($id)
 	{
-		$sql = 'SELECT id_prod, cant_prod FROM compra WHERE id_factura='.$id;
-		return $this->oMySQL->ejecutarConsultaSelect($sql);
+            
+                 $consulta= \Base\CompraQuery::create()
+                        ->filterBy("id_factura","id_factura")
+                        ->select(array("id_prod","cant_prod"))
+                        ->find();
+                return $consulta;
+            //    $sql = 'SELECT id_prod, cant_prod FROM compra WHERE id_factura='.$id;
+		//return $this->oMySQL->ejecutarConsultaSelect($sql);
 	}
 	
 	/**

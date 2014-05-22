@@ -43,14 +43,15 @@ class ModelHome
 	/** Retorna las ofertas de día */
 	function getOfertas()
 	{
-		$sql = "SELECT promocion.cod_producto, promocion.fecha_ini, promocion.fecha_fin, precio.valor AS valor, porcetaje_red, producto.id_prod AS id_prod,producto.nombre AS nombre, producto.descripcion  AS descripcion
+		
+            /*$sql = "SELECT promocion.cod_producto, promocion.fecha_ini, promocion.fecha_fin, precio.valor AS valor, porcetaje_red, producto.id_prod AS id_prod,producto.nombre AS nombre, producto.descripcion  AS descripcion
 FROM promocion, producto, precio
 WHERE 
 promocion.cod_producto = producto.id_prod AND
 producto.id_prod=precio.cod_producto AND 
 now() between promocion.fecha_ini and promocion.fecha_fin AND
 now() between precio.fecha_ini and precio.fecha_fin";
-		return $this->oMySQL->ejecutarConsultaSelect($sql);
+		return $this->oMySQL->ejecutarConsultaSelect($sql);*/
 	}
 	
 	function arrayToObject( $array ){

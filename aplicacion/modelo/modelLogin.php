@@ -1,5 +1,11 @@
 
 <?php
+// configurar autoloading
+require_once '../libs/vendor/autoload.php';
+
+// configurar Propel
+require_once '../libs/generated-conf/config.php';
+
 
 class ModelLogin
 {
@@ -18,12 +24,20 @@ class ModelLogin
 			// escape the POST stuff
 			$user_name = $_POST['login_ususario'];
 			// Inyección SQL a la vista :D
+                        
+                        $v=\Base\loginQuery::create()
+                         ->filterBy("nombre", $user_name)
+                         ->select(array("nombre","password"))
+                         ->find();
+                       
+                     
+                        /* 
 			$sql = "SELECT nombre, password
 					FROM login
 					WHERE nombre = '" . $user_name ."';";
 			
 			$resultado = $this->oMySQL->ejecutarConsultaSelect($sql);
-			
+			*/
 			// if this user exists
 			if ($this->oMySQL->contarFilasAfectadas() == 1) {
 
@@ -56,5 +70,10 @@ class ModelLogin
 	{
 		$this->oMySQL->cerrarConexion();
 	}
+        
+        /*
+  
+
+         */
 }
 ?>
