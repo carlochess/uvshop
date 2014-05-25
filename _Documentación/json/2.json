@@ -1,0 +1,104 @@
+{
+    "011": {
+        "codigo": "011",
+        "nombre": "GTA-V",
+        "imagen": "http://www.gamestop.es/productImages/243654/3max.jpg",
+        "categoria": "PS3",
+        "empresa_fabricante": "Rock Stars Games",
+        "descripción": "Los Santos, una extensa y soleada metrópolis llena de gurús de autoayuda, aspirantes a estrellas y famosos en decadencia, en su día la envidia del mundo occidental, lucha ahora por mantenerse a flote en una era de incertidumbre económica y realities baratos. En medio de la confusión, tres criminales muy diferentes barajan sus probabilidades de supervivencia y de éxito: Franklin, ex delincuente callejero, ahora en busca de oportunidades de verdad y dinero serio; Michael, profesional ex convicto, cuyo retiro no es tan prometedor como él hubiera esperado; y Trevor, un maníaco violento motivado por la posibilidad de encontrar drogas baratas y el próximo atraco importante. Agotadas las opciones, esta banda lo arriesgará todo en una serie de atrevidos y peligrosos atracos que marcarán sus vidas. Grand Theft Auto V es el juego más grande y ambicioso que Rockstar Games ha creado, y aprovecha al máximo hasta el más mínimo recurso de la potencia de procesamiento de la actual generación de consolas. Con el fin de proporcionar la mejor experiencia posible para un mundo tan grande y detallado, el juego contará con requisitos de instalación en PlayStation 3. Grand Theft Auto V se lanza en un disco e instalará contenido en cuanto insertes el juego. La instalación es de aproximadamente 8GB y los jugadores podrán jugar tan pronto como termine la instalación.",
+        "precio_unitario": 112500,
+        "porcentaje_iva": 16
+    },
+    "012": {
+        "codigo": "012",
+        "nombre": "Infamous Second Son Edición Especial",
+        "imagen": "http://www.gamestop.es/productImages/252969/3max.jpg",
+        "empresa_fabricante": "Sony",
+        "categoria": "PS4",
+        "descripción": "Rodeado por una sociedad que los teme, los superhumanos son cazados y encerrados por el Departamento de Protección Unificada. Cuando Delsin Rowe descubre sus poderes, se ve obligado a huir en busca de otros superhumanos para salvar a sus seres queridos del opresor D.P.U., que ahora le pisa los talones. Las decisiones que tome mientras tanto cambiarán el futuro de todos los que le rodean.",
+        "precio_unitario": 187500,
+        "porcentaje_iva": 16
+    },
+    "013": {
+        "codigo": "013",
+        "nombre": "Final Fantasy XIII Lightning Returns",
+        "imagen": "http://www.gamestop.es/productImages/250520/3max.jpg",
+        "empresa_fabricante": "Square-Enix",
+        "categoria": "PS3",
+        "descripción": "LIGHTNING RETURNS: FINAL FANTASY XIII presenta el regreso de Lightning, una de las heroínas de la saga, en un mundo al que sólo le quedan 13 días para su total aniquilación. En esta nueva aventura de FINAL FANTASY tomarás el control de Lightning en un ambiente cambiante y extenso para conseguir salvar al mundo de Nova Crysalis de la destrucción. El juego cuenta con un nuevo sistema de combate orientado más a la acción, donde el jugador tiene un control más directo del personaje.",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16
+    },
+    "014": {
+        "codigo": "014",
+        "nombre": "Thief",
+        "imagen": "http://www.gamestop.es/productImages/251605/3max.jpg",
+        "empresa_fabricante": "Square-Enix",
+        "categoria": "PS4",
+        "descripción": "Garrett, el experto ladrón, abandona las sombras para adentrarse en la Ciudad. Mientras la milicia del Barón siembra el terror y la opresión, una misteriosa enfermedad azota las calles. Bajo las órdenes de Orion, la voz del pueblo, los ciudadanos se preparan para una sangrienta revolución. Al encontrarse en la cuerda floja entre la política y el pueblo, envuelto en una maraña de conflictos, Garrett solo puede fiarse de sus habilidades de ratero. Queda poco tiempo y el experto ladrón descubre un terrible secreto sobre su oscuro pasado que podría desmoronar su mundo. Garrett nunca ha pagado por nada... hasta ahora.",
+        "precio_unitario": 162500,
+        "porcentaje_iva": 16
+    },
+    "015": {
+        "codigo": "015",
+        "nombre": "Final Fantasy X/X-2 HD Remaster",
+        "imagen": "http://www.gamestop.es/productImages/250518/3max.jpg",
+        "empresa_fabricante": "Square-Enix",
+        "descripción": "Dos juegos de rol clásicos ahora en alta definición – Descubre dos de los títulos más celebrados de esta legendaria serie de juegos de rol, ahora con un aspecto todavía mejor de lo que recordabas. Ediciones internacionales de ambos juegos – Por primera vez la versión internacional de FINAL FANTASY X-2 sale de Japón y llega cargada de contenidos adicionales que no se incluyeron en la versión original. Banda sonora actualizada – Se han retocado y remasterizado en alta definición más de 60 temas de la banda sonora del juego original FINAL FANTASY X. Soporte para trofeos – Soporte para trofeos de PlayStation 3 y PlayStation Vita para ambos títulos. Soporte para Cross-Save – Guarda tus partidas PlayStation Network y sigue jugando en la versión para PlayStation 3 o en la versión para PlayStation Vita. Nota: para usar esta función se necesitan ambas versiones del juego.",
+        "categoria": "PS3",
+        "precio_unitario": 100000,
+        "porcentaje_iva": 16
+    },
+    "016": {
+        "codigo": "016",
+        "nombre": "Wolfenstein: The New Order",
+        "imagen": "http://www.gamestop.es/productImages/254091/3max.jpg",
+        "empresa_fabricante": "Bethesda",
+        "descripción": "Wolfenstein:The New Order revitaliza la serie que creó el género de los shooters en primera persona. una elaborada narrativa repleta de acción, aventura y combate en primera persona. Intenso, cinematográfico y con unos gráficos impresionantes gracias al motor id Tech 5 de id Software, Wolfenstein envía a los jugadores en una misión personal por toda Europa para derrocar a la maquinaria de guerra nazi. Con la ayuda de un pequeño grupo de miembros de la resistencia, podrás infiltrarte en instalaciones de máxima seguridad, enfrentarte a legiones nazis de alta tecnología y hacerte con el control de las superarmas que les han permitido conquistar la Tierra... y mucho más.",
+        "categoria": "XBOX-360",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16
+    },
+    "017": {
+        "codigo": "017",
+        "nombre": "Amazing Spiderman 2",
+        "imagen": "http://www.gamestop.es/productImages/253374/3max.jpg",
+        "empresa_fabricante": "Activision",
+        "descripción": "La araña regresa para acabar con los criminales",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16,
+        "categoria": "XBOX-360"
+    },
+    "018": {
+        "codigo": "018",
+        "nombre": "Minecraft",
+        "imagen": "http://www.gamestop.es/productImages/253635/3max.jpg",
+        "empresa_fabricante": "Sony",
+        "descripción": "¿Qué aspecto tiene el mundo de Minecraft? El que tú le quieras dar. De eso mismo se trata este juego que rebosa creatividad. Cada palmo construido con bloques se puede destruir y volver a crear a tu total antojo, utilizando utensilios y herramientas que tendrás que conseguir y crear. No importa si quieres construirte una humilde granja, un majestuoso palacio o un parque de juegos para ti y tus amigos: las herramientas que necesitas las tienes en tus propias manos. Existen todo tipo de utensilios para trabajar y empezar a crear. Tala árboles y construye útiles de madera, extrae rocas y construye estructuras de piedra o cuida de las plantas y los animales y comercia con los vecinos para obtener nuevos artículos. Podrás cambiar el cauce de los ríos y lagos, construir sin límite de altura o cavar el túnel más profundo nunca visto. El mundo que te rodea se genera al azar y extiende sus límites sin reservas, por lo que puedes escoger el lugar que prefieras para establecer un campamento. Ya te sientas mejor en una colina nevada, en un frondoso bosque o en un desierto bajo un sol de justicia, súbete las mangas y empieza a construir tu vida.",
+        "precio_unitario": 50000,
+        "porcentaje_iva": 16,
+        "categoria": "XBOX-360"
+
+    },
+    "019": {
+        "codigo": "019",
+        "nombre": "Darksiders Collection",
+        "imagen": "http://www.gamestop.es/productImages/253679/3max.jpg",
+        "empresa_fabricante": "N/A",
+        "descripción": "Darksiders ",
+        "precio_unitario": 87500,
+        "porcentaje_iva": 16,
+        "categoria": "PS3"
+
+    },
+    "020": {
+        "codigo": "020",
+        "nombre": "MXGP Motocross GP",
+        "imagen": "http://www.gamestop.es/productImages/253142/3max.jpg",
+        "empresa_fabricante": "Namco Bandai",
+        "descripción": "",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16,
+        "categoria": "PS3"
+    }
+}

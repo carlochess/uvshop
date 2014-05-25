@@ -19,7 +19,6 @@ class Precios extends Controlador {
         $f_inic = $_POST['f_inicio'];
         $f_fin = $_POST['f_finalizacion'];
         $precio = $_POST['precio'];
-        echo floatval($precio);
         $modelprecio = $this->loadModel("modelPrecio");
         $modelprecio->agregarPrecio($id[0], $f_inic, $f_fin, intval($precio));
         $modelprecio->terminarConexion();

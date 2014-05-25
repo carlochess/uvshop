@@ -1,0 +1,103 @@
+{
+    "021": {
+        "codigo": "021",
+        "nombre": "Assassin's Creed IV JackDaw",
+        "imagen": "http://www.gamestop.es/productImages/253585/3max.jpg",
+        "empresa_fabricante": "Ubisoft",
+        "descripción": "Esta historia independiente dividida en nueve misiones está protagonizada por el mejor compañero de Edward Kenway, Adewale. Esclavo de nacimiento, Adewale encontró la libertad como pirata en el Jackdaw, donde se convirtió en el segundo al mando de Kenway. Ahora, 15 años después, Adewalé es un diestro Asesino que naufraga en Santo Domingo sin armas ni tripulación. Es el comienzo de su propia aventura.",
+        "precio_unitario": 187500,
+        "porcentaje_iva": 16,
+        "categoria": "PS4"
+    },
+    "022": {
+        "codigo": "022",
+        "nombre": "Diablo III: Reaper Of Souls",
+        "imagen": "http://www.gamestop.es/productImages/252841/3max.jpg",
+        "empresa_fabricante": "Blizzard",
+        "descripción": "En Reaper of Souls, los cinco héroes originales de Diablo III (el bárbaro, el cazador de demonios, el monje, el médico brujo y el mago) suman un nuevo campeón a sus filas: el cruzado. Ataviado de pies a cabeza con una armadura marcada por mil batallas, es una fuerza imparable de destrucción y justicia que canaliza el poder de la furia celestial para castigar a sus presas demoníacas. Los jugadores se embarcarán en un oscuro y peligroso viaje a través de un nuevo y encarnizado acto, en el que deberán aventurarse en paisajes terroríficos, recorrer la legendaria ciudad de Westmarch y aniquilar a incontables esbirros, cuyo único y ardiente deseo es el de poner fin a su cruzada. La gesta culmina en un enfrentamiento con Malthael, el Arcángel de la Sabiduría caído, una entidad fantasmal con un poder insondable cuyos retorcidos planes son la causa de las desgracias de los inocentes habitantes de Santuario.",
+        "precio_unitario": 87500,
+        "porcentaje_iva": 16,
+        "categoria": "PC"
+    },
+    "023": {
+        "codigo": "023",
+        "nombre": "Metal Gear Solid V: Ground Zeroes",
+        "imagen": "http://www.gamestop.es/productImages/253067/3max.jpg",
+        "empresa_fabricante": "Konami",
+        "descripción": "Metal Gear Solid V: Ground Zeroes es el primer segmento de la Experiencia Metal Gear Solid V y prólogo del segundo segmento, más largo, Metal Gear Solid V: The Panthom Pain, que será lanzado más adelante. MGS:GZ ofrece a los fans la oportunidad de disfrutar de una producción visual sin precedentes y una jugabilidad que ofrece un primer acercamiento a lo que vendrá con el segundo segmento del título.",
+        "precio_unitario": 80000,
+        "porcentaje_iva": 16,
+        "categoria": "PS4"
+    }
+    ,
+    "024": {
+        "codigo": "024",
+        "nombre": "Resident Evil 4 HD Edition",
+        "imagen": "http://www.gamestop.es/productImages/253083/3max.jpg",
+        "empresa_fabricante": "Capcom",
+        "descripción": "En Resident Evil 4, el agente especial Leon. S. Kennedy es enviado a una misión para rescatar a la hija del presidente de los Estados Unidos, que ha sido raptada. Leon se zambullirá en las entrañas de una aldea europea (con un sospechoso parecido a cualquier aldea de El Bierzo, ya que aunque no se diga jamás, este título está ambientado en España), enfrentándose a nuevas amenazas que van más allá de los tradicionales zombis de anteriores entregas de la serie. Leon luchará intensamente frente a nuevas criaturas que han sido contagiadas por una nueva amenaza llamada Las Plagas. Y además, deberá sobrevivir a ataques masivos de enemigos, entre ellos los propios habitantes de la aldea, cuya mente es controlada por Los Iluminados, que es la misteriosa secta que está detrás del secuestro de la niña.",
+        "precio_unitario": 50000,
+        "porcentaje_iva": 16,
+        "categoria": "PC"
+    },
+    "025": {
+        "codigo": "025",
+        "nombre": "Plantas Vs Zombies",
+        "imagen": "http://www.gamestop.es/productImages/251552/3max.jpg",
+        "empresa_fabricante": "Ea Games",
+        "descripción": "Plants vs. Zombies Garden Warfare se mete en las trincheras con una nueva experiencia de acción explosiva. Vuela zombis por los aires, siembra plantas y conoce nuevos personajes en un explosivo mundo que te proporciona la profundidad de un shooter online tradicional combinado con el humor refrescante de Plants vs. Zombies. ¡Pasa a la acción con tus amigos en los modos cooperativo y multijugador y comenzad a sembrar la victoria!",
+        "precio_unitario": 70000,
+        "porcentaje_iva": 16,
+        "categoria": "XBOX-360"
+    },
+    "026": {
+        "codigo": "026",
+        "nombre": "Dead Space ",
+        "imagen": "http://cybergameujtl.files.wordpress.com/2013/02/dead_space_3_game-wide.jpg",
+        "empresa_fabricante": "Electronics Arts",
+        "descripción": "Recorre en solitario un territorio infestado de enemigos o haz equipo con un amigo para experimentar las emociones y escalofríos juntos Brindando suspenso galardonado, horror, acción y audio, Dead Space 3 enviará a los jugadores en una exhilarante y espeluznante nueva aventura en el 2013. Después de estrellarse en un nuevo y hostil planeta conocido como Tau Volantis, el héroe Isaac Clarke descubre que este planeta puede ser la clave para terminar con la infestación de Necromorphs. En su violenta búsqueda por respuestas, Isaac debe batallar temperaturas bajo cero y heladas condiciones y mortales y altamente evolucionados enemigos, incluyendo nuevos Necromorphs, gigantescas creaturas jefe e incluso humanos descarriados. Afortunadamente,  Isaac no esta solo. Los jugadores pueden elegir hacer equipo con un amigo en cualquier momento del juego con la característica drop-in/drop-out cooperativa completamente integrada. Los jugadores que elijan atacar al terror juntos experimentarán detalles adicionales de la historia y mecánicas de juego encontradas únicamente cuando se juega con el personaje cooperativo, Sargento John Carver.",
+        "precio_unitario": 150000,
+        "porcentaje_iva": 16,
+        "catergoría": "XBOX-360"
+    },
+    "027": {
+        "codigo": "027",
+        "nombre": "Brazuca",
+        "imagen": "http://www.somosnoticiacol.com/site/wp-content/uploads/2014/05/brazuca_0.jpg",
+        "empresa_fabricante": "adidas",
+        "categoria": "Articulos Deportivos",
+        "descripción": "¿Cuál es el mejor equipo de fútbol del mundo? ¿Cuál de todos se   llevará a casa la copa de fútbol más importante? El resultado final se reduce a dos equipos, un partido y un balón. Este balón. Todo el mundial Brazil 2014 gira en torno a Brazuca: el balón oficial del evento deportivo más grande del planeta. Está confeccionado en materiales premium que han sido sometidos a pruebas rigurosas para recibir los puntajes más altos de la FIFA en sensación, durabilidad y vuelo. Materiales de alta calidad en la cubierta, en el refuerzo y en la cámara para ofrecer el rendimiento ideal en el campo Superficie sin costuras para una trayectoria más predecible, un mejor toque y una menor absorción de agua Mayor puntuación según la FIFA: este balón ha superado las pruebas de la FIFA relacionadas con la circunferencia, el peso, el rebote y la absorción de agua 100 % poliuretano",
+        "precio_unitario": 309900,
+        "porcentaje_iva": 25
+    },
+    "028": {
+        "codigo": "028",
+        "nombre": "Camiseta seleccion colombia visitante manga larga ",
+        "imagen": "http://demandware.edgesuite.net/aagl_prd/on/demandware.static/Sites-adidas-CO-Site/Sites-adidas-products/es_CO/v1400600211123/zoom/G74471_F_B2C.jpg",
+        "empresa_fabricante": "adidas",
+        "descripción": "En Brasil, cualquier cosa menos que todo, termina siendo nada. Es la etapa más importante y si no vamos con todo, es mejor no ir. No se trata de quien es el que más talento o experiencia tiene, se trata de !quien lo quiere más! ¡quien lo desea más! ¿Qué tan lejos estás dispuesto a ir por la selección? ¡Por la Tricolor o nada! La tecnología de ventilación Climacool® te mantiene fresco y seco Simbolo del sombrero vueltiao en la franja azul de la parte delantera Las alas del cóndor enlazadas con la frase #unidosporunpais ",
+        "categoria": "Artículos Deportivos",
+        "precio_unitario": 179000,
+        "porcentaje_iva": 18
+    },
+    "029": {
+        "codigo": "029",
+        "nombre": "Camiseta seleccion colombia local manga corta ",
+        "imagen": "http://cloudfront.abcdeportes.com/sites/default/files/styles/galerias_big_960w_540h/public/galerias/image/2014/05/colombia_2014_world_cup_home_kit_5.jpg?itok=T5cQ8YmL",
+        "empresa_fabricante": "adidas",
+        "categoria": "Artículos Deportivos",
+        "descripción": "En Brasil, cualquier cosa menos que todo, termina siendo nada. Es la etapa más importante y si no vamos con todo, es mejor no ir. No se trata de quien es el que más talento o experiencia tiene, se trata de !quien lo quiere más! ¡quien lo desea más! ¿Qué tan lejos estás dispuesto a ir por la selección? ¡Por la Tricolor o nada! La tecnología de ventilación Climacool® te mantiene fresco y seco Simbolo del sombrero vueltiao en la franja azul de la parte delantera Las alas del cóndor enlazadas con la frase #unidosporunpais",
+        "precio_unitario": 179000,
+        "porcentaje_iva": 18
+    },
+    "030": {
+        "codigo": "030",
+        "nombre": "Guayos Continental",
+        "imagen": "http://golty.com.co/wp-content/files_mf/0122.png",
+        "empresa_fabricante": "Golty",
+        "categoria": "Artículos Deportivos",
+        "descripción": "Mayor refuerzo estructural,liviano flexible y suave,control optimo del balón en cualquier condición climática, mejor agarre durante el juego",
+        "precio_unitario": 130000,
+        "porcentaje_iva": 7
+    }
+}

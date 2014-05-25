@@ -54,7 +54,7 @@ now() between precio.fecha_ini and precio.fecha_fin";
 
     /** Retorna N objetos aleatorios */
     function getProdAleatorios() {
-        $consulta = \Base\PrecioQuery::create()
+        /*$consulta = \Base\PrecioQuery::create()
                 ->joinWith('Precio.Producto')
                 ->select("Producto.IdProd")
                 ->withColumn("Producto.IdProd", 'id_prod')
@@ -68,15 +68,15 @@ now() between precio.fecha_ini and precio.fecha_fin";
                 ->limit(3)
                 ->find();
         $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
-        return $arregloObj;
         
-        /*$sql = "SELECT producto.id_prod AS id_prod, nombre, descripcion,empresa_fab,iva, producto.id_prod AS ruta,precio.valor AS precio  "
+        return $arregloObj;*/
+        
+        
+        $sql = "SELECT producto.id_prod AS id_prod, nombre, descripcion,empresa_fab,iva, producto.id_prod AS ruta,precio.valor AS precio  "
           . "FROM producto,precio WHERE producto.id_prod=precio.cod_producto "
           . "ORDER BY RAND() "
           . "LIMIT 3";
-          $stmt = $con->prepare($sql);
-          return $stmt->execute(); */
-        //return $this->oMySQL->ejecutarConsultaSelect(' ');
+        return $this->oMySQL->ejecutarConsultaSelect($sql);
     }
 
     /** Retorna los 10 productos mas vendidos */

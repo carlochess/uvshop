@@ -1,0 +1,101 @@
+{
+    "001": {
+        "codigo": "001",
+        "nombre": "Kirby Triple Deluxe",
+        "imagen": "http://www.gamestop.es/productImages/253767/3max.jpg",
+        "empresa_fabricante": "Nintendo",
+        "descripción": "Kirby utiliza sus habilidades de copia, marca de la casa del pequeño héroe rosa, absorbiendo enemigos para coger prestados sus poderes. Por ejemplo, absorbe a un enemigo espadachín y utiliza la habilidad de copia espada para infligir daño, o absorbe a un enemigo explosivo y utiliza la habilidad de copia bomba. Juega con las 25 habilidades de copia diferentes. Esa capacidad camaleónica permite a los juegos de Kirby tener un desarrollo muy variado: ningún personaje hace tantas cosas como Kirby.",
+        "precio_unitario": 92500,
+        "porcentaje_iva": 16
+    },
+    "002": {
+        "codigo": "002",
+        "nombre": "Watch Dogs: Vigilante Edition",
+        "imagen": "http://www.gamestop.es/productImages/250458/3max.jpg",
+        "categoria": "PS3",
+        "empresa_fabricante": "Ubisoft",
+        "descripción": "Eres Aiden Pearce, un brillante hacker hoy día que hace tiempo fue un matón y cuyo pasado criminal le condujo a una violenta tragedia familiar. Estás ahora persiguiendo a los que hicieron daño a tu familia, tienes la capacidad de rastrear y saber cualquier cosa de aquellos que te rodean, manipulando todo lo que esté conectado a la red de la ciudad. Usa la ciudad de Chicago como tu arma definitiva, y perfila cuál será tu estilo de venganza.",
+        "precio_unitario": 237500,
+        "porcentaje_iva": 16
+    },
+    "003": {
+        "codigo": "003",
+        "nombre": "Wolfenstein: The New Order",
+        "imagen": "http://www.gamestop.es/productImages/253411/3max.jpg",
+        "empresa_fabricante": "Bethesda",
+        "categoria": "PC",
+        "descripción": "La fuerza e intimidación implacables de las que hacen gala los nazis, combinadas con una misteriosa y avanzada tecnología, han doblegado incluso a las naciones más poderosas. Eres el héroe de guerra norteamericano B.J. Blazkowicz, que tras un coma de 14 años, ha despertado en una versión alternativa e inimaginable de los años sesenta en la que el monstruoso régimen nazi ha ganado la Segunda Guerra Mundial y ahora gobierna el planeta con puño de hierro. Y tú eres el único que puede reescribir la historia. ",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16
+    },
+    "004": {
+        "codigo": "004",
+        "nombre": "Mario Kart 8",
+        "imagen": "http://www.gamestop.es/productImages/253556/3max.jpg",
+        "empresa_fabricante": "Nintendo",
+        "categoria": "Wii U",
+        "descripción": "Mario Kart 8 llega cargado de novedades para todos los fans de las carreras más alocadas de los videojuegos. Si Mario Kart Wii introdujo las motos, y Mario Kart 7 las carreras por tierra, mar y aire, Mario Kart 8 le da un giro de 180 grados a la diversión con la llegada de la antigravedad. Si hasta ahora solo podías correr por la superficie de una pista, prepárate para hacerlo por paredes y techos, abriendo nuevas posibilidades de competición y diversión inéditas en la saga. En lo visual, las carreras de Mario y compañía nunca han lucido tan bien, gracias a sus gráficos en alta definición a constantes 60 frames por segundo. Por supuesto, tampoco faltarán nuevos circuitos creados desde cero para sacar todo el partido a la posibilidad de conducir bocabajo, pero incluso los circuitos clásicos estarán rediseñados para explotar al máximo esta posibilidad. Pero sin duda el elemento que hará que todos los usuarios de Wii U jueguen durante horas y horas será su modo multijugador. Ya sea hasta cuatro jugadores a pantalla partida, como en su sólido modo online gratuito con hasta 12 jugadores simultáneos, la diversión está garantizada.",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16
+    },
+    "005": {
+        "codigo": "005",
+        "categoria": "PS3",
+        "nombre": "Murdered: Soul Suspect",
+        "imagen": "http://www.gamestop.es/productImages/251691/3max.jpg",
+        "empresa_fabricante": "Square-Enix",
+        "descripción": "Ronan O’Connor, un detective con un pasado turbio, se ve envuelto en un robo en el que un asesino cruel e implacable pondrá fin a su vida de forma prematura. Ronan descubre con horror que se encuentra en el más allá. Para poder escapar del Umbral, el mundo del limbo, tendrá que servirse de sus nuevas habilidades sobrenaturales para descubrir la verdad sobre su asesino, encontrarlo y llevarlo ante la justicia. En la piel de Ronan tienes la libertad para explorar la ciudad de Salem en busca de pruebas: las casas de madera al estilo de Nueva Inglaterra, las estrechas calles, las iglesias góticas, el manicomio… Enfréntate a espíritus demoníacos para salvar tu alma y descubrir la impactante verdad sobre el responsable de tu muerte.",
+        "precio_unitario": 100000,
+        "porcentaje_iva": 16
+    },
+    "006": {
+        "codigo": "006",
+        "nombre": "Copa Mundial de la FIFA Brasil 2014 - Champions Edition",
+        "imagen": "http://www.gamestop.es/productImages/253284/3max.jpg",
+        "empresa_fabricante": "Ea Sports",
+        "categoria": "PS3",
+        "descripción": "Vive toda la diversión, emoción y drama del mayor espectáculo futbolístico del mundo. Con varias mejoras e innovaciones en la aclamada jugabilidad de FIFA 14, además de 100 nuevas animaciones, EA SPORTS™ Copa Mundial de la FIFA 2014 es el juego más accesible y divertido de EA SPORTS FIFA en Xbox 360 y PlayStation 3. Vive el mayor evento deportivo del mundo y elige entre 203 Selecciones Nacionales con las que competir en los distintos modos de juego. Sumérgete en la Copa Mundial de la FIFA™ jugando en los estadios reales del Mundial de Brasil y con un público completamente volcado con su equipo reflejando el ambiente festivo de la Copa Mundial de la FIFA 2014™.",
+        "precio_unitario": 162500,
+        "porcentaje_iva": 16
+    },
+    "007": {
+        "codigo": "007",
+        "nombre": "Short Peace Ranko Tsukigime´s",
+        "imagen": "http://www.gamestop.es/productImages/253255/3max.jpg",
+        "empresa_fabricante": "Namco Bandai",
+        "categoria": "PS3",
+        "descripción": "Se ve como gomelito",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16
+    },
+    "008": {
+        "codigo": "008",
+        "nombre": "Lego El Hobbit",
+        "categoria": "XBOX One",
+        "imagen": "http://www.gamestop.es/productImages/253431/3max.jpg",
+        "empresa_fabricante": "Warner Bros Interactive Entertainment",
+        "descripción": "Acompaña a Bilbo Bolsón, Gandalf y los enanos liderados por Thorin en esta nueva aventura de LEGO, que se inspira en las dos primeras películas de la trilogía de El Hobbit, Un Viaje Inesperado y La Desolación de Smaug.",
+        "precio_unitario": 137500,
+        "porcentaje_iva": 16
+    },
+    "009": {
+        "codigo": "009",
+        "nombre": "Final Fantasy XIV",
+        "imagen": "http://www.gamestop.es/productImages/252787/3max.jpg",
+        "empresa_fabricante": "Square-Enix",
+        "categoria": "PS4",
+        "descripción": "FINAL FANTASY® XIV: A Realm Reborn™ es un juego de rol multijugador masivo online (MMORPG) para PlatStation 4 que te invita a explorar el reino de Eorzea con amigos de cualquier parte del mundo. Forma un grupo e inicia una aventura con multitud de jugadores de todo el mundo. Forja amistades, monta en chocobo y sube en barcos aéreos mientras creas junto a tus compañeros tu propia historia, única, en Eorzea. Embárcate solo o con la ayuda de tus amigos para emprender misiones épicas, batallas contra conocidos monstruos de FINAL FANTASY y adquirir habilidades y equipamiento únicos. ¡Todos los elementos clásicos de la serie que has conocido y amado te están esperando!",
+        "precio_unitario": 87500,
+        "porcentaje_iva": 16
+    },
+    "010": {
+        "codigo": "010",
+        "nombre": "Titanfall",
+        "imagen": "http://www.gamestop.es/productImages/252136/3max.jpg",
+        "empresa_fabricante": "Ea Games",
+        "categoria": "XBOX-360",
+        "descripción": "Prepárate para Titanfall. Producido por uno de los co-creadores de Call of Duty y otros desarolladores claves detrás de dicha franquincia, Titanfall es un nuevo universo en el que se yuxtaponen lo pequeño frente a lo gigante, lo natural frente a lo industrial y el hombre frente a la máquina. Los visionarios de Respawn se han inspirado en su probada experiencia en juegos de acción en primera persona y con Titanfall están concentrados en traer algo excitante a la nueva generación de juegos multijugador.",
+        "precio_unitario": 162500,
+        "porcentaje_iva": 16
+    }
+}

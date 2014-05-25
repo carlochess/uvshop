@@ -1,0 +1,103 @@
+{
+    "031": {
+        "codigo": "031",
+        "nombre": "Balón de voleibol profesional  ",
+        "imagen": "http://golty.com.co/wp-content/files_mf/voleibol01.png",
+        "empresa_fabricante": "Golty",
+        "categoria": "Artículos Deportivos",
+        "descripción": "Suavidad al toque lo que genera mayor segurida en la respuesta posee un mejor agarre con resistencia a la suciedad y minima absorcion de agua",
+        "precio_unitario": 150000,
+        "porcentaje_iva": 7
+    },
+    "032": {
+        "codigo": "032",
+        "nombre": "Balón Golty Fusion  ",
+        "imagen": "http://golty.com.co/wp-content/files_mf/microfutbolfusion.png",
+        "empresa_fabricante": "Golty",
+        "categoria": "Artículos Deportivos",
+        "descripción": "Superficie lisa,resistente al calor y al desgaste, resistente a altas temperaturas, paneles en forma pentagonal  y hexagonal",
+        "precio_unitario": 240000,
+        "porcentaje_iva": 7
+    },
+    "033": {
+        "codigo": "033",
+        "nombre": "Mini component F830 ",
+        "imagen": "http://images.samsung.com/is/image/samsung/co_MX-F830-ZX_504_Front_black?$Download-Source$",
+        "empresa_fabricante": "Samsung",
+        "descripción": "Visualiza el sonido,Entretenimiento más fácil,Muévete y diviértete con un sonido inigualable,Transforma tu sala en un estadio",
+        "precio_unitario": 400000,
+        "porcentaje_iva": 23,
+        "categoria": "Equipos de Sonido"
+    },
+    "034": {
+        "codigo": "034",
+        "nombre": "Mini component FS8000 ",
+        "imagen": "http://images.samsung.com/is/image/samsung/co_MX-FS8000-ZX_507_Dynamic2_black_10029518080538?$L1-Gallery$",
+        "empresa_fabricante": "Samsung",
+        "descripción": "El ambiente de fiesta perfecto en cualquier lugar.Transfórmate en el DJ de tu fiesta.Potencia y sonido para una gran fiesta.Transforma tu sala en un estadio",
+        "precio_unitario": 400000,
+        "categoria": "Equipos de Sonido",
+        "porcentaje_iva": 23
+    },
+    "035": {
+        "codigo": "035",
+        "nombre": "Camiseta Sheldon Cooper  ",
+        "imagen": "http://www.latostadora.com/generados/tiendas/3712/compos/33524_f.jpg",
+        "empresa_fabricante": "Herpuuu",
+        "descripción": "Nuestra camiseta de calidad superior. 100% algodón peinado, 180 gr/m2, tapa costuras reforzado en cuello, acabado de canalé elastano",
+        "precio_unitario": 60000,
+        "categoria": "Ropa",
+        "porcentaje_iva": 14
+    },
+    "036": {
+        "codigo": "036",
+        "nombre": "Camiseta Flash  ",
+        "categoria": "Ropa",
+        "imagen": "http://www.latostadora.com/generados/tiendas/3712/compos/33229_f.jpg",
+        "empresa_fabricante": "Herpuuu",
+        "descripción": "Nuestra camiseta de calidad superior. 100% algodón peinado, 180 gr/m2, tapa costuras reforzado en cuello, acabado de canalé elastano",
+        "precio_unitario": 60000,
+        "porcentaje_iva": 14
+    },
+    "037": {
+        "codigo": "037",
+        "categoria": "Cámaras",
+        "nombre": "cámara RX100 III ",
+        "imagen": "http://sonyglobal.scene7.com/is/image/gwtprod/035aa1d968a74cd124185069520b021d?fmt=png-alpha&wid=1014",
+        "empresa_fabricante": "Sony",
+        "descripción": "La lente fija RX100 III combina una calidad de imagen de 20,1 MP (efectivos) un visor electrónico (EVF) incorporado, una lente ZEISS® más amplia y que permite mayor luz, y tamaño compacto, lo que la hace ideal para fotógrafos profesionales en movimiento. Su combinación única de características hace que sea la opción ideal para profesionales que buscan una segunda cámara que complemente su modelo de lentes intercambiables.",
+        "precio_unitario": 700000,
+        "porcentaje_iva": 20
+
+    },
+    "038": {
+        "codigo": "038",
+        "categoria": "Cámaras",
+        "nombre": "cámara 5x TX30 ",
+        "imagen": "http://sonyglobal.scene7.com/is/image/gwtprod/8c447d4d2acf8e1765bc9be831e059f8?fmt=png-alpha&wid=1014",
+        "empresa_fabricante": "Sony",
+        "descripción": "En la piscina, buceando o esquiando, la TX30 tiene una pantalla OLED y un sensor de 18,2 MP para lograr fotos detalladas y videos fluidos en Full HD de arrecifes de coral o colinas nevadas..",
+        "precio_unitario": 560000,
+        "porcentaje_iva": 20
+    },
+    "039": {
+        "codigo": "039",
+        "nombre": "cámara 55 H300 ",
+        "imagen": "http://sonyglobal.scene7.com/is/image/gwtprod/f6fa6732135c962d2a79f89a9ff3ee6a?fmt=png-alpha&wid=1014",
+        "empresa_fabricante": "Sony",
+        "descripción": "La Cyber-shot™ H300, que incorpora un potente zoom óptico de 35x, te acerca al sujeto para hacer fotos precisas de gran belleza. Su sensor de 20,1 MP, el video HD y las funciones creativas te permiten capturar imágenes y videos de calidad con toda facilidad. El cuerpo tipo DSLR ofrece una sujeción cómoda al realizar fotos, panorámicas o grabaciones.",
+        "precio_unitario": 1300000,
+        "porcentaje_iva": 20
+    },
+    "040": {
+        "codigo": "040",
+        "nombre": "cámara RX1R ",
+        "categoria": "Cámaras",
+        "imagen": "http://sonyglobal.scene7.com/is/image/gwtprod/baa84c927dda32ca3aa275b9c7fc00d5?fmt=png-alpha&wid=165",
+        "empresa_fabricante": "Sony",
+        "descripción": "Cámara digital compacta con sensor de fotograma completo de 35 mm1. RX1 es una cámara con cómodas dimensiones y diseño atemporal.cómoda al realizar fotos, panorámicas o grabaciones.",
+        "precio_unitario": 1460000,
+        "porcentaje_iva": 20
+
+    }
+}

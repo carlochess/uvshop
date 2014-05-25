@@ -25,7 +25,7 @@ class Imagen {
             $temp = explode(".", $_FILES["file"]["name"]);
             $extension = strtolower(end($temp));
             $type = strtolower($_FILES["file"]["type"]);
-            if (in_array($type, $allowedTypes) && ($_FILES["file"]["size"] < 1000000) && in_array($extension, $allowedExts)) {
+            if (in_array($type, $allowedTypes) && ($_FILES["file"]["size"] < 10000000) && in_array($extension, $allowedExts)) {
                 if ($_FILES["file"]["error"] > 0) {
                     echo "Error ";
                 } else {
