@@ -23,9 +23,9 @@ class Home extends Controlador// implements Control {
         // recibe 4 productos aleatorios
         $productosAleatorios = $this->home->getProdAleatorios();
         // recibe todas las promos del día
-        $promos = array();//$this->home->getOfertas();
-        $categorias = array();//$this->categorias;
-        $masVendidos = array();//$this->home->getMasVendidos();
+        $promos = $this->home->getOfertas();
+        $categorias = $this->categorias;
+        $masVendidos = $this->home->getMasVendidos();
         // Cierra la conexión a la base de datos
         //$this->home->terminarConexion();
         if (count($json) == 1 && $json[0] == "true") {

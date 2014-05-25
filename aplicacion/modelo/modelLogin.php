@@ -1,10 +1,10 @@
 
 <?php
 // configurar autoloading
-require_once '../libs/vendor/autoload.php';
+//require_once '../libs/vendor/autoload.php';
 
 // configurar Propel
-require_once '../libs/generated-conf/config.php';
+//require_once '../libs/generated-conf/config.php';
 
 
 class ModelLogin

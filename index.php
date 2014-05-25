@@ -1,5 +1,7 @@
 <?php
 date_default_timezone_set('America/Bogota');
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
 // Carga la configuración
 require 'aplicacion/cfg/config.php';
 
@@ -12,14 +14,12 @@ require 'aplicacion/libs/uvshop.php';
 require 'aplicacion/libs/controlador.php';
 
 // configurar autoloading
-require 'aplicacion/libs/vendor/autoload.php';
+require 'aplicacion/libs/orm/vendor/autoload.php';
 
 // configurar Propel
-require 'aplicacion/libs/generated-conf/config.php';
-/*
-if (file_exists('vendor/autoload.php')) {
-    require 'vendor/autoload.php';
-}*/
+require 'aplicacion/libs/orm/generated-conf/config.php';
+
+require  'aplicacion/libs/easyphpthumbnail.class.php';
 
 // iniciar la tienda virtual
 $app = new Uvshop();

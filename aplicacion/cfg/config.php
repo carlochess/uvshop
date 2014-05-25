@@ -1,6 +1,6 @@
 <?php
 // Directorios y direcciones
-define('DIR_APP', '/var/www/uvshop/');
+define('DIR_APP', '/var/www/html/uvshop/');
 define('URL', 'http://localhost/uvshop/');
 define ('LIBRERIAS', $_SERVER["DOCUMENT_ROOT"]."/uvshop/aplicacion/libs/");
 

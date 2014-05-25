@@ -11,7 +11,7 @@
 						<div class="thumbnail">
 							<img  id="imag" src="holder.js/200x200">
 						</div>
-						<form enctype="multipart/form-data" action="<?php echo URL.'producto/agregarProd' ?>" method="POST" id="formulario">
+						<form enctype="multipart/form-data" action="<?php echo URL.'productos/agregarProd' ?>" method="POST" id="formulario">
 							  <div class="form-group">
 								<label for="exampleInputFile">Foto</label>
 								<input type="file" id="exampleInputFile" name="file">
@@ -107,7 +107,7 @@
 				  <td class="unidades"><?php echo $producto->unidades ?></td>
 				  <td class="categoria"><?php echo $producto->categoria ?></td>
 				  <td>
-					<a href="<?php echo URL."producto/eliminarprod/".$producto->id_prod ?>">
+					<a href="<?php echo URL."productos/eliminarprod/".$producto->id_prod ?>">
 						<img src="<?php echo URL;?>imagenes/cruz_roja.png" />
 					</a>
 					<a href="<?php echo URL."admin/precio/".$producto->id_prod ?>">
@@ -140,7 +140,7 @@
 		   $("#add").click(function(){
 				$('#myModalLabel').text('Agregar');
 				$('#boton').text('Agregar');
-				$('#formulario').attr('action', '<?php echo URL.'producto/agregarProd' ?>');
+				$('#formulario').attr('action', '<?php echo URL.'productos/agregarProd' ?>');
 				$('#myModal').modal();
 				$('#codigo').val('');
 				$('#nombre').val('');
@@ -159,7 +159,7 @@
 				var $unidades = $linea.find(".unidades").text();
 				var $categoria = $linea.find(".categoria").text();
 				var $iva = $linea.find(".iva").text();
-				$('#formulario').attr('action', '<?php echo URL.'producto/actualizarProd' ?>');
+				$('#formulario').attr('action', '<?php echo URL.'productos/actualizarProd' ?>');
 				$('#myModalLabel').text('Editar');
 				$('#boton').text('Editar');
 				$('#codigo').val($id);

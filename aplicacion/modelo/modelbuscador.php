@@ -2,10 +2,10 @@
 <?php
 
 // configurar autoloading
-require_once '../libs/vendor/autoload.php';
+//require_once '../libs/vendor/autoload.php';
 
 // configurar Propel
-require_once '../libs/generated-conf/config.php';
+//require_once '../libs/generated-conf/config.php';
 
 class ModelBuscador {
     /* Clase encargada de las consultas a la bd */
@@ -23,7 +23,9 @@ class ModelBuscador {
                 ->withColumn("Producto.id_prod", 'id_prod')
                 ->filterBy(nombre, "%" . $nombre . "%")
                 ->find();
-        return $consulta->toArray();
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        return $arregloObj;
+        //return $consulta->toArray();
         //return $this->oMySQL->ejecutarConsultaSelect('SELECT nombre, producto.id_prod as id_prod FROM producto WHERE nombre LIKE "%'.$nombre.'%";');
     }
 
@@ -33,7 +35,9 @@ class ModelBuscador {
                 ->select("nombre")
                 ->withColumn("Producto.id_prod", 'id_prod')
                 ->find();
-        return $consulta->toArray();
+        //return $consulta->toArray();
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        return $arregloObj;
         //return $this->oMySQL->ejecutarConsultaSelect('SELECT nombre, producto.id_prod as id_prod FROM producto');
     }
 
@@ -42,13 +46,13 @@ class ModelBuscador {
                 ->select(array("nombre", "id_prod", "descripcion", "categoria"))
                 ->filterBy("categoria", $categoria)
                 ->find();
-        return $consulta->toArray();
-        //return $this->oMySQL->ejecutarConsultaSelect('SELECT id_prod, nombre, descripcion, categoria FROM producto WHERE categoria="' . $categoria . '"');
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        /*return $arregloObj;
+        return $this->oMySQL->ejecutarConsultaSelect('SELECT id_prod, nombre, descripcion, categoria FROM producto WHERE categoria="' . $categoria . '"');*/
     }
 
     function numResultados() {
-        
-        //return $this->oMySQL->contarFilasAfectadas();
+        return $this->oMySQL->contarFilasAfectadas();
     }
 
     function terminarConexion() {

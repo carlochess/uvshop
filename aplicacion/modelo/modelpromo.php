@@ -2,10 +2,10 @@
 <?php
 
 // configurar autoloading
-require_once '../libs/vendor/autoload.php';
+//require_once '../libs/vendor/autoload.php';
 
 // configurar Propel
-require_once '../libs/generated-conf/config.php';
+//require_once '../libs/generated-conf/config.php';
 
 class ModelPromo {
     /* Clase encargada de las consultas a la bd */
@@ -18,47 +18,58 @@ class ModelPromo {
 
     /** Agrega una promoción a la base de datos */
     function agregarPromocion($id_item, $f_inic, $f_fin, $desc) {
-        $promocion = new Precio();
-        $promocion->setIdPrecio($id_item);
+        $promocion = new Promocion();
+        $promocion->setCodProducto($id_item);
         $promocion->setFechaIni($f_inic);
         $promocion->setFechaFin($f_fin);
-        $promocion->setValor($desc);
+        $promocion->setValor(100.00);
         $promocion->save();
-        //$sql = 'INSERT INTO promocion(cod_producto, fecha_ini, fecha_fin, valor, porcetaje_red) VALUES ("' . $id_item . '", "' . $f_inic . '","' . $f_fin . '",0,' . $desc . ')';
-        //$this->oMySQL->ejecutarConsultaI($sql);
+        /*$sql = 'INSERT INTO promocion(cod_producto, fecha_ini, fecha_fin, valor, porcetaje_red) VALUES ("' . $id_item . '", "' . $f_inic . '","' . $f_fin . '",0,' . $desc . ')';
+        $this->oMySQL->ejecutarConsultaI($sql);*/
     }
 
-    /** retorna todas las promociones de hoy */
+    /** 
+     * retorna todas las promociones de hoy 
+     */
     function getPromociones() {
-        /*$consulta = \Base\::create()
-                ->select(array("cod_producto", "fecha_ini", "fecha_fin", "porcetaje_red"))
+        $consulta = \Base\PromocionQuery::create()
+                ->select(array("id_promocion","cod_producto", "fecha_ini", "fecha_fin", "porcetaje_red"))
                 ->find();
-        return $consulta->toArray();*/
-        //return $this->oMySQL->ejecutarConsultaSelect('SELECT cod_producto, fecha_ini, fecha_fin, porcetaje_red FROM promocion');
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        return $arregloObj;/*
+        return $this->oMySQL->ejecutarConsultaSelect('SELECT cod_producto, fecha_ini, fecha_fin, porcetaje_red FROM promocion');
+         * */
     }
 
     /** retorna las promociones de un producto para este día */
     function getPromocion($id) {
-        $consulta = \Base\PrecioQuery::create()
-                ->select(array("id_precio", "fecha_ini", "fecha_fin"))
+        /*$consulta = \Base\PromocionQuery::create()
+                ->select(array("cod_producto", "fecha_ini", "fecha_fin", "porcetaje_red"))
                 ->where("cod_producto='".$id."' and  CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin")
                 ->find();
-        return $consulta->toArray();
-        /*return $this->oMySQL->ejecutarConsultaSelect('SELECT cod_producto, fecha_ini, fecha_fin, porcetaje_red 
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        return $arregloObj;*/
+        return $this->oMySQL->ejecutarConsultaSelect('SELECT cod_producto, fecha_ini, fecha_fin, porcetaje_red 
 		FROM promocion 
 		WHERE cod_producto="' . $id . '" AND CAST(now() AS DATE) between promocion.fecha_ini and promocion.fecha_fin');
-         */
     }
 
     /** recibe todas las promociones */
     function eliminarPromocion($id) {
-        return $this->oMySQL->ejecutarConsultaI('DELETE FROM promocion WHERE cod_producto="' . $id . '"');
+        $promo = \Base\PromocionQuery::create()->filterByIdPromocion($id)->find();
+        $promo->delete();
+        //return $this->oMySQL->ejecutarConsultaI('DELETE FROM promocion WHERE cod_producto="' . $id . '"');
     }
 
-    /** recibe todas las promociones */
     function actualizarPromocion($id_item, $f_inic, $f_fin, $desc) {
-        $sql = 'UPDATE promocion SET fecha_ini="' . $f_inic . '",fecha_fin="' . $f_fin . '",porcetaje_red= ' . $desc . ' WHERE cod_producto= "' . $id_item . '"';
-        return $this->oMySQL->ejecutarConsultaI($sql);
+        \Base\PromocionQuery::create()
+        ->filterByIdPromocion($id_item)
+        ->update(array("FechaIni" => $f_inic,
+            "FechaFin" => $f_fin,
+            "PorcetajeRed" => $desc
+            ));
+        /*$sql = 'UPDATE promocion SET fecha_ini="' . $f_inic . '",fecha_fin="' . $f_fin . '",porcetaje_red= ' . $desc . ' WHERE cod_producto= "' . $id_item . '"';
+        return $this->oMySQL->ejecutarConsultaI($sql);*/
     }
 
     /**

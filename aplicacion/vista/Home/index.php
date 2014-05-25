@@ -69,16 +69,16 @@
 	  <div class="row">
 		<?php foreach ($productosAleatorios as $prod) { ?>
 			<div class="col-lg-4">
-				<a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>">
+				<a href="<?php echo URL.'productos/info/'.$prod->id_prod; ?>">
 					<img 
 					   class="img-circle"
 					   src="<?php echo URL.'imagenes/'.$prod->ruta.'x200.jpg'; ?>" 
 					>
 				</a>
-			  <h2><a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>"><?php echo $prod->nombre; ?></a></h2>
+			  <h2><a href="<?php echo URL.'productos/info/'.$prod->id_prod; ?>"><?php echo $prod->nombre; ?></a></h2>
 			  <p><?php echo $prod->descripcion; ?></p>
 			  <p>$<span class="precio"> <?php echo $prod->precio; ?> </span></p>
-			  <p><a class="btn btn-default" href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>" role="button">Ver mas &raquo;</a></p>
+			  <p><a class="btn btn-default" href="<?php echo URL.'productos/info/'.$prod->id_prod; ?>" role="button">Ver mas &raquo;</a></p>
 			</div>
 		<?php } ?>
 		

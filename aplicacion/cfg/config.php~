@@ -1,7 +1,7 @@
 <?php
 // Directorios y direcciones
-define('DIR_APP', 'C:\xampp\htdocs\uvshop');
-define('URL', 'http://127.0.0.1/uvshop/');
+define('DIR_APP', '/var/html/www/uvshop/');
+define('URL', 'http://localhost/uvshop/');
 define ('LIBRERIAS', $_SERVER["DOCUMENT_ROOT"]."/uvshop/aplicacion/libs/");
 
 // Base de datos

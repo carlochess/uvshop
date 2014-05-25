@@ -7,12 +7,11 @@ include_once  'bd.php';
 class Controlador
 {
 	/* no implmentado */
-	protected $login;
-	private $oMySQL;
+    protected $login;
+    private $oMySQL;
     function __construct(){
-		
-		$this->oMySQL = MySQL::getBD();
-	}
+            $this->oMySQL = MySQL::getBD();
+    }
     /**
      * Carga el modelo según el nombre.
      * @param string $model_name El nombre del modelo
