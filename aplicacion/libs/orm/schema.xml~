@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="uvshop" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="compra" idMethod="native" phpName="Compra">
+    <column name="id_prod" phpName="IdProd" type="VARCHAR" size="10"/>
+    <column name="id_compra" phpName="IdCompra" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="id_factura" phpName="IdFactura" type="INTEGER" size="4"/>
+    <column name="cant_prod" phpName="CantProd" type="INTEGER" required="true"/>
+    <column name="valor" phpName="Valor" type="DECIMAL" required="true"/>
+    <column name="iva" phpName="Iva" type="TINYINT" required="true"/>
+    <column name="porcetaje_red" phpName="PorcetajeRed" type="SMALLINT" required="true"/>
+    <foreign-key foreignTable="factura" name="compra_ibfk_1" onDelete="CASCADE">
+      <reference local="id_factura" foreign="id_factura"/>
+    </foreign-key>
+    <index name="id_prod">
+      <index-column name="id_prod" size="10"/>
+    </index>
+    <index name="id_factura">
+      <index-column name="id_factura" size="4"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="factura" idMethod="native" phpName="Factura">
+    <column name="id_factura" phpName="IdFactura" type="INTEGER" size="5" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="id_cliente" phpName="IdCliente" type="VARCHAR" size="40" required="true"/>
+    <column name="fecha" phpName="Fecha" type="DATE" required="true"/>
+    <column name="cantidad_productos" phpName="CantidadProductos" type="INTEGER" required="true"/>
+    <column name="valor" phpName="Valor" type="DECIMAL" required="true"/>
+    <column name="iva" phpName="Iva" type="TINYINT" required="true"/>
+    <foreign-key foreignTable="producto" name="factura_ibfk_1" onDelete="CASCADE">
+      <reference local="id_cliente" foreign="id_prod"/>
+    </foreign-key>
+    <index name="factura_ibfk_1">
+      <index-column name="id_cliente" size="40"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="imagen" idMethod="native" phpName="Imagen">
+    <column name="id_imagen" phpName="IdImagen" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="id_prod" phpName="IdProd" type="VARCHAR" size="10" required="true"/>
+    <column name="ruta" phpName="Ruta" type="VARCHAR" size="40" required="true"/>
+    <column name="ancho" phpName="Ancho" type="INTEGER" required="true"/>
+    <column name="largo" phpName="Largo" type="INTEGER" required="true"/>
+    <column name="extension" phpName="Extension" type="VARCHAR" size="6" required="true"/>
+    <foreign-key foreignTable="producto" name="imagen_ibfk_1" onDelete="CASCADE">
+      <reference local="id_prod" foreign="id_prod"/>
+    </foreign-key>
+    <index name="id_prod">
+      <index-column name="id_prod" size="10"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="metodo_pago" idMethod="native" phpName="MetodoPago">
+    <column name="id_factura" phpName="IdFactura" type="INTEGER" size="5" required="true"/>
+    <column name="id_pago" phpName="IdPago" type="INTEGER" size="40" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="tipo" phpName="Tipo" type="VARCHAR" size="3" required="true"/>
+    <column name="cuotas" phpName="Cuotas" type="INTEGER" required="true"/>
+    <column name="monto" phpName="Monto" type="INTEGER"/>
+    <foreign-key foreignTable="factura" name="metodo_pago_ibfk_1" onDelete="CASCADE">
+      <reference local="id_factura" foreign="id_factura"/>
+    </foreign-key>
+    <index name="id_factura">
+      <index-column name="id_factura" size="5"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="precio" idMethod="native" phpName="Precio">
+    <column name="id_precio" phpName="IdPrecio" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="cod_producto" phpName="CodProducto" type="VARCHAR" size="20"/>
+    <column name="fecha_ini" phpName="FechaIni" type="DATE" required="true"/>
+    <column name="fecha_fin" phpName="FechaFin" type="DATE" required="true"/>
+    <column name="valor" phpName="Valor" type="DECIMAL" scale="2" required="true"/>
+    <foreign-key foreignTable="producto" name="precio_ibfk_1" onDelete="CASCADE" onUpdate="CASCADE">
+      <reference local="cod_producto" foreign="id_prod"/>
+    </foreign-key>
+    <index name="precio_ibfk_1">
+      <index-column name="cod_producto" size="20"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="producto" idMethod="native" phpName="Producto">
+    <column name="id_prod" phpName="IdProd" type="VARCHAR" size="10" primaryKey="true" required="true" defaultValue=""/>
+    <column name="nombre" phpName="Nombre" type="VARCHAR" size="30" required="true"/>
+    <column name="empresa_fab" phpName="EmpresaFab" type="VARCHAR" size="20" required="true"/>
+    <column name="descripcion" phpName="Descripcion" type="LONGVARCHAR" required="true"/>
+    <column name="iva" phpName="Iva" type="TINYINT" required="true"/>
+    <column name="categoria" phpName="Categoria" type="VARCHAR" size="25"/>
+    <column name="unidades" phpName="Unidades" type="INTEGER"/>
+    <index name="id_categoria">
+      <index-column name="categoria" size="25"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="promocion" idMethod="native" phpName="Promocion">
+    <column name="id_promocion" phpName="IdPromocion" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="cod_producto" phpName="CodProducto" type="VARCHAR" size="20"/>
+    <column name="fecha_ini" phpName="FechaIni" type="DATE" required="true"/>
+    <column name="fecha_fin" phpName="FechaFin" type="DATE" required="true"/>
+    <column name="valor" phpName="Valor" type="DECIMAL" required="true"/>
+    <column name="porcetaje_red" phpName="PorcetajeRed" type="SMALLINT" required="true"/>
+    <foreign-key foreignTable="producto" name="promocion_ibfk_1">
+      <reference local="cod_producto" foreign="id_prod"/>
+    </foreign-key>
+    <index name="cod_producto">
+      <index-column name="cod_producto" size="20"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="usuario" idMethod="native" phpName="Usuario">
+    <column name="nombre" phpName="Nombre" type="VARCHAR" size="25" required="true"/>
+    <column name="apellidos" phpName="Apellidos" type="VARCHAR" size="30" required="true"/>
+    <column name="tipo_id" phpName="TipoId" type="VARCHAR" size="4" required="true"/>
+    <column name="id" phpName="Id" type="VARCHAR" size="20" primaryKey="true" required="true"/>
+    <column name="telefono" phpName="Telefono" type="VARCHAR" size="20" required="true"/>
+    <column name="fecha_cumple" phpName="FechaCumple" type="DATE" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="20" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>

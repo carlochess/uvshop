@@ -1,0 +1,14 @@
+<?php
+// Directorios y direcciones
+define('DIR_APP', '/var/html/www/uvshop/');
+define('URL', 'http://localhost/uvshop/');
+define ('LIBRERIAS', $_SERVER["DOCUMENT_ROOT"]."/uvshop/aplicacion/libs/");
+
+// Base de datos
+define('DB_USER', 'root');
+define('DB_PASS', 'Univalle');
+define('DB_NAME', 'uvshop');
+define('DB_HOST', 'localhost');
+define('DB_TYPE', 'mysql');
+
+?>

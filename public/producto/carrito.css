@@ -1,0 +1,61 @@
+.notification-container {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		top: 0px;
+		/*left: 5px;*/
+		/*right: 5px;*/
+		i {
+			color: #fff;
+		}
+	}
+
+	.notification-counter {   
+		position: absolute;
+		top: -2px;
+		left: 12px;
+		
+		background-color: rgba(212, 19, 13, 1);
+		color: #fff;
+		border-radius: 3px;
+		padding: 1px 3px;
+		font: 8px Verdana;
+	}
+	.producto {
+		height: 33px;
+		margin: 10px 0;
+		list-style: none;
+		padding-left: 60px;
+		line-height: 40px;
+	}
+	
+.producto{
+	width: 200px;
+	margin: 20px;
+}
+
+.verMas{
+	text-align:center;
+	
+}
+
+.remover{
+	padding-left:20px;
+}
+
+#carrito{
+	overflow: auto;
+	height: 70px;
+}
+#carrito::-webkit-scrollbar-thumb{
+background-color:#B03C3F;
+border-radius:10px;
+}
+#carrito::-webkit-scrollbar-thumb:hover{
+background-color:#BF4649;
+border:1px solid #333333;
+}
+#carrito::-webkit-scrollbar-thumb:active{
+background-color:#A6393D;
+border:1px solid #333333;
+} 
