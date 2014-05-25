@@ -1,9 +1,0 @@
-{
-    "require": {
-        "propel/propel": "2.0.0-alpha2",
-        "monolog/monolog": "1.9.*"
-    },
-    "autoload": {
-          "classmap": ["generated-classes/"]
-     }
-}
