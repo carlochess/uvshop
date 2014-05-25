@@ -1,0 +1,103 @@
+{
+    "061": {
+        "codigo": "061",
+        "nombre": "Agapanthus africanus",
+        "imagen": "http://www.viveroseljardin.com/209-large/agapanthus-africanus.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "Se trata de una planta herbácea, perennifolia, rizomatosa. Posee un tallo corto que porta varias hojas alargadas, arciformes, de 10 a 35 cm de longitud y de 1 a 2 de ancho, además de un estipe floral de 25 a 60 cm de longitud, que se ve coronado por una umbela de 20 a 30 flores de color azul brillante, cada flor, hermafrodita y actinomorfa, de 2,5 a 5 cm de diámetro.",
+        "precio_unitario": 45000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "062": {
+        "codigo": "062",
+        "nombre": "Abutilon megapotamicum",
+        "imagen": "http://www.viveroseljardin.com/172-351-thickbox/abutilon-megapotamicum.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": " es una especie botánica de Abutilon nativa de Brasil. Es un arbusto de hasta 2.5 m de altura, con hojas de 5-8 cm de largo, ovadas a suavemente trilobadas. Flores tubulares naranja amarillentas con la base del tubo rojiza, con 5 pétalos de 4 cm de largo y cáliz acampanado formado por 5 sépalos de color rojo.",
+        "precio_unitario": 160000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "063": {
+        "codigo": "063",
+        "nombre": "Acalypha wilkesiana moorea",
+        "imagen": "http://www.viveroseljardin.com/208-thickbox/acalypha-wilkesiana-moorea.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "No disponible",
+        "precio_unitario": 110000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    }
+    ,
+    "064": {
+        "codigo": "064",
+        "nombre": "Acidanthera murielae",
+        "imagen": "http://www.viveroseljardin.com/350-352-thickbox/acidanthera-murielae.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "De la a Acidanthera murielae  o Gladiolus callianthus   no sabíamos casi que nada por lo que nos hemos dedicado a averiguar sobre ella y ahí os va: es una planta que pertenece a las de la familia de las Iridáceas y está emparentada con los  gladiolos,  puede alcanzar los 80 cm de altura, desarrollando en los extremos superiores unas hermosas flores olorosas, grandes y blancas.",
+        "precio_unitario": 110000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "065": {
+        "codigo": "065",
+        "nombre": "Aechmea-Nudicaulis",
+        "imagen": "http://www.viveroseljardin.com/255-thickbox/aechmea-nudicaulis.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": " es una especie fanerógama de la familia de Bromeliáceas, originaria de Brasil y Ecuador.",
+        "precio_unitario": 250000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "066": {
+        "codigo": "066",
+        "nombre": "Aechmea recurvata",
+        "imagen": "http://www.viveroseljardin.com/254-293-thickbox/aechmea-recurvata.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "No hay descripción",
+        "precio_unitario": 2100000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "067": {
+        "codigo": "067",
+        "nombre": "Aechmea Gamosepala",
+        "imagen": "http://www.viveroseljardin.com/77-thickbox/aechmea-gamosepala.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "es una especie botánica de bromélida típica de la flora de la selva Amazónica en Brasil, muy usada como planta ornamental.  Esta especie perenne es citada en Flora Brasiliensis por Carl Friedrich Philipp von Martius.  Alcanza de 3 a 6 dm de altura, follaje verde; flores azul, roja o rosa.",
+        "precio_unitario": 2100000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "068": {
+        "codigo": "068",
+        "nombre": "Edmundoa lindenii sin.Canistrum lindenii",
+        "imagen": "http://www.viveroseljardin.com/229-large/edmundoa-lindenii-sincanistrum-lindenii.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "is a species of the genus Edmundoa. This species is endemic to Brazil.",
+        "precio_unitario": 2100000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "069": {
+        "codigo": "069",
+        "nombre": "Begonia heracleifolia",
+        "imagen": "http://www.viveroseljardin.com/199-thickbox/begonia-heracleifolia.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "Esta begonia es relativamente común en las partes húmedas de México y se encuentra con frecuencia en los taludes de carreteras. Es vistosa.",
+        "precio_unitario": 2100000,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    },
+    "070": {
+        "codigo": "070",
+        "nombre": "Epiphyllum lola leah",
+        "imagen": "http://www.viveroseljardin.com/311-330-thickbox/epiphyllum.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "Epiphyllum Hybrid 'LOLA LEAH' Has a Large bloom with clean white, broad petals, first row has 12 petals 1-inch wide, next row 3/4-inch wide. ",
+        "precio_unitario": 3362500,
+        "porcentaje_iva": 16,
+        "categoria": "Plantas"
+    }
+}

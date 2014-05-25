@@ -75,9 +75,9 @@
                             <td class="porcetaje_red"><?php echo $promocion->porcetaje_red; ?></td>
                             <td>
                                 <a href="<?php echo URL . "promociones/eliminarpromo/" . $promocion->id_promocion; ?>">
-                                    <img src="<?php echo URL; ?>imagenes/cruz_roja.png" />
+                                    <img src="<?php echo URL; ?>imagenes/aaserver/cruz_roja.png" />
                                 </a>
-                                <img class="boton" src="<?php echo URL; ?>imagenes/edit.png" />
+                                <img class="boton" src="<?php echo URL; ?>imagenes/aaserver/edit.png" />
                             </td>
                         </tr>
                     <?php } ?>

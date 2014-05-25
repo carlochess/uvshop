@@ -108,12 +108,12 @@
 				  <td class="categoria"><?php echo $producto->categoria ?></td>
 				  <td>
 					<a href="<?php echo URL."productos/eliminarprod/".$producto->id_prod ?>">
-						<img src="<?php echo URL;?>imagenes/cruz_roja.png" />
+						<img src="<?php echo URL;?>imagenes/aaserver/cruz_roja.png" />
 					</a>
 					<a href="<?php echo URL."admin/precio/".$producto->id_prod ?>">
-						<img src="<?php echo URL;?>imagenes/precio-icon.png" />
+						<img src="<?php echo URL;?>imagenes/aaserver/precio-icon.png" />
 					</a>
-					<img class="boton" src="<?php echo URL;?>imagenes/edit.png" />
+					<img class="boton" src="<?php echo URL;?>imagenes/aaserver/edit.png" />
 				  </td>
                 </tr>
 			  <?php } ?>

@@ -19,7 +19,7 @@ class Promociones extends Controlador {
         $id_item = $_POST['idItem'];
         $f_inic = $_POST['f_inicio'];
         $f_fin = $_POST['f_finalizacion'];
-        $desc = $_POST['descuento'];
+        $desc = floatval($_POST['descuento']);
         $modelpromo = $this->loadModel("modelPromo");
         $modelpromo->agregarPromocion($id_item, $f_inic, $f_fin, $desc);
         $modelpromo->terminarConexion();
@@ -33,11 +33,11 @@ class Promociones extends Controlador {
         $id_item = $_POST['idItem'];
         $f_inic = $_POST['f_inicio'];
         $f_fin = $_POST['f_finalizacion'];
-        $desc = $_POST['descuento'];
+        $desc = floatval($_POST['descuento']);
         $modelpromo = $this->loadModel("modelPromo");
         $modelpromo->actualizarPromocion($id_item, $f_inic, $f_fin, $desc);
         $modelpromo->terminarConexion();
-        header('Location: ' . URL . 'admin/promociones');
+        //header('Location: ' . URL . 'admin/promociones');
     }
 
     /**

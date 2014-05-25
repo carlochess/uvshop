@@ -22,7 +22,7 @@ class ModelPromo {
         $promocion->setCodProducto($id_item);
         $promocion->setFechaIni($f_inic);
         $promocion->setFechaFin($f_fin);
-        $promocion->setValor(100.00);
+        $promocion->setPorcetajeRed($desc);
         $promocion->save();
         /*$sql = 'INSERT INTO promocion(cod_producto, fecha_ini, fecha_fin, valor, porcetaje_red) VALUES ("' . $id_item . '", "' . $f_inic . '","' . $f_fin . '",0,' . $desc . ')';
         $this->oMySQL->ejecutarConsultaI($sql);*/
@@ -68,6 +68,7 @@ class ModelPromo {
             "FechaFin" => $f_fin,
             "PorcetajeRed" => $desc
             ));
+        echo "actualizado $desc";
         /*$sql = 'UPDATE promocion SET fecha_ini="' . $f_inic . '",fecha_fin="' . $f_fin . '",porcetaje_red= ' . $desc . ' WHERE cod_producto= "' . $id_item . '"';
         return $this->oMySQL->ejecutarConsultaI($sql);*/
     }

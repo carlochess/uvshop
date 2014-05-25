@@ -9,7 +9,7 @@
 	  
 	  <!-- Primer item -->
         <div class="item active">
-          <img src=<?php echo URL."imagenes/10291504.jpg";?> alt="First slide">
+          <img src=<?php echo URL."imagenes/aaserver/10291504.jpg";?> alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Uv shop.</h1>
@@ -20,7 +20,7 @@
         </div>
 		<!-- Segundo item -->
         <div class="item">
-          <img src=<?php echo URL."imagenes/10291505.jpg";?> alt="Second slide">
+          <img src=<?php echo URL."imagenes/aaserver/10291505.jpg";?> alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>¿quieres ver nuestras promociones?.</h1>
@@ -31,7 +31,7 @@
         </div>
 		<!-- Tercer item -->
         <div class="item">
-		  <img src=<?php echo URL."imagenes/10291506.jpg";?> alt="Third slide">
+		  <img src=<?php echo URL."imagenes/aaserver/10291506.jpg";?> alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Busca por categorias.</h1>

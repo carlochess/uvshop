@@ -8,9 +8,27 @@ if (isset($_POST["arreglo"])) {
         if (file_exists($ruta))
             return file_get_contents($ruta);
     }
+    
+    function _isCurl(){
+        return function_exists('curl_version');
+    }
+    
+    function _isJson(){
+        return function_exists('json_decode');
+    }
 
     function insertarBD($str) {
         $str = leerArchivo($str);
+        if (!_isCurl())
+        {
+            echo "Curl no esta instalado en tu equipo <br />";
+            return;
+        }
+        if (!_isJson())
+        {
+            echo "JsonDecode no esta instalado en tu equipo <br />";
+            return;
+        }
         $json = json_decode(utf8_encode($str), true);
         if (is_array($json))
         {
@@ -75,7 +93,9 @@ if (isset($_POST["arreglo"])) {
                 curl_exec($ch);
 
                 if (file_exists($nombreImg))
+                {
                     unlink($nombreImg);
+                }
             }
         }
     }

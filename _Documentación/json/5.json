@@ -1,0 +1,103 @@
+{
+    "041": {
+        "codigo": "041",
+        "nombre": "PHP desde cero",
+        "imagen": "http://ecx.images-amazon.com/images/I/51kGUcMeoML.jpg",
+        "empresa_fabricante": " Alfredo Limongi",
+        "categoria": "Libros",
+        "descripción": "Algunas de las características de este libro son: - Esta escrito de un modo sencillo y ameno. - Ejemplos pequeños fáciles de entender. - Incluye un capítulo completo dedicado a HTML. - Incluye un capítulo dedicado a SQL y como conectar con MySQL. - Disponible en formato Kindle o en versión impresa. - Escrito completamente en Español. - Ideal para principiantes. Este libro les permitirá a los usuarios inexpertos aprender a programar páginas Web desde cero usando PHP, el único lenguaje del mercado que combina versatilidad, seguridad y facilidad de uso. Dada la sencillez del lenguaje utilizado, esta guía es ideal para aquellos que desean dar sus primeros pasos en el mundo de la programación de páginas Web, sin embargo, el modo en que la presente edición está estructurada, le permite a los ya iniciados, aprender a usar el lenguaje PHP de una manera didáctica y amena, sin perder el tiempo en conceptos que pudieran ser conocidos por ellos.",
+        "precio_unitario": 150000,
+        "porcentaje_iva": 7
+    },
+    "042": {
+        "codigo": "042",
+        "nombre": "Introduccion a Los Sistemas de Bases de Datos",
+        "imagen": "http://scfi.uaemex.mx/~yledeneva/investigaci%C3%B3n_archivos/Catalogo%20de%20libros/Catalogo_2_archivos/image024.jpg",
+        "empresa_fabricante": " Chris J. Date ",
+        "categoria": "Libros",
+        "descripción": "Figuras. Ejercicios. Respuestas a ejercicios seleccionados. Referencias. Bibliografia. Esta septima edicion revisada y ampliada sigue ofreciendo una base solida de los fundamentos de la tecnologia de bases de datos, asi como algunas ideas sobre el futuro desarrollo de este campo. El libro esta dividido en seis partes princi",
+        "precio_unitario": 240000,
+        "porcentaje_iva": 7
+    },
+    "043": {
+        "codigo": "043",
+        "nombre": "Normalización de Bases de Datos Relacionales",
+        "imagen": "http://2.bp.blogspot.com/_HePyGs27lc0/TG2KDOsKjUI/AAAAAAAAAL0/VmO8txYJjp0/s320/diseno_bases_datos_prob_resueltos.jpg",
+        "empresa_fabricante": "Yanet Espinal Martín",
+        "descripción": "En la primera parte del libro se realiza un análisis de los fundamentos teóricos asociados a las bases de datos (BD), comenzando por su evolución, pasando por los diferentes modelos existentes y culminando con un análisis futurista del modelo relacional. Más adelante se profundiza en el diseño de las bases de datos relacionales (BDR) abordando sus diferentes formas normales y emitiendo un juicio crítico al respecto. El resto del libro aborda la elaboración de un sistema informático propio y específico de la universidad de las ciencias informáticas (UCI), capaz de automatizar el proceso de normalización de BDR, que sirva de apoyo para el diseño de BDR en el desarrollo de soluciones informáticas; así como también, facilitar el aprendizaje de los estudiantes de la UCI, integrándose de manera automática con los diferentes Sistemas Gestores de Bases de Datos. El mismo debe ser útil a los estudiantes e investigadores de la teoría de BD, en particular a los que profundizan en el proceso de normalización de BDR y su automatización. El software resultante de esta investigación facilita la enseñanza de la teoría de normalización BDR a través de la visualización gráfica de su ejecución.",
+        "precio_unitario": 400000,
+        "porcentaje_iva": 23,
+        "categoria": "Libros"
+    },
+    "044": {
+        "codigo": "044",
+        "nombre": "Sistemas de Bases de Datos: Un Enfoque Practico Para Diseno, Implementacion y Gestion ",
+        "imagen": "https://bibliotecaduitama.files.wordpress.com/2009/04/portada8.jpg",
+        "empresa_fabricante": "Thomas M. Connolly",
+        "descripción": "Un gran libro",
+        "precio_unitario": 400000,
+        "categoria": "Libros",
+        "porcentaje_iva": 23
+    },
+    "045": {
+        "codigo": "045",
+        "nombre": "MongoDB in Action",
+        "imagen": "http://emptysqua.re/blog/media/2011/12/mongodb-in-action.png",
+        "empresa_fabricante": " Kyle Banker",
+        "descripción": "MongoDB in Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications.",
+        "precio_unitario": 60000,
+        "categoria": "Libros",
+        "porcentaje_iva": 14
+    },
+    "046": {
+        "codigo": "046",
+        "nombre": "MongoDB: The Definitive Guide",
+        "categoria": "Libros",
+        "imagen": "http://img2.imagesbn.com/p/9781449344689_p0_v1_s260x420.JPG",
+        "empresa_fabricante": "Kristina Chodorow ",
+        "descripción": "Manage the huMONGOus amount of data collected through your web application with MongoDB. This authoritative introduction—written by a core contributor to the project—shows you the many advantages of using document-oriented databases, and demonstrates how this reliable, high-performance system allows for almost infinite horizontal scalability.  This updated second edition provides guidance for database developers, advanced configuration for system administrators, and an overview of the concepts and use cases for other people on your project. Ideal for NoSQL newcomers and experienced MongoDB users alike, this guide provides numerous real-world schema design examples.",
+        "precio_unitario": 60000,
+        "porcentaje_iva": 14
+    },
+    "047": {
+        "codigo": "047",
+        "categoria": "Libros",
+        "nombre": "Plegaria por un Papa envenenado",
+        "imagen": "http://blogs.elespectador.com/elmagazin/files/2014/03/Plegaria-papa.jpg",
+        "empresa_fabricante": "Evelio Rosero",
+        "descripción": "El 26 de agosto de 1978, Albino Luciani apareció muerto en las dependencias papales del Vaticano. Elegido Papa sólo treinta y tres días antes, Luciani había escogido el nombre de Juan Pablo I y la víspera de su muerte mostró a su secretario la lista de obispos y cardenales que debían ser destituidos de inmediato. Con las prostitutas de Venecia a modo de coro, el lector asistirá a su enfrentamiento a personajes poderosísimos como el obispo Marcinkus, director del banco del Vaticano, presenciará una clase magistral a catequistas fuera de todo protocolo, y sabrá cómo, al final, la jerarquía eclesiástica aplicó la «solución siciliana» para quitarse de en medio a un Papa que le incomodaba. Tras documentarse de manera exhaustiva, Evelio Rosero ha escrito una hermosa plegaria, una brillantísima recreación literaria que nos acerca a un pontífice que de manera visionaria, ",
+        "precio_unitario": 700000,
+        "porcentaje_iva": 20
+
+    },
+    "048": {
+        "codigo": "048",
+        "categoria": "Libros",
+        "nombre": "Ursúa",
+        "imagen": "http://image.casadellibro.com/libros/0/ursua-9788439726418.jpg",
+        "empresa_fabricante": " William Ospina",
+        "descripción": "En 1543, con solo dieciséis años, deseoso de fortuna y aventuras guerreras, el joven Pedro de Ursúa viaja al Nuevo Mundo. Desembarca en Perú, confiando en que la tierra de los incas le depare, como a tantos hasta entonces, riqueza y poder; sin embargo, se encuentra con una región turbulenta, dividida entre bandos de conquistadores tan apegados a sus nuevas rapiñas que recelan de cualquier recién llegado. La llegada de su tío Miguel Díaz de Armendáriz a Cartagena lo libra de este panorama sin promesas y bajo su padrinazgo comienza una larga y codiciosa carrera de conquistas. Después, libre ya de disposiciones oficiales, se entrega a sus sueños de riqueza y de gloria.",
+        "precio_unitario": 560000,
+        "porcentaje_iva": 20
+    },
+    "049": {
+        "codigo": "049",
+        "nombre": "How to Design Programs : An Introduction to Programming and Computing ",
+        "categoria": "Libros",
+        "imagen": "http://htdp.org/htdp-cover.gif",
+        "empresa_fabricante": "Matthias Felleisen, Robert Bruce Findler",
+        "descripción": "This introduction to programming places computer science in the core of a liberal arts education. Unlike other introductory books, it focuses on the program design process. This approach fosters a variety of skills--critical reading, analytical thinking, creative synthesis, and attention to detail--that are important for everyone, not just future computer programmers. The book exposes readers to two fundamentally new ideas. First, it presents program design guidelines that show the reader how to analyze a problem statement; how to formulate concise goals; how to make up examples; how to develop an outline of the solution, based on the analysis; how to finish the program; and how to test. Each step produces a well-defined intermediate product. Second, the book comes with a novel programming environment, the first one explicitly designed for beginners. The environment grows with the readers as they master the material in the book until it supports a full-fledged language for the whole spectrum of programming tasks. All the book's support materials are available for free on the Web. The Web site includes the environment, teacher guides, exercises for all levels, solutions, and additional projects.",
+        "precio_unitario": 1300000,
+        "porcentaje_iva": 20
+    },
+    "050": {
+        "codigo": "050",
+        "nombre": "El Desbarrancadero",
+        "categoria": "Libros",
+        "imagen": "http://www.alfaguara.com/uploads/imagenes/libro/portada/200301/portada-el-desbarrancadero.jpg",
+        "empresa_fabricante": "Fernando Vallejo",
+        "descripción": "Fernando, un escritor colombiano que vive en México, vuelve a su patria de nacimiento para acompañar en sus últimos días a su hermano Darío, enfermo de sida. Darío se ha instalado en la casa familiar. Entre la abundancia de recuerdos sobresalen los dedicados a su padre que, junto a su hermano Darío, es el único miembro de la familia a quien Fernando quiere.",
+        "precio_unitario": 1460000,
+        "porcentaje_iva": 20
+    }
+}

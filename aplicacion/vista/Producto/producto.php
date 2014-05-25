@@ -52,14 +52,14 @@
 			<div class="row">
 				<?php foreach ($productosAleatorios as $prod) { ?>
 					<div class="col-md-3">
-						<a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>">
+						<a href="<?php echo URL.'productos/info/'.$prod->id_prod; ?>">
 							<img 
 							   class="img-thumbnail"
 							   src="<?php echo URL.'imagenes/'.$prod->id_prod.'x200.jpg'; ?>" 
-							   alt="Generic placeholder image"
+							   alt="Imagen no encontrada"
 							>
 						</a>
-					  <h2><a href="<?php echo URL.'producto/info/'.$prod->id_prod; ?>"><?php echo $prod->nombre; ?></a></h2>
+					  <h2><a href="<?php echo URL.'productos/info/'.$prod->id_prod; ?>"><?php echo $prod->nombre; ?></a></h2>
 					  <p><?php echo $prod->descripcion; ?></p>
 					</div>
 				<?php } ?>

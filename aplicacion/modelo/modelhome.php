@@ -1,14 +1,7 @@
 
 <?php
 
-// configurar autoloading
-//require_once '../libs/vendor/autoload.php';
-// configurar Propel
-//require_once '../libs/generated-conf/config.php';
-
 class ModelHome {
-    /* Clase encargada de las consultas a la bd */
-
     private $oMySQL;
 
     function __construct(MySQL $db) {
@@ -41,20 +34,34 @@ class ModelHome {
 
     /** Retorna las ofertas de día */
     function getOfertas() {
-
+        /*
+        $consulta = \Base\ProductoQuery::create()
+                ->joinPromocion("promocion.cod_producto = producto.id_prod")
+                ->joinPrecio("promocion.cod_producto = producto.id_prod")
+                ->where("now() between Promocion.fecha_ini AND Promocion.fecha_fin AND now() between Precio.fecha_ini and Precio.fecha_fin")
+                ->select(array("Promocion.cod_producto", "Promocion.fecha_ini", "Promocion.fecha_fin","porcetaje_red"))
+                ->addAsColumn("valor", 'Precio.valor')
+                ->addAsColumn("id_prod", 'Producto.id_prod')
+                ->addAsColumn("nombre", 'Producto.nombre')
+                ->addAsColumn("descripcion", 'Producto.descripcion')
+                ->limit(6)
+                ->find();
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        return $arregloObj;*/
+        
         $sql = "SELECT promocion.cod_producto, promocion.fecha_ini, promocion.fecha_fin, precio.valor AS valor, porcetaje_red, producto.id_prod AS id_prod,producto.nombre AS nombre, producto.descripcion  AS descripcion
-FROM promocion, producto, precio
-WHERE 
-promocion.cod_producto = producto.id_prod AND
-producto.id_prod=precio.cod_producto AND 
-now() between promocion.fecha_ini and promocion.fecha_fin AND
-now() between precio.fecha_ini and precio.fecha_fin";
+                FROM promocion, producto, precio
+                WHERE 
+                promocion.cod_producto = producto.id_prod AND
+                producto.id_prod=precio.cod_producto AND 
+                now() between promocion.fecha_ini and promocion.fecha_fin AND
+                now() between precio.fecha_ini and precio.fecha_fin";
         return $this->oMySQL->ejecutarConsultaSelect($sql);
     }
 
     /** Retorna N objetos aleatorios */
     function getProdAleatorios() {
-        /*$consulta = \Base\PrecioQuery::create()
+        $consulta = \Base\PrecioQuery::create()
                 ->joinWith('Precio.Producto')
                 ->select("Producto.IdProd")
                 ->withColumn("Producto.IdProd", 'id_prod')
@@ -69,14 +76,14 @@ now() between precio.fecha_ini and precio.fecha_fin";
                 ->find();
         $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
         
-        return $arregloObj;*/
+        return $arregloObj;
         
-        
+        /*
         $sql = "SELECT producto.id_prod AS id_prod, nombre, descripcion,empresa_fab,iva, producto.id_prod AS ruta,precio.valor AS precio  "
           . "FROM producto,precio WHERE producto.id_prod=precio.cod_producto "
           . "ORDER BY RAND() "
           . "LIMIT 3";
-        return $this->oMySQL->ejecutarConsultaSelect($sql);
+        return $this->oMySQL->ejecutarConsultaSelect($sql);*/
     }
 
     /** Retorna los 10 productos mas vendidos */
