@@ -88,10 +88,10 @@ class ModelHome {
 
     /** Retorna los 10 productos mas vendidos */
     function getMasVendidos() {
-        $consulta = \Base\ProductoQuery::create()
+        $consulta = \Base\CompraQuery::create()
                 ->select(array("id_prod"))
                 ->addAsColumn("veces", 'count(id_prod)')
-                ->addAsColumn("cantidad", 'count(unidades)')
+                ->addAsColumn("cantidad", 'count(cant_prod)')
                 ->groupBy("id_prod")//'SUM(price_equipment)'
                 ->orderBy("veces", "DESC")
                 ->limit(10)

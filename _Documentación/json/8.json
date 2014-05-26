@@ -1,0 +1,53 @@
+{
+    "071": {
+        "codigo": "071",
+        "nombre": "Bacardi Limón",
+        "imagen": "http://www.makrovirtual.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/5/7/57395_01.jpg",
+        "empresa_fabricante": "Bacardí",
+        "descripción": " Con el afán de innovación de nuestro fundador, BACARDI está orgulloso por haber dado origen a una familia de rones distintivos, todos perfectamente elaborados con la misma pasión para un carater superior. 35%, Contiene ingredientes naturales no se exponga directamente a la luz. Disfrutelo solo, en las rocas o combinado con agua mineral o el mezclador de su preferencia. BACARDI limón es un producto cuidadosamente elaborado que infunde al ron BACARDI la esencia de la familia real de los frutos citricos: el limón, la lima y la toronja.",
+        "precio_unitario": 45000,
+        "porcentaje_iva": 16,
+        "categoria": "Licores"
+    },
+    "072": {
+        "codigo": "072",
+        "nombre": "Ron Medellin Anejo X375ml",
+        "imagen": "http://www.itqi.com/files/image/photo_galery/big_ron-medellin-anejo-3-anos.jpg",
+        "empresa_fabricante": "Licores de Antioquia",
+        "descripción": "Cuenta la historia que siglos atrás, conquistadores aventureros visitaron nuestras costas buscando riquezas y esclavizando a los nativos para robar sus tesoros. Desesperados por su suerte, los esclavos invocaron la presencia de sus dioses para pedir su ayuda. Fue entonces cuando los dioses atendieron la súplica y compartieron con los esclavos parte de su oro sagrado, el cual brillaba cada mañana para iluminar sus tierras hasta la llegada de la noche.",
+        "precio_unitario": 160000,
+        "porcentaje_iva": 16,
+        "categoria": "Licores"
+    },
+    "073": {
+        "codigo": "073",
+        "nombre": "Absolut Vodka",
+        "imagen": "http://4.bp.blogspot.com/-tPImSC_4Lcw/T_GoPz7IaKI/AAAAAAAAAJ8/dYFilTNmWt8/s1600/absolut_vodka_1liter_lys_hi.jpg",
+        "empresa_fabricante": "Madre tierra",
+        "descripción": "Absolut Vodka se presentó por primera vez en Nueva York en 1979. Rápidamente se hizo muy popular en toda la ciudad, después en Estados Unidos y en el mundo entero. Pero la receta que imprime a Absolut este sabor puro y natural tiene más de 30 años. Como el tarro de medicinas del S. XVIII que se encontró en una tienda de antigüedades de Estcolomo, que sirvió de inspiración para el diseño de la icónica botella de Absolut Vodka.",
+        "precio_unitario": 110000,
+        "porcentaje_iva": 16,
+        "categoria": "Licores"
+    }
+    ,
+    "074": {
+        "codigo": "074",
+        "nombre": "Lager",
+        "imagen": "http://www.revistalabarra.com.co/guia/files/classifieds/1510-1858.jpg",
+        "empresa_fabricante": "Apostol",
+        "descripción": "Lager. Tiempo de elaboración: 21 días. Alcohol: 4,6%. Color: dorado transparente.",
+        "precio_unitario": 110000,
+        "porcentaje_iva": 16,
+        "categoria": "Licores"
+    },
+    "075": {
+        "codigo": "075",
+        "nombre": "Hefe Weizen",
+        "imagen": "https://coleccionandolupulo.files.wordpress.com/2013/01/dscn7781.jpg?w=225&h=300",
+        "empresa_fabricante": "Apostol",
+        "descripción": "Tiempo de elaboración: 15 días. Alcohol: 5,3%. Color: dorado turbio.",
+        "precio_unitario": 250000,
+        "porcentaje_iva": 16,
+        "categoria": "Licores"
+    }
+}

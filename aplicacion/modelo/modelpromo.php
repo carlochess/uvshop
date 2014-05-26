@@ -41,17 +41,20 @@ class ModelPromo {
          * */
     }
 
-    /** retorna las promociones de un producto para este día */
+    /** 
+     * retorna las promociones de un producto para este día 
+     */
     function getPromocion($id) {
-        /*$consulta = \Base\PromocionQuery::create()
+        $consulta = \Base\PromocionQuery::create()
                 ->select(array("cod_producto", "fecha_ini", "fecha_fin", "porcetaje_red"))
-                ->where("cod_producto='".$id."' and  CAST(now() AS DATE) between precio.fecha_ini and precio.fecha_fin")
+                ->where("cod_producto='".$id."' and  CAST(now() AS DATE) between fecha_ini and fecha_fin")
                 ->find();
         $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
-        return $arregloObj;*/
+        return $arregloObj;
+        /*
         return $this->oMySQL->ejecutarConsultaSelect('SELECT cod_producto, fecha_ini, fecha_fin, porcetaje_red 
 		FROM promocion 
-		WHERE cod_producto="' . $id . '" AND CAST(now() AS DATE) between promocion.fecha_ini and promocion.fecha_fin');
+		WHERE cod_producto="' . $id . '" AND CAST(now() AS DATE) between promocion.fecha_ini and promocion.fecha_fin');*/
     }
 
     /** recibe todas las promociones */

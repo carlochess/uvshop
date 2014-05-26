@@ -18,7 +18,8 @@ class ModelFactura {
         $consulta = \Base\FacturaQuery::create()
                 ->select(array("id_factura", "id_cliente", "fecha", "cantidad_productos"))
                 ->find();
-        return $consulta;
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        return $arregloObj;
         /*$sql = 'SELECT `id_factura`, `id_cliente`, `fecha`, `cantidad_productos` FROM `factura`';
         return $this->oMySQL->ejecutarConsultaSelect($sql);*/
     }
@@ -28,10 +29,12 @@ class ModelFactura {
      */
     function /* array(stdObject) */ getFactura($id) {
         $consulta = \Base\CompraQuery::create()
-                ->filterBy("id_factura", "id_factura")
+                ->filterByIdCompra($id)
                 ->select(array("id_prod", "cant_prod"))
                 ->find();
-        return $consulta;
+        $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
+        print_r($arregloObj);
+        return $arregloObj;
         //$sql = 'SELECT id_prod, cant_prod FROM compra WHERE id_factura='.$id;
         //return $this->oMySQL->ejecutarConsultaSelect($sql);
     }

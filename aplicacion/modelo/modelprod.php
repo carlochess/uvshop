@@ -93,8 +93,8 @@ class ModelProd {
     function actualizarProducto($id_prod, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades) {
         \Base\ProductoQuery::create()
                 ->filterByIdProd($id_prod)
-                ->update(array('nombre' => $nombreP, 'empresa_fab' => $empresa_fab
-                    , 'descripcion' => $descripcion, 'iva' => $iva, 'categoria' => $categoria, 'unidades' => $unidades));
+                ->update(array('Nombre' => $nombreP, 'EmpresaFab' => $empresa_fab
+                    , 'Descripcion' => $descripcion, 'Iva' => $iva, 'Categoria' => $categoria, 'Unidades' => $unidades));
         /*
         $sql = 'UPDATE producto SET nombre="'.$nombreP.'",empresa_fab="'.$empresa_fab.'",descripcion="'.$descripcion.'",iva='.$iva.',categoria="'.$categoria.'",unidades='.$unidades.' WHERE id_prod="'.$id_prod.'"';
         $this->oMySQL->ejecutarConsultaI($sql);*/
