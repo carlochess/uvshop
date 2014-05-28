@@ -20,12 +20,12 @@
 		<?php foreach($resBusqueda as $res){ ?>
 			<tr style="border-style:solid;">
 				<td>
-					<a href="<?php echo URL.'producto/info/'.$res->id_prod ;?>">
+					<a href="<?php echo URL.'productos/info/'.$res->id_prod ;?>">
 						<img src="<?php echo URL.'imagenes/'.$res->id_prod ;?>x200.jpg" /> 
 					</a>
 				</td>
 				<td>
-					<a href="<?php echo URL.'producto/info/'.$res->id_prod ;?>">
+					<a href="<?php echo URL.'productos/info/'.$res->id_prod ;?>">
 						<?php echo $res->nombre; ?>
 					</a>
 				</td>

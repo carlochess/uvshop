@@ -12,7 +12,7 @@ class Home extends Controlador// implements Control {
         parent::__construct();
         $this->home = $this->loadModel("modelHome");
         // recibe las super-categorias
-        //$this->categorias = $this->home->getCategorias();
+        $this->categorias = $this->home->getCategorias();
     }
 
     /**
@@ -25,6 +25,7 @@ class Home extends Controlador// implements Control {
         // recibe todas las promos del día
         $promos = $this->home->getOfertas();
         $categorias = $this->categorias;
+        print_r($categorias);
         $masVendidos = $this->home->getMasVendidos();
         // Cierra la conexión a la base de datos
         //$this->home->terminarConexion();

@@ -21,7 +21,7 @@ class ModelBuscador {
         $consulta = \Base\ProductoQuery::create()
                 ->select("nombre")
                 ->withColumn("Producto.id_prod", 'id_prod')
-                ->filterBy("nombre", "%" . $nombre . "%")
+                ->filterBy("Nombre", "%" . $nombre . "%")
                 ->find();
         $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
         return $arregloObj;
@@ -43,11 +43,11 @@ class ModelBuscador {
 
     function buscarInfoCategoria($categoria) {
         $consulta = \Base\ProductoQuery::create()
-                ->select(array("nombre", "id_prod", "descripcion", "categoria"))
-                ->filterBy("categoria", $categoria)
+                ->select(array("nombre", "id_prod", "descripcion", "Categoria"))
+                ->filterBy("Categoria", $categoria)
                 ->find();
         $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
-        /*return $arregloObj;
+        return $arregloObj;/*
         return $this->oMySQL->ejecutarConsultaSelect('SELECT id_prod, nombre, descripcion, categoria FROM producto WHERE categoria="' . $categoria . '"');*/
     }
 

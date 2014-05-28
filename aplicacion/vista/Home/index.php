@@ -9,7 +9,7 @@
 	  
 	  <!-- Primer item -->
         <div class="item active">
-          <img src=<?php echo URL."imagenes/aaserver/10291504.jpg";?> alt="First slide">
+          <img src="http://www.nicolasdory.com/wp-content/uploads/2011/02/2011_02_20_BennettLakePano.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Uv shop.</h1>

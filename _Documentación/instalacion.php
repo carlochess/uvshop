@@ -33,15 +33,17 @@ if (isset($_POST['loginBD']) && isset($_POST['passBD']) && isset($_POST['hostBD'
     mysql_close($conn);
     
     $contenido = 
-   "define('DIR_APP', '%s');\n
+   "<?php \n
+    define('DIR_APP', '%s');\n
     define('URL', '%s');\n
-    define ('LIBRERIAS', '\$_SERVER['DOCUMENT_ROOT'].'/uvshop/aplicacion/libs/'');\n
+    define ('LIBRERIAS', \$_SERVER['DOCUMENT_ROOT'].'/uvshop/aplicacion/libs/');\n
     // Base de datos\n
     define('DB_USER', '%s');\n
     define('DB_PASS', '%s');\n
     define('DB_NAME', 'uvshop');\n
     define('DB_HOST', '%s');\n
-    define('DB_TYPE', 'mysql');";
+    define('DB_TYPE', 'mysql');\n
+    ?>\n";
     echo "Creando archivo de configuracion  <br/>";
     $archivo = '../aplicacion/cfg/config.php';
     if(file_exists($archivo))
@@ -107,7 +109,7 @@ if (isset($_POST['loginBD']) && isset($_POST['passBD']) && isset($_POST['hostBD'
                 </p>
                 <input type="text" name="rutaAbs"/>
                 <p>
-                    Dirección servidor (ejemplo http://127.0.0.1)
+                    Dirección servidor (ejemplo http://127.0.0.1/)
                 </p>
                 <input type="text" name="dirServer"/>
                 <p>

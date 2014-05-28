@@ -10,7 +10,7 @@ class ModelHome {
 
     /** Retorna las categorías que agrupan a los producto */
     function /* array(stdObject) */ getCategorias() {
-        $consulta = \Base\ProductoQuery::create()->select("*")->distinct()->find();
+        $consulta = \Base\ProductoQuery::create()->select(array("categoria"))->distinct()->find();
         $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
         return $arregloObj;
         //return $this->oMySQL->ejecutarConsultaSelect('SELECT DISTINCT categoria FROM producto');
