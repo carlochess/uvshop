@@ -1,4 +1,5 @@
 <?php
+//var_dump(Validador::createBuilder(5.56)->esFloat()->max(20)->build()->isValid());
 class ValidadorBuilder {
     private $data;
     private $valid;
@@ -205,7 +206,5 @@ class Validador {
     }
 }
 
-
-var_dump(Validador::createBuilder(5.56)->esFloat()->max(20)->build()->isValid());
 
 ?>

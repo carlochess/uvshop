@@ -6,9 +6,18 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Admin' => $baseDir . '/../controlador/admin.php',
+    'AlgoritmoBusqueda' => $baseDir . '/../controlador/AlgoritmoBusqueda.php',
+    'Buscador' => $baseDir . '/../controlador/buscador.php',
+    'Control' => $baseDir . '/../controlador/Control.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Factory.php',
+    'Grafico' => $baseDir . '/../controlador/graficos.php',
+    'Home' => $baseDir . '/../controlador/home.php',
+    'Imagen' => $baseDir . '/../controlador/imagen.php',
+    'Ingenua' => $baseDir . '/../controlador/Ingenua.php',
+    'Levenshtein' => $baseDir . '/../controlador/Levenshtein.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/PHPUnit/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/PHPUnit/Extensions/PhptTestCase.php',
     'PHPUnit_Extensions_PhptTestCase_Logger' => $vendorDir . '/phpunit/phpunit/PHPUnit/Extensions/PhptTestCase/Logger.php',
@@ -351,5 +360,14 @@ return array(
     'PHP_Token_WHITESPACE' => $vendorDir . '/phpunit/php-token-stream/PHP/Token.php',
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/PHP/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/PHP/Token.php',
+    'Pago' => $baseDir . '/../controlador/pago.php',
+    'Precios' => $baseDir . '/../controlador/precios.php',
+    'Productos' => $baseDir . '/../controlador/productos.php',
+    'Promociones' => $baseDir . '/../controlador/promociones.php',
+    'Reporte' => $baseDir . '/../controlador/reporte.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/Text/Template.php',
+    'Validador' => $baseDir . '/../controlador/validadorB.php',
+    'ValidadorBuilder' => $baseDir . '/../controlador/validadorB.php',
+    'easyphpthumbnail' => $baseDir . '/../controlador/easyphpthumbnail.class.php',
+    'validador' => $baseDir . '/../controlador/validador.php',
 );

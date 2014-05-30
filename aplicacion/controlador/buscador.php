@@ -27,10 +27,9 @@ class Buscador extends Controlador {
     function /* void */ buscar() {
         $nombre = $_POST['nombre'];
         if (isset($nombre)) {
-            $i = rand(0, 10);
-            if ($i < 6) {
+            //$i = rand(0, 10);
+            if (true) {
                 include("Levenshtein.php");
-                echo "Levenshtein";
                 $var = new Levenshtein();
             } else {
                 include("Ingenua.php");
@@ -42,6 +41,8 @@ class Buscador extends Controlador {
             require('aplicacion/vista/Buscador/header.php');
             require('aplicacion/vista/Buscador/index.php');
             require('aplicacion/vista/Buscador/footer.php');
+        } else {
+            $this->index();
         }
     }
 

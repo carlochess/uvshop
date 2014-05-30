@@ -1,6 +1,8 @@
 
 <?php
 
+namespace Base;
+
 class ModelFactura {
     /* Clase encargada de las consultas a la bd */
 
@@ -15,7 +17,7 @@ class ModelFactura {
 
     /** Devuelve todas las facturas de la base de datos */
     function /* array(stdObject) */ getFacturas() {
-        $consulta = \Base\FacturaQuery::create()
+        $consulta = FacturaQuery::create()
                 ->select(array("id_factura", "id_cliente", "fecha", "cantidad_productos"))
                 ->find();
         $arregloObj = json_decode(json_encode($consulta->toArray()), FALSE);
@@ -28,7 +30,7 @@ class ModelFactura {
       /* @arg int id identificación de la factura
      */
     function /* array(stdObject) */ getFactura($id) {
-        $consulta = \Base\CompraQuery::create()
+        $consulta = CompraQuery::create()
                 ->filterByIdCompra($id)
                 ->select(array("id_prod", "cant_prod"))
                 ->find();
