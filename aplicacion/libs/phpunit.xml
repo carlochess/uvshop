@@ -2,7 +2,7 @@
 <phpunit bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="Uvshop test suite">
-            <directory>../../tests</directory>
+            <directory>../../test</directory>
         </testsuite>
     </testsuites>
 </phpunit>
