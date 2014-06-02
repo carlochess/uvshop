@@ -1,3 +1,9 @@
+<?php if (isset($error)){ ?>
+    <div class="alert alert-error">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> <?php echo $error; ?>
+    </div>
+<?php } ?>
 
 <div>
     <form action="<?php echo URL.'users/registrarse' ?>" method="POST" >

@@ -66,6 +66,7 @@
 
 								<input type="submit" class="btn-primary" name="login" value="Log in" />
 							</form>
+                                                    <a href="<?php echo URL; ?>users/facebook">Log in FB </a>
 						</div>
 					</li>
 				</ul>

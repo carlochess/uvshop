@@ -9,5 +9,8 @@
         "classmap": [
             "../controlador"
         ]
+    },
+    "require": {
+        "league/oauth2-client": "~0.3"
     }
 }

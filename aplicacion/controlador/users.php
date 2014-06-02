@@ -22,7 +22,15 @@ Class Users extends Controlador {
     }
     
     public function registrarse() {
-        print_r($_POST);
+        $error = "Esta mal";
+        require('aplicacion/vista/Usuarios/header.php');
+        require('aplicacion/vista/Usuarios/registro.php');
+        require('aplicacion/vista/Usuarios/footer.php');
     }
-
+    
+    public function facebook(){
+        require('aplicacion/vista/Usuarios/header.php');
+        require('aplicacion/vista/Usuarios/facebook.php');
+        require('aplicacion/vista/Usuarios/footer.php');
+    }
 }

@@ -7,8 +7,7 @@
     },
     "autoload": {
         "classmap": [
-            "aplicacion/controlador",
-            "aplicacion/modelo"
+            "../controlador"
         ]
     }
 }
