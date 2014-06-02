@@ -1,0 +1,122 @@
+{
+    "90": {
+        "codigo": "90",
+        "nombre": "Bicicleta Seek 2",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.0bfc0ce99892772fc285e10ee3943d9a_Genericnsp-271.jpg",
+        "empresa_fabricante": "",
+        "descripción": "Cuadro ligero de ALUXX SL",
+        "precio_unitario": 2000000,
+        "porcentaje_iva": 33,
+        "categoria": "Articulos Deportivos"
+    },
+    "91": {
+        "codigo": "91",
+        "nombre": "Bicicleta Omnium",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.1379b5de7cb668c186ab48a9361eabd7_Genericnsp-271.jpg",
+        "empresa_fabricante": "Giant",
+        "descripción": "",
+        "precio_unitario": 900000,
+        "porcentaje_iva": 12,
+        "categoria": "Articulos Deportivos"
+    },
+    "92": {
+        "codigo": "92",
+        "nombre": "Bicicleta Halfway City",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.8e5f062e9750688c028aaa3058da9ec4_Genericnsp-271.jpg",
+        "empresa_fabricante": "GIANT",
+        "descripción": "Disponible con ruedas de 20 pulgadas, la Halfway cuenta con un cuadro de aluminio ligero, fácil de plegar, con poca altura desde el suelo hasta el tubo superior y un posicionamiento cómodo",
+        "precio_unitario": 700000,
+        "porcentaje_iva": 22,
+        "categoria": "Articulos Deportivos"
+    },
+    "93": {
+        "codigo": "93",
+        "nombre": "Bicicleta Cypress W",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.1fc372946c0b98fb8d7f87d4c38ea83a_Genericnsp-272.jpg",
+        "empresa_fabricante": "Generic",
+        "descripción": "A LIGHTWEIGHT ALUXX ALUMINUM FRAMESET, SHAPED USING LIV/GIANT’S 3F WOMEN’SSPECIFIC DESIGN PHILOSOPHY, IS FORMED TO PRODUCE AN AGILE, YET COMFORTABLE CRUISING EXPERIENCE.",
+        "precio_unitario": 800000,
+        "porcentaje_iva": 22,
+        "categoria": "Articulos Deportivos"
+    },
+    "94": {
+        "codigo": "94",
+        "nombre": "Bicicleta Escape 1",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.82558bd755d4bf64f8b1324b360ed554_Genericnsp-271.jpg",
+        "empresa_fabricante": "CANNODALE",
+        "descripción": "Design features a lightweight ALUXX aluminum frameset and composite fork.",
+        "precio_unitario": 300000,
+        "porcentaje_iva": 11,
+        "categoria": "Articulos Deportivos"
+    },
+    "95": {
+        "codigo": "95",
+        "nombre": "Bicicleta Defy advance 2 compact",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.63ae8dd535459e6ddaa9950601158f8d_Genericnsp-271.jpg",
+        "empresa_fabricante": "Giant",
+        "descripción": "Un cuadro de composite de grado Advanced es el corazón de esta belleza de rendimiento extremo. Ensamblada a mano, cada Defy Advanced aumenta la comodidad en carretera en competiciones agresivas. Si vas a realizar un sprint de competición o simplemente vas a hacer un largo recorrido, la Defy Advanced se ha diseñado para que puedas rodar más kilómetros de forma mucho más sencilla",
+        "precio_unitario": 800000,
+        "porcentaje_iva": 33,
+        "categoria": "Articulos Deportivos"
+    },
+    "96": {
+        "codigo": "96",
+        "nombre": "Bicicleta Cypress",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.fc34f61d23b74be53ee07d469bd32064_Genericnsp-271.jpg",
+        "empresa_fabricante": "",
+        "descripción": "UN LIGERO CUADRO DE ALUMINIO ALUXX PERMITE DISFRUTAR DE UNA RODADURA ÁGIL A LA VEZ QUE CÓMODA.",
+        "precio_unitario": 700000,
+        "porcentaje_iva": 11,
+        "categoria": "Articulos Deportivos"
+    },
+    "97": {
+        "codigo": "97",
+        "nombre": "Cypress City",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.97d2860871f3d35e35f6eb0477d3015a_Genericnsp-271.jpg",
+        "empresa_fabricante": "Giant",
+        "descripción": "UN LIGERO CUADRO DE ALUMINIO ALUXX PERMITE DISFRUTAR DE UNA   RODADURA ÁGIL A LA VEZ QUE CÓMODA.",
+        "precio_unitario": 200000,
+        "porcentaje_iva": 11,
+        "categoria": "Articulos Deportivos"
+    },
+    "98": {
+        "codigo": "98",
+        "nombre": "Bicicleta ExpressWay 1",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.78d607068cd064420401737e12f83bae_Genericnsp-271.jpg",
+        "empresa_fabricante": "Giant",
+        "descripción": "Available with 20-inch wheels, ExpressWay features a lightweight, easy-to-fold aluminum frame with a low standover height and comfortable positioning.",
+        "precio_unitario": 300000,
+        "porcentaje_iva": 34,
+        "categoria": "Articulos Deportivos"
+    },
+    "99": {
+        "codigo": "99",
+        "nombre": "Bicicleta CyberPress DX W",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.e02fde07d49ee258cc3f6d1b19207757_Genericnsp-272.jpg",
+        "empresa_fabricante": "Giant",
+        "descripción": "El cuadro de aluminio ligero ALUXX, construido siguiendo la filosofía de diseño específica para mujeres 3F de Liv/giant, permite disfrutar de una experiencia ágil pero a la vez cómoda.",
+        "precio_unitario": 700000,
+        "porcentaje_iva": 44,
+        "categoria": "Articulos Deportivos"
+    },
+    "100": {
+        "codigo": "100",
+        "nombre": "Bicicleta Propel Advance 1",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.e67ec824afbc9f855ad850f1b49c5b05_Genericnsp-271.jpg",
+        "empresa_fabricante": "Giant",
+        "descripción": "Suficiente rigidez como para transmitir potencia a los pedales y flexibilidad suficiente como para que puedas sentirte cómodo en largos entrenamientos, además de un módulo del cuadro de carretera aerodinámico basado en las numerosas pruebas realizadas en el túnel del viento-esa es la Propel Advanced.",
+        "precio_unitario": 800000,
+        "porcentaje_iva": 13,
+        "categoria": "Articulos Deportivos"
+    },
+    "101": {
+        "codigo": "101",
+        "nombre": "Rove 2 Disc DD",
+        "imagen": "http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.e02fde07d49ee258cc3f6d1b19207757_Genericnsp-272.jpg",
+        "empresa_fabricante": "Giant",
+        "descripción": "Esta versatil bicicleta X-Road dispone de un marco de aluminio AluXX fuerte, ligero y fiable, con un diseño 3F de Liv/Giant específico para mujeres. Con suficiente holgura en su Cuadro para los neumaticos todo terreno, además de un manubrio estilo montañero y un amplia gama de Velocidades, , alienta tus ansias de aventuras. Con el adicional de una Horquilla de Suspención que se puede bloquear para pavimento liso o volver a abrir para excursiones todo terreno. Una mezcla inteligente de peso, comodidad y robustez están integrados en cada cuadro, ofreciendo al ciclista de Aventura, la comodidad de una bicicleta de montaña con la velocidad de una bicicleta de carretera.",
+        "precio_unitario": 900000,
+        "porcentaje_iva": 33,
+        "categoria": "Articulos Deportivos"
+    }
+}

@@ -31,7 +31,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<?php foreach($categorias as $cat){ ?>
-								<li><a href="<?php echo URL.'buscador/categoria/'.str_replace(' ','_',$cat);?>"><?php echo $cat; ?> </a></li>
+								<li><a href="<?php echo URL.'buscador/categoria/'.str_replace(' ','_',$cat->categoria);?>"><?php echo $cat->categoria; ?> </a></li>
 							<?php } ?>
 						</ul>
 					</li>
@@ -51,7 +51,8 @@
 						<li><a href="#">Comprar</a></li>
 					  </ul>
 					</li>
-					<li><a href="/users/sign_up">Registrarse</a></li>
+		            	<!----	<li><a href="/users/sign_up">Registrarse</a></li> --->
+                                <li> <a href="<?php echo URL; ?>users/registro">Registrarse</a></li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Entrar <strong class="caret"></strong></a>

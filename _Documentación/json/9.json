@@ -1,0 +1,100 @@
+{
+"80": {
+"codigo": "80",
+        "nombre": "Apple Iphone 5C",
+        "imagen": "http://www.smart-gsm.com/blog/wp-content/uploads/2013/09/iphone-5C-frente.jpg",
+        "empresa_fabricante": "Apple",
+        "descripción": "El Apple iPhone 5C pasa a ser el iPhone económico de Apple, reemplazando al iPhone 5 y situado debajo del iPhone 5S. Posee una pantalla Retina de 4 pulgadas, cámara trasera de 8 megapixels, cámara frontal FaceTime HD, 16GB o 32GB de almacenamiento interno y está disponible en cinco vibrantes colores. Procesador DualCore 1.2GHz, 1GB RAM, 16GB Almacenamiento Interno, Camara Trasera 8MP, Camara Frontal 1.2MP, iOs7",
+        "precio_unitario":1210000,
+        "porcentaje_iva":16,
+        "categoria": "Celulares"
+        },
+        "81": {
+        "codigo": "81",
+                "nombre": "Samsung Galaxy Note 3",
+                "imagen": "http://cdn1.smart-gsm.com/picture/samsung-galaxy-note-3.jpg",
+                "empresa_fabricante": "Samsung",
+                "descripción": "El Samsung Galaxy Note 3 es la tercera generación del phablet de Samsung. Posee una pantalla 1080p Super AMOLED de 5.7 pulgadas, procesador Exynos octa-core o Snapdragon 800 quad-core según región, 3GB de RAM, cámara trasera de 13 megapixels, soporte S Pen y todas las aplicaciones de Samsung agregadas a Android 4.3 Jelly Bean. Procesador QuadCore 2.3GHz, 3GB RAM, 32GB Almacenamiento Interno, Camara Trasera 13MP, Camara Frontal 2MP, Android 4.3",
+                "precio_unitario":1320000,
+                "porcentaje_iva":16,
+                "categoria": "Celulares"
+        },
+        "82": {
+        "codigo": "82",
+                "nombre": "Huawei Ascend P6",
+                "imagen": "http://www.smart-gsm.com/blog/wp-content/uploads/2013/06/Huawei-Ascend-P6_3.jpg",
+                "empresa_fabricante": "Huawei",
+                "descripción": "El Huawei Ascend P6 es un smartphone Android que sacrifica algunas características para mantener un perfil de tan solo 6.18mm. Posee una pantalla 720p de 4.7 pulgadas con tecnología in-cell, cámara BSI de 8 megapixels y flash LED, procesador quad-core a 1.5GHz, 2GB de RAM, 8GB de almacenamiento interno, impresionante cámara frontal de 5 megapixels, y corre Android 4.2.2 Jelly Bean con Emotion UI.Procesador QuadCore 1.5GHz, 2GB RAM, 8GB Almacenamiento Interno, Camara Trasera 8MP, Camara Frontal 5MP, Android 4.2",
+                "precio_unitario":699000,
+                "porcentaje_iva":16,
+                "categoria": "Celulares"
+        },
+        "83": {
+        "codigo": "83",
+                "nombre": "LG G2",
+                "imagen": "http://www.smart-gsm.com/blog/wp-content/uploads/2013/10/lg-g2_11.jpg",
+                "empresa_fabricante": "LG",
+                "descripción": "El LG G2 es el nuevo smartphone insignia de LG, que combina hardware de última generación con mejoras de software y diseño innovador. Posee una pantalla 1080p de 5.2 pulgadas, procesador Snapdragon 800 a 2.26GHz, 2GB de RAM, cámara de 13 megapixels con estabilización óptica de imagen, y soporte para audio a 24 bits, 192KHz. El LG G2 posee los botones de volumen y encendido en la parte posterior, para permitir una mejor operación. Aún así, posee una batería de 3000mAh. Procesador QuadCore 2.26GHz, 2GB RAM, 16GB Almacenamiento Interno, Camara Trasera 13MP, Camara Frontal 2.1MP, Android 4.2",
+                "precio_unitario":979000,
+                "porcentaje_iva":16,
+                "categoria": "Celulares"
+        },
+        "84": {
+        "codigo": "84",
+                "nombre": "Sony Xperia M",
+                "imagen": "http://www.smart-gsm.com/blog/wp-content/uploads/2013/06/2_Xperia_M_Front_Black.jpg",
+                "empresa_fabricante": "Sony",
+                "descripción": "El Sony Xperia M es un smartphone de gama media corriendo Android 4.1 Jelly Bean con una pantalla TFT de 4 pulgadas a 480 x 854 pixels de resolución, procesador dual-core Qualcomm Snapdragon S4 Pro a 1GHz, 1GB de RAM, cámara trasera de 5 megapixels y variedad de colores disponibles. Procesador DualCore 1GHz, 1GB RAM, 4GB Almacenamiento Interno, Camara Trasera 5MP, Camara Frontal VGA,  Android 4.1",
+                "precio_unitario":399000,
+                "porcentaje_iva":16,
+                "categoria": "Celulares"
+        },
+        "85": {
+        "codigo": "85",
+                "nombre": "Nokia Lumia 625",
+                "imagen": "http://www.tic.com.uy/media/catalog/product/n/o/nokia-lumia-625-black-front-facing-nok-l625.jpg",
+                "empresa_fabricante": "Nokia",
+                "descripción": "El Nokia Lumia 625 es un smartphone Windows Phone con una pantalla WVGA de 4.7 pulgadas y 201ppi. Adentro, cuenta con un procesador dual-core a 1.2GHz, 512MB de RAM, 8GB de almacenamiento interno expandibles a 64GB adicionales mediante microSD, cámara trasera de 5 megapixels, cámara frontal VGA y batería de 2000mAh. Procesador DualCore 1.2GHz, 512MG RAM, 8GB Almacenamiento Interno, Camara Frontal 5MP, Camara Trasera VGA, Windows Phone",
+                "precio_unitario":449000,
+                "porcentaje_iva":16,
+                "categoria": "Celulares"
+        },
+        "86": {
+        "codigo": "86",
+                "nombre": "Sony Xperia Z2",
+                "imagen": "http://www.smart-gsm.com/blog/wp-content/uploads/2014/03/Xperia_Z2_Black_Front.jpg",
+                "empresa_fabricante": "Sony",
+                "descripción": "El Sony Xperia Z2 mejora al Xperia Z1 con una pantalla 1080p de 5.2 pulgadas Triluminos y Live Colour LED, una nueva tecnología. También cuenta con un procesador quad-core Snapdragon 801 a 2.3GHz, 3GB de RAM, cámara trasera de 20.7 megapixels con captura de video 4K, batería de 3000mAh, resistente al agua y un espesor de 8.2mm. Procesador QuadCore 2.3 GHz, 3GB RAM, 16GB Almacenamiento Interno, Camara Frontal 20.7MP, Camara Trasera 2.2MP, Android 4.4",
+                "precio_unitario":205456,
+                "porcentaje_iva":12,
+                "categoria": "Celulares"
+        },
+        "87": {
+        "codigo": "87",
+                "nombre": "Bicicleta Simple Single",
+                "imagen":"http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.d632334130a2b9d194362b7d857b88bf_Genericnsp-272.jpg",
+                "empresa_fabricante": "Giant",
+                "descripción": "The iconic lines of a classic beach cruiser coupled with modern, lightweight aluminum tubes and construction methods. A kickstand, wishbone seatstays and rack mounts round out this updated classic.",
+                "precio_unitario":500000,
+                "porcentaje_iva":24,
+                "categoria": "Articulos Deportivos"
+        },
+        "88": {
+                "codigo": "88",
+                "nombre": "Bicicleta Trinity Advance", "imagen":"http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.621af29360685f88fae4c26f96ed9d8c_Genericnsp-271.jpg",
+                "empresa_fabricante": "Giant",
+                "descripción": "El diseño cuenta con un cuadro ligero de aluminio ALUXX SL y una horquilla de  aleación",
+                "precio_unitario":1200000,
+                "porcentaje_iva":22,
+                "categoria": "Articulos Deportivos"
+        },
+        "89": {
+        "codigo": "89",
+                "nombre": "Bicicleta simple seven", "imagen":"http://www.giantmedellin.com/modules/mod_news_pro_gk5/cache/k2.items.cache.e303e2027514497aaa0603a129a3eb42_Genericnsp-271.jpg",
+                "empresa_fabricante": "Olympo",
+                "descripción": "El diseño cuenta con un cuadro ligero de aluminio ALUXX SL y una horquilla de aleación.",
+                "precio_unitario":600000,
+                "porcentaje_iva":12,
+                "categoria": "Articulos Deportivos"
+        }
+}
