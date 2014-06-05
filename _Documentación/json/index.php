@@ -1,9 +1,10 @@
 <?php
+include "../../aplicacion/cfg/config.php";
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(-1);
 if (isset($_POST["arreglo"])) {
-
+    
     function /* String */ leerArchivo($ruta) {
         if (file_exists($ruta))
             return file_get_contents($ruta);
@@ -68,7 +69,7 @@ if (isset($_POST["arreglo"])) {
                     'categoriaProd' => $categoria,
                     'unidadesProd' => $unidades,
                     'file' => '@' . realpath($nombreImg) . ';type=image/' . $temp);
-                curl_setopt($ch, CURLOPT_URL, 'http://localhost/uvshop/productos/agregarProd');
+                curl_setopt($ch, CURLOPT_URL, URL.'productos/agregarProd');
                 curl_setopt($ch, CURLOPT_POST, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 curl_exec($ch);
@@ -87,7 +88,7 @@ if (isset($_POST["arreglo"])) {
                 $data = array('f_inicio' => $fecha_inicial,
                     'f_finalizacion' => $fecha_final,
                     'precio' => $valor);
-                curl_setopt($ch, CURLOPT_URL, 'http://localhost/uvshop/precios/agregarprecio/' . $id_prod);
+                curl_setopt($ch, CURLOPT_URL, URL.'precios/agregarprecio/' . $id_prod);
                 curl_setopt($ch, CURLOPT_POST, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 curl_exec($ch);

@@ -1,9 +1,9 @@
 <?php
 
-$provider = new League\OAuth2\Client\Provider\Facebook(array(
-    'clientId'  =>  '526791157424846',
-    'clientSecret'  =>  '9e91996a32f9262e2ac9457b65883efd',
-    'redirectUri'   =>  'http://uvshop.co/users/facebook/'
+$provider = new League\OAuth2\Client\Provider\Google(array(
+    'clientId'  =>  '206140480642.apps.googleusercontent.com',
+    'clientSecret'  =>  'AIzaSyCXXTzDOwT-IoVygSvdBB47jN4Rxsye2pU',
+    'redirectUri'   =>  'http://uvshop.co/users/gmail'
 ));
 
 if ( ! isset($_GET['code'])) {

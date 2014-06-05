@@ -33,4 +33,9 @@ Class Users extends Controlador {
         require('aplicacion/vista/Usuarios/facebook.php');
         require('aplicacion/vista/Usuarios/footer.php');
     }
+    public function gmail(){
+        require('aplicacion/vista/Usuarios/header.php');
+        require('aplicacion/vista/Usuarios/gmail.php');
+        require('aplicacion/vista/Usuarios/footer.php');
+    }
 }

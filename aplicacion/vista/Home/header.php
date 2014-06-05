@@ -31,7 +31,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<?php foreach($categorias as $cat){ ?>
-								<li><a href="<?php echo URL.'buscador/categoria/'.str_replace(' ','_',$cat->categoria);?>"><?php echo $cat->categoria; ?> </a></li>
+								<li><a href="<?php echo URL.'buscador/categoria/'.str_replace(' ','_',$cat);?>"><?php echo $cat; ?> </a></li>
 							<?php } ?>
 						</ul>
 					</li>
@@ -67,6 +67,7 @@
 								<input type="submit" class="btn-primary" name="login" value="Log in" />
 							</form>
                                                     <a href="<?php echo URL; ?>users/facebook">Log in FB </a>
+                                                    <a href="<?php echo URL; ?>users/gmail">Log in G+ </a>
 						</div>
 					</li>
 				</ul>

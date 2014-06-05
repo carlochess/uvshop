@@ -39,7 +39,8 @@
 
         <div class="panel panel-default">
             <div class="panel-body" id="Texto">
-                <img src="<?php echo URL . 'imagenes/' . $id . 'x200.jpg'; ?>"/> Producto <?php echo $id; ?>
+                <img src="<?php echo URL . 'imagenes/' . $id . 'x200.jpg'; ?>"/>
+                Producto <span id="indentificacion"><?php echo $id; ?></span>
             </div>
         </div>
 

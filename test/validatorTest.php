@@ -13,7 +13,7 @@ class ValidatorTest extends PHPUnit_Framework_TestCase {
      * @dataProvider data
      * @author Carlos Ro
      */
-    public function testAddNumbers($actual_1) {
+    public function test($actual_1) {
         $this->assertTrue(Validador::createBuilder($actual_1)->esInt()->max(20)->build()->isValid(), "Logrado");
     }
     
