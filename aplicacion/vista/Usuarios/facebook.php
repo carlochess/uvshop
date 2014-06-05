@@ -1,62 +1,11 @@
 <?php
-
-$provider = new League\OAuth2\Client\Provider\Facebook(array(
-    'clientId'  =>  '526791157424846',
-    'clientSecret'  =>  '9e91996a32f9262e2ac9457b65883efd',
-    'redirectUri'   =>  'http://uvshop.co/users/facebook/'
-));
-
-if ( ! isset($_GET['code'])) {
-
-    // If we don't have an authorization code then get one
-    header('Location: '.$provider->getAuthorizationUrl());
-    exit;
-
-} else {
-    //echo "Codigo: ".$_GET['code'].'<br/>';
-    try{
-    $token = $provider->getAccessToken('AuthorizationCode', [
-        'code' => $_GET['code']
-    ]);
-}catch(Exception $e)
-{
-        echo "Error: ".$e;
-}
-
-    // Optional: Now you have a token you can look up a users profile data
-    try {
-
-        // We got an access token, let's now get the user's details
-        $userDetails = $provider->getUserDetails($token);
-
-        // Use these details to create a new profile
-        printf('Hola %s!', $userDetails->firstName);
-
-    } catch (Exception $e) {
-    
-    }
-
-    // Optional: Now you have a token you can look up a users profile data
-    try {
-
-        // We got an access token, let's now get the user's details
-        $userDetails = $provider->getUserDetails($token);
-
-        // Use these details to create a new profile
-        printf('Hola %s!', $userDetails->firstName);
-
-    } catch (Exception $e) {
-
-        // Failed to get user details
-        exit('Oh Dios...');
-    }
-
-    // Use this to interact with an API on the users behalf
-    //echo $token->accessToken;
-
-    // Use this to get a new access token if the old one expires
-    //echo $token->refreshToken;
-
-    // Number of seconds until the access token will expire, and need refreshing
-    //echo $token->expires;
-}
+echo '<p><img src="' . $userDetails->imageUrl . '" /><p>';
+echo '<p>uid: '.$userDetails->uid . '</p>';
+echo '<p>name: '.$userDetails->name . '</p>';
+echo '<p>firstName: '.$userDetails->firstName . '</p>';
+echo '<p>lastName: '.$userDetails->lastName . '</p>';
+echo '<p>email: '.$userDetails->email . '</p>';
+echo '<p>location: '.$userDetails->location . '</p>';
+echo '<p>description: '.$userDetails->description . '</p>';
+echo '<p>description: '.$userDetails->description . '</p>';
+?>

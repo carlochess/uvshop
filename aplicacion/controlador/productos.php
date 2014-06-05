@@ -68,6 +68,7 @@ class Productos extends Controlador {
     function agregarProd() {
         require_once('imagen.php');
         require('validador.php');
+        require('validadorB.php');
         $controladorImg = new Imagen();
         $valid = new validador();
         $agregadoExito = false;
@@ -78,15 +79,32 @@ class Productos extends Controlador {
         $iva = $valid->test_input($_POST["ivaProd"]);
         $categoria = $valid->test_input($_POST["categoriaProd"]);
         $unidades = $valid->test_input($_POST["unidadesProd"]);
-
+        $error[]=array();
         if ($controladorImg->guardarImagen($codigo)) {
-            $modelprod = $this->loadModel("modelProd");
-            $agregadoExito = $modelprod->agregarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
-            $modelprod->terminarConexion();
+            //Validador::createBuilder(5.56)->esFloat()->max(20)->build()->isValid()
+            if(Validador::createBuilder($codigo)->esCadena->tieneLongitud(1,4)->build()->isValid())
+            {
+                if(Validador::createBuilder($nombreP)->esCadena->tieneLongitud(1,20)->build()->isValid())
+                {
+                    $modelprod = $this->loadModel("modelProd");
+                    try{
+                        $agregadoExito = $modelprod->agregarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
+                    } catch (Exception $ex) {
+                        $error = "Error al agregar producto";
+                    }
+                }
+                else{
+                    $error[] = "Nombre invalido";
+                }
+            }  else {
+                $error[] = "Código invalido";
+            }
         } else {
-            echo "Error al agregar imagen";
+            $error[] = "Error al agregar imagen";
         }
-        header('Location: ' . URL . '/admin/precio/' . $codigo);
+        require('aplicacion/vista/Admin/header.php');
+        require('aplicacion/vista/Admin/producto.php');
+        require('aplicacion/vista/Admin/footer.php');
     }
 
     /**
