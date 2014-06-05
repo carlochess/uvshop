@@ -69,13 +69,14 @@
                 Agregando items :D
             </div>
         </div>
-        <?php if (isset($error)){if (count($error)>0) { ?>
-            <div class="alert alert-danger">
-                <?php foreach ($error as $elem) {
-                    echo "<p>".$elem."</p>";
-                } ?>
-            </div>    
-        <?php }else { ?>
+        <?php if (isset($error)){
+            if (count($error)>0) { ?>
+                <div class="alert alert-danger">
+                    <?php for ($i = 0; $i < count($error) ; $i++) {
+                        echo "<p>".$error[$i]."</p>";
+                    } ?>
+                </div>    
+            <?php }else { ?>
             <div class="alert alert-success">Agregado con éxito</div>
         <?php }} ?>
         <div class="row">

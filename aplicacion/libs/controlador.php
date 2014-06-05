@@ -19,7 +19,7 @@ class Controlador
      */
     public function loadModel($model_name)
     {
-        require 'aplicacion/modelo/' . strtolower($model_name) . '.php';
+        require_once 'aplicacion/modelo/' . strtolower($model_name) . '.php';
         return new $model_name($this->oMySQL);
     }
 }

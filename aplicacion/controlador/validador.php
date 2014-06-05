@@ -7,7 +7,7 @@
  * TODO: validaciones de tipo
  * TODO: validaciones de formato
  */
-class validador {
+class removedor {
 
     /**
      * Función que remueve espacios y caracteres no deseados

@@ -66,7 +66,7 @@ class MySQL {
 			$query->execute();
 			$this->filasAfectadas = $query->rowCount();
 		} catch(PDOException $ex) {
-			echo "<br/> Error al ejecutar consulta ".$ex->getMessage();
+			//echo "<br/> Error al ejecutar consulta ".$ex->getMessage();
 		}
 	}
 	

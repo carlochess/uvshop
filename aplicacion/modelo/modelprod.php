@@ -72,7 +72,7 @@ class ModelProd {
      * Función que agrega un producto a la base de datos
      */
     function agregarProducto($id_prod, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades) {
-        /*$producto = new Producto();
+        $producto = new Producto();
         $producto->setIdProd($id_prod);
         $producto->setNombre($nombreP);
         $producto->setEmpresaFab($empresa_fab);
@@ -80,11 +80,11 @@ class ModelProd {
         $producto->setIva($iva);
         $producto->setCategoria($categoria);
         $producto->setUnidades($unidades);
-        $producto->save();*/
+        $producto->save();
         
-        $sql = 'INSERT INTO producto(id_prod, nombre, empresa_fab, descripcion, iva, categoria,unidades) 
+        /*$sql = 'INSERT INTO producto(id_prod, nombre, empresa_fab, descripcion, iva, categoria,unidades) 
         VALUES ("'.$id_prod.'","'.$nombreP.'","'.$empresa_fab.'","'.$descripcion.'",'.$iva.',"'.$categoria.'",'.$unidades.')';
-        $this->oMySQL->ejecutarConsultaI($sql);
+        $this->oMySQL->ejecutarConsultaI($sql);*/
     }
 
     /**

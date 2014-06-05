@@ -2,7 +2,7 @@
 
 class Productos extends Controlador {
 
-    private $categorias;
+    public $categoria= "productos";
 
     // Constructor clase producto
     function __construct() {
@@ -70,7 +70,7 @@ class Productos extends Controlador {
         require('validador.php');
         require('validadorB.php');
         $controladorImg = new Imagen();
-        $valid = new validador();
+        $valid = new removedor();
         $agregadoExito = false;
         $codigo = $valid->test_input($_POST["idProd"]);
         $nombreP = $valid->test_input($_POST["nProd"]);
@@ -79,29 +79,30 @@ class Productos extends Controlador {
         $iva = $valid->test_input($_POST["ivaProd"]);
         $categoria = $valid->test_input($_POST["categoriaProd"]);
         $unidades = $valid->test_input($_POST["unidadesProd"]);
-        $error[]=array();
+        $error= array();
+        $modelprod = $this->loadModel("modelProd");
         if ($controladorImg->guardarImagen($codigo)) {
             //Validador::createBuilder(5.56)->esFloat()->max(20)->build()->isValid()
-            if(Validador::createBuilder($codigo)->esCadena->tieneLongitud(1,4)->build()->isValid())
+            if(Validador::createBuilder($codigo)->esCadena()->tieneLongitud(1,4)->build()->isValid())
             {
-                if(Validador::createBuilder($nombreP)->esCadena->tieneLongitud(1,20)->build()->isValid())
+                if(Validador::createBuilder($nombreP)->esCadena()->tieneLongitud(1,20)->build()->isValid())
                 {
-                    $modelprod = $this->loadModel("modelProd");
                     try{
                         $agregadoExito = $modelprod->agregarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
                     } catch (Exception $ex) {
-                        $error = "Error al agregar producto";
+                        array_push($error,"Error al agregar producto: ");
                     }
                 }
                 else{
-                    $error[] = "Nombre invalido";
+                    array_push($error,"Nombre inválido");
                 }
             }  else {
-                $error[] = "Código invalido";
+                array_push($error,"Código inválido");
             }
         } else {
-            $error[] = "Error al agregar imagen";
+            array_push($error,"Error al agregar imagen");
         }
+        $productos = $modelprod->getProductos();
         require('aplicacion/vista/Admin/header.php');
         require('aplicacion/vista/Admin/producto.php');
         require('aplicacion/vista/Admin/footer.php');
