@@ -21,7 +21,12 @@ class Promociones extends Controlador {
         $f_fin = $_POST['f_finalizacion'];
         $desc = floatval($_POST['descuento']);
         $modelpromo = $this->loadModel("modelPromo");
+        try{
         $modelpromo->agregarPromocion($id_item, $f_inic, $f_fin, $desc);
+        }  catch (Exception $ex)
+        {
+            
+        }
         $modelpromo->terminarConexion();
         header('Location: ' . URL . 'admin/promociones');
     }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Uvshop test suite" tests="10" assertions="10" failures="0" errors="0" time="0.007390">
+    <testsuite name="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" tests="10" assertions="10" failures="0" errors="0" time="0.007390">
+      <testcase name="testCreacionInstanciaEstatica" class="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" line="9" assertions="1" time="0.001719"/>
+      <testcase name="testCadenaVacia" class="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" line="13" assertions="1" time="0.000466"/>
+      <testcase name="testNegacion" class="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" line="17" assertions="1" time="0.000447"/>
+      <testcase name="testContineEspacioCadena" class="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" line="21" assertions="1" time="0.000314"/>
+      <testcase name="testComprobarFechaMenorQueOtra" class="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" line="25" assertions="1" time="0.002942"/>
+      <testcase name="testCadenaNula" class="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" line="31" assertions="1" time="0.000319"/>
+      <testsuite name="ValidatorTest::testEnteroMenorAVeinte" tests="3" assertions="3" failures="0" errors="0" time="0.000887">
+        <testcase name="testEnteroMenorAVeinte with data set #0" assertions="1" time="0.000303"/>
+        <testcase name="testEnteroMenorAVeinte with data set #1" assertions="1" time="0.000294"/>
+        <testcase name="testEnteroMenorAVeinte with data set #2" assertions="1" time="0.000290"/>
+      </testsuite>
+      <testcase name="testCadenaValida" class="ValidatorTest" file="/var/www/html/uvshop/test/validatorTest.php" line="62" assertions="1" time="0.000296"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

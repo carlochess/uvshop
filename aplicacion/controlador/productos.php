@@ -89,6 +89,7 @@ class Productos extends Controlador {
                 {
                     try{
                         $agregadoExito = $modelprod->agregarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
+                        header("Location: ".URL."admin/precio/".$codigo);
                     } catch (Exception $ex) {
                         array_push($error,"Error al agregar producto: ");
                     }

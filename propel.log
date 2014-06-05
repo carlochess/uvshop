@@ -51,3 +51,5 @@
 [2014-06-05 00:34:03] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
 [2014-06-05 00:35:50] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
 [2014-06-05 00:36:10] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
+[2014-06-05 00:41:03] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
+[2014-06-05 00:41:22] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
