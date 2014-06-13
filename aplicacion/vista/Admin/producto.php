@@ -182,3 +182,19 @@
                         });
                     });
                 </script>
+                <script src="<?php echo URL; ?>public/readmore.js"></script>
+
+                <script>
+                    $('.descripcion').readmore({
+                      moreLink: '<a href="#">Ver mas</a>',
+                      maxHeight: 50,
+                      lessLink: '<a href="#">Cerrar</a>',
+                      afterToggle: function(trigger, element, expanded) {
+                        if(! expanded) { 
+                          $('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
+                        }
+                      }
+                    });
+
+                    $('article').readmore({maxHeight: 240});
+                </script>

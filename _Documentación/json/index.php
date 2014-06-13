@@ -4,35 +4,32 @@ include "../../aplicacion/cfg/config.php";
 //ini_set('display_startup_errors', 1);
 //error_reporting(-1);
 if (isset($_POST["arreglo"])) {
-    
+
     function /* String */ leerArchivo($ruta) {
         if (file_exists($ruta))
             return file_get_contents($ruta);
     }
-    
-    function _isCurl(){
+
+    function _isCurl() {
         return function_exists('curl_version');
     }
-    
-    function _isJson(){
+
+    function _isJson() {
         return function_exists('json_decode');
     }
 
     function insertarBD($str) {
         $str = leerArchivo($str);
-        if (!_isCurl())
-        {
+        if (!_isCurl()) {
             echo "Curl no esta instalado en tu equipo <br />";
             return;
         }
-        if (!_isJson())
-        {
+        if (!_isJson()) {
             echo "JsonDecode no esta instalado en tu equipo <br />";
             return;
         }
         $json = json_decode(utf8_encode($str), true);
-        if (is_array($json))
-        {
+        if (is_array($json)) {
             foreach ($json as $key => $value) {
 
                 // Imagen
@@ -69,7 +66,9 @@ if (isset($_POST["arreglo"])) {
                     'categoriaProd' => $categoria,
                     'unidadesProd' => $unidades,
                     'file' => '@' . realpath($nombreImg) . ';type=image/' . $temp);
-                curl_setopt($ch, CURLOPT_URL, URL.'productos/agregarProd');
+                curl_setopt($ch, CURLOPT_URL, URL . 'productos/agregarProd');
+                curl_setopt($ch, CURLOPT_MUTE, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_POST, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 curl_exec($ch);
@@ -88,13 +87,12 @@ if (isset($_POST["arreglo"])) {
                 $data = array('f_inicio' => $fecha_inicial,
                     'f_finalizacion' => $fecha_final,
                     'precio' => $valor);
-                curl_setopt($ch, CURLOPT_URL, URL.'precios/agregarprecio/' . $id_prod);
+                curl_setopt($ch, CURLOPT_URL, URL . 'precios/agregarprecio/' . $id_prod);
                 curl_setopt($ch, CURLOPT_POST, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 curl_exec($ch);
 
-                if (file_exists($nombreImg))
-                {
+                if (file_exists($nombreImg)) {
                     unlink($nombreImg);
                 }
             }

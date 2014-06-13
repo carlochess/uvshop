@@ -83,9 +83,9 @@ class Productos extends Controlador {
         $modelprod = $this->loadModel("modelProd");
         if ($controladorImg->guardarImagen($codigo)) {
             //Validador::createBuilder(5.56)->esFloat()->max(20)->build()->isValid()
-            if(Validador::createBuilder($codigo)->esCadena()->tieneLongitud(1,4)->build()->isValid())
+            if(Validador::createBuilder($codigo)->esCadena()->tieneLongitud(1,10)->build()->isValid())
             {
-                if(Validador::createBuilder($nombreP)->esCadena()->tieneLongitud(1,20)->build()->isValid())
+                if(Validador::createBuilder($nombreP)->esCadena()->tieneLongitud(1,30)->build()->isValid())
                 {
                     try{
                         $agregadoExito = $modelprod->agregarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);

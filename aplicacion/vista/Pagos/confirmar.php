@@ -23,7 +23,7 @@
 				<th> id </th>
 				<th> Nombre </th>
 				<th> Cantidad </th>
-			<tr>
+			</tr>
 			<?php foreach($productos as $producto) { ?>
 			<tr>
 				<td> <img src="<?php echo URL.'imagenes/'.$producto->id.'x50.jpg'; ?>" /> </td>
@@ -38,6 +38,7 @@
 			<tr>
 				<th> # </th>
 				<th> Medio_de_pago </th>
+                                <th> Numero_de_tarjeta </th>
 				<th> Numero_de_cuotas </th>
 				<th> Monto </th>
 			<tr>
@@ -45,8 +46,9 @@
 			<tr>
 				<td> <?php echo "->" ?> </td>
 				<td> <?php echo $metododePago->Medio_de_pago; ?> </td>
+                                <td> <?php echo (isset($metododePago->Numero_de_tarjeta))?$metododePago->Numero_de_tarjeta:""; ?> </td>
 				<td> <?php echo $metododePago->Numero_de_cuotas; ?> </td>
-				<td> <?php echo $metododePago->monto;?> </td>
+				<td> <?php echo $metododePago->Monto;?> </td>
 			</tr>
 			<?php } ?>
 		</table>
@@ -60,7 +62,7 @@
 				<input type="hidden" id="id" name="metodosFIN" value="">
 				<input type="hidden" id="id2" name="prodFIN" value="">
 				<button class= "btn btn-success"  type="submit" id="pagar"> Pagar >> </button>
-			<form>
+			</form>
 		</p>
 	</div>
 </div>

@@ -54,7 +54,7 @@
 		            	<!----	<li><a href="/users/sign_up">Registrarse</a></li> --->
                                 <li> <a href="<?php echo URL; ?>users/registro">Registrarse</a></li>
 					<li class="divider-vertical"></li>
-					<li class="dropdown">
+					<li class="dropdown" id="loggin">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Entrar <strong class="caret"></strong></a>
 						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
 							<form method="post" action="index.php" name="loginform" style="padding:20px;">
