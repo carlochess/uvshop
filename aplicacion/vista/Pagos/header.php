@@ -11,6 +11,12 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link href="<?php echo URL; ?>public/producto/carrito.css" rel="stylesheet">
 	<link href="<?php echo URL; ?>public/pagos/estilo.css" rel="stylesheet">
+        <script>
+        function goBack()
+        {
+            window.history.back()
+        }
+        </script>
   </head>
   <body>
   <div class="navbar-inverse navbar-static-top" role="navigation">

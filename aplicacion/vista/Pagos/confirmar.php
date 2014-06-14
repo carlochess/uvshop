@@ -55,9 +55,7 @@
 	</div>
 	<div>
         <p class="text-center">
-			<a href="<?php echo URL.'pago/modos' ?>">
-				<button class= "btn btn-alert" id="volver"> << Volver </button>
-			</a>
+			<button class= "btn btn-alert" id="volver" onclick="goBack()"> << Volver </button>
 			<form action="<?php echo URL.'pago/finalizar'; ?>" method="post">
 				<input type="hidden" id="id" name="metodosFIN" value="">
 				<input type="hidden" id="id2" name="prodFIN" value="">

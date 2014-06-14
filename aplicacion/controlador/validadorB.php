@@ -65,7 +65,7 @@ class ValidadorBuilder {
     // validación y conversion float
     function esFloat() {
         if ($this->valid) {
-            if (!is_float($this->data))
+            if (!is_float(filter_var($this->data , FILTER_VALIDATE_FLOAT)))
                 $this->valid = false;
             else {
                 $this->data = floatval($this->data);
@@ -178,6 +178,8 @@ class ValidadorBuilder {
     // $this->data contiene una fecha <= a @arg $fechaSiguiente
     function fechaNoSeCruzaCon($fechaSiguiente) {
         if ($this->valid) {
+            if(!$this->esFecha($fechaSiguiente))
+                $this->valid = false;
             if (strtotime($this->data) > strtotime($fechaSiguiente))
                 $this->valid = false;
         }

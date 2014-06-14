@@ -36,11 +36,21 @@
 <div class="container-fluid">
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">Precio: productos</h1>
-
+        
         <div class="panel panel-default">
             <div class="panel-body" id="Texto">
                 <img src="<?php echo URL . 'imagenes/' . $id . 'x200.jpg'; ?>"/>
                 Producto <span id="indentificacion"><?php echo $id; ?></span>
+                <?php if (isset($error)){
+                    if (count($error)>0) { ?>
+                        <div class="alert alert-danger">
+                            <?php for ($i = 0; $i < count($error) ; $i++) {
+                                echo "<p>".$error[$i]."</p>";
+                            } ?>
+                        </div>    
+                    <?php }else { ?>
+                    <div class="alert alert-success">Agregado con éxito</div>
+                <?php }} ?>
             </div>
         </div>
 

@@ -65,15 +65,14 @@ class ModelPromo {
     }
 
     function actualizarPromocion($id_item, $f_inic, $f_fin, $desc) {
-        \Base\PromocionQuery::create()
+        /*\Base\PromocionQuery::create()
         ->filterByIdPromocion($id_item)
         ->update(array("FechaIni" => $f_inic,
             "FechaFin" => $f_fin,
             "PorcetajeRed" => $desc
-            ));
-        echo "actualizado $desc";
-        /*$sql = 'UPDATE promocion SET fecha_ini="' . $f_inic . '",fecha_fin="' . $f_fin . '",porcetaje_red= ' . $desc . ' WHERE cod_producto= "' . $id_item . '"';
-        return $this->oMySQL->ejecutarConsultaI($sql);*/
+            ));*/
+        $sql = 'UPDATE promocion SET fecha_ini="' . $f_inic . '",fecha_fin="' . $f_fin . '",porcetaje_red= ' . $desc . ' WHERE cod_producto= "' . $id_item . '"';
+        return $this->oMySQL->ejecutarConsultaI($sql);
     }
 
     /**

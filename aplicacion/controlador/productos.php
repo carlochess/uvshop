@@ -2,7 +2,7 @@
 
 class Productos extends Controlador {
 
-    public $categoria= "productos";
+    public $categoria = "productos";
 
     // Constructor clase producto
     function __construct() {
@@ -23,7 +23,7 @@ class Productos extends Controlador {
         if (isset($id)) {
             $modelprod = $this->loadModel("modelProd");
             $info = $modelprod->getInforProd($id[0]);
-            
+
             if (count($info) >= 1) {
                 $prod = $info[0];
                 $ind = $this->loadModel("modelHome");
@@ -79,29 +79,34 @@ class Productos extends Controlador {
         $iva = $valid->test_input($_POST["ivaProd"]);
         $categoria = $valid->test_input($_POST["categoriaProd"]);
         $unidades = $valid->test_input($_POST["unidadesProd"]);
-        $error= array();
+        $error = array();
         $modelprod = $this->loadModel("modelProd");
         if ($controladorImg->guardarImagen($codigo)) {
             //Validador::createBuilder(5.56)->esFloat()->max(20)->build()->isValid()
-            if(Validador::createBuilder($codigo)->esCadena()->tieneLongitud(1,10)->build()->isValid())
-            {
-                if(Validador::createBuilder($nombreP)->esCadena()->tieneLongitud(1,30)->build()->isValid())
-                {
-                    try{
-                        $agregadoExito = $modelprod->agregarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
-                        header("Location: ".URL."admin/precio/".$codigo);
-                    } catch (Exception $ex) {
-                        array_push($error,"Error al agregar producto: ");
+            if (Validador::createBuilder($codigo)->esCadena()->tieneLongitud(1, 10)->build()->isValid()) {
+                if (Validador::createBuilder($nombreP)->esCadena()->tieneLongitud(1, 30)->build()->isValid()) {
+                    if (Validador::createBuilder($empresa_fab)->esCadena()->tieneLongitud(1, 50)->build()->isValid()) {
+                        if (Validador::createBuilder(intval($unidades))->esInt()->enIntervalo(0, 100000)->build()->isValid()) {
+                            try {
+                                $agregadoExito = $modelprod->agregarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
+                                header("Location: " . URL . "admin/precio/" . $codigo);
+                            } catch (Exception $ex) {
+                                array_push($error, "Error al agregar producto: ");
+                            }
+                        } else {
+                            array_push($error, "Número de unidades inválido");
+                        }
+                    } else {
+                        array_push($error, "Nombre empresa fabricante inválido");
                     }
+                } else {
+                    array_push($error, "Nombre inválido");
                 }
-                else{
-                    array_push($error,"Nombre inválido");
-                }
-            }  else {
-                array_push($error,"Código inválido");
+            } else {
+                array_push($error, "Código inválido");
             }
         } else {
-            array_push($error,"Error al agregar imagen");
+            array_push($error, "Error al agregar imagen");
         }
         $productos = $modelprod->getProductos();
         require('aplicacion/vista/Admin/header.php');
@@ -115,7 +120,8 @@ class Productos extends Controlador {
     function actualizarProd() {
         require('validador.php');
         require_once('imagen.php');
-        $valid = new validador();
+        require('validadorB.php');
+        $valid = new removedor();
         $controladorImg = new Imagen();
 
         $codigo = $valid->test_input($_POST["idProd"]);
@@ -127,9 +133,35 @@ class Productos extends Controlador {
         $unidades = $valid->test_input($_POST["unidadesProd"]);
         $controladorImg->guardarImagen($codigo);
         $modelprod = $this->loadModel("modelProd");
-        $modelprod->actualizarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
-        $modelprod->terminarConexion();
-        header('Location: ' . URL . '/admin/producto');
+        $error = array();
+        
+        if (Validador::createBuilder($codigo)->esCadena()->tieneLongitud(1, 10)->build()->isValid()) {
+            if (Validador::createBuilder($nombreP)->esCadena()->tieneLongitud(1, 30)->build()->isValid()) {
+                if (Validador::createBuilder($empresa_fab)->esCadena()->tieneLongitud(1, 50)->build()->isValid()) {
+                    if (Validador::createBuilder(intval($unidades))->esInt()->enIntervalo(0, 100000)->build()->isValid()) {
+                        try {
+                            $modelprod->actualizarProducto($codigo, $nombreP, $empresa_fab, $descripcion, $iva, $categoria, $unidades);
+                            $modelprod->terminarConexion();
+                            header('Location: ' . URL . '/admin/producto');
+                        } catch (Exception $ex) {
+                            array_push($error, "Error al agregar producto: ");
+                        }
+                    } else {
+                        array_push($error, "Número de unidades inválido");
+                    }
+                } else {
+                    array_push($error, "Nombre empresa fabricante inválido");
+                }
+            } else {
+                array_push($error, "Nombre inválido");
+            }
+        } else {
+            array_push($error, "Código inválido");
+        }
+        $productos = $modelprod->getProductos();
+        require('aplicacion/vista/Admin/header.php');
+        require('aplicacion/vista/Admin/producto.php');
+        require('aplicacion/vista/Admin/footer.php');
     }
 
 }

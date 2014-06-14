@@ -42,7 +42,7 @@
             <h1 class="page-header"> Recibo de pago </h1>
             Total <p id="Restan"> <?php echo $total; ?> </p>
             Restan <p id="Total"> <?php echo $total; ?> </p>
-
+            tarjeta="5292835286827246"
             <table id="agregar" class="table">
                 <tr>
                     <th> ¿eliminar? </th>
@@ -60,7 +60,7 @@
                         </select>
                     </td>
                     <td> 
-                        <input class="form-control"  id="nTarjeta" type="text" value="5292835286827246" />
+                        <input class="form-control"  id="nTarjeta" type="text"/>
                     </td>
                     <td> 
                         <input class="form-control"  id="nCuotas" type="text" value="" />

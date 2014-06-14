@@ -5,8 +5,8 @@ $serviceContainer->setAdapterClass('uvshop', 'mysql');
 $manager = new \Propel\Runtime\Connection\ConnectionManagerSingle();
 $manager->setConfiguration(array (
   'dsn' => 'mysql:host=localhost;dbname=uvshop',
-  'user' => 'root',
-  'password' => 'Univalle',
+  'user' => DB_USER,
+  'password' => DB_PASS,
 ));
 $manager->setName('uvshop');
 $serviceContainer->setConnectionManager('uvshop', $manager);

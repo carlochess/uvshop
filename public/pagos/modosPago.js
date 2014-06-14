@@ -5,6 +5,7 @@ $(document).ready(function() {
             case 'efectivo':
                 $("#nCuotas").val("1");
                 $("#nCuotas").prop('disabled', true);
+                $("#nTarjeta").val("0");
                 $("#nTarjeta").prop('disabled', true);
                 break;
             case 'tarjeta':

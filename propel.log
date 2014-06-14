@@ -53,3 +53,7 @@
 [2014-06-05 00:36:10] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
 [2014-06-05 00:41:03] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
 [2014-06-05 00:41:22] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
+[2014-06-13 14:53:55] defaultLogger.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS "idProd",  AS "cantProd" FROM `compra` WHERE compra.ID_FACTURA='20'' at line 1 [] []
+[2014-06-13 15:00:13] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '012' for key 'PRIMARY' [] []
+[2014-06-13 18:36:53] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`uvshop`.`promocion`, CONSTRAINT `promocion_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`id_prod`) ON DELETE CASCADE ON UPDATE CASCADE) [] []
+[2014-06-13 18:37:54] defaultLogger.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`uvshop`.`promocion`, CONSTRAINT `promocion_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`id_prod`) ON DELETE CASCADE ON UPDATE CASCADE) [] []

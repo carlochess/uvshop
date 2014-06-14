@@ -27,8 +27,7 @@ class Pago extends Controlador {
             require('aplicacion/vista/Pagos/footer.php');
             $modelprod->terminarConexion();
         } else {
-            //header('Location: ' . URL);
-            print_r($_COOKIE['carritoCod']);
+            header('Location: ' . URL);
             echo "<br />";
         }
     }
@@ -41,7 +40,7 @@ class Pago extends Controlador {
      */
     function /* void */ modos() {
 
-        if (isset($_POST) && count($_POST) > 0) {
+        if (isset($_POST) && count($_POST) > 0 && isset($_COOKIE['carritoCod']) && !empty($_COOKIE['carritoCod'])) {
             $modelprod = $this->loadModel("modelProd");
             $ids = array();
             $cantidades = array();
@@ -71,7 +70,7 @@ class Pago extends Controlador {
 
     function /* void */ confirmar() {
 
-        if (isset($_POST['metodosFIN']) && $_POST['prodFIN']) {
+        if (isset($_POST['metodosFIN']) && isset($_POST['prodFIN']) && isset($_COOKIE['carritoCod']) && !empty($_COOKIE['carritoCod'])) {
             $metodosPago = json_decode($_POST['metodosFIN']);
             $productos = json_decode($_POST['prodFIN']);
             if (count($metodosPago) > 3 && count($productos) > 1) {
@@ -81,11 +80,11 @@ class Pago extends Controlador {
                 echo "Validando los productos";
                 if(!$this->validarProductos($productos)){
                     echo "Error al validar productos";
-                    header('Location: ' . URL . 'pago/modos');
+                    //header('Location: ' . URL . 'pago/modos');
                 }
                 if(!$this->validarPagos($metodosPago)){
                     echo "Error al validar métodos de pago";
-                    header('Location: ' . URL . 'pago/modos');
+                    //header('Location: ' . URL . 'pago/modos');
                 }
                 
                 require('aplicacion/vista/Pagos/header.php');
@@ -93,20 +92,21 @@ class Pago extends Controlador {
                 require('aplicacion/vista/Pagos/footer.php');
             }
             else {
-                header('Location: ' . URL . 'pago/modos');
+                echo "Error, cantidad de productos";
+            //header('Location: ' . URL . 'pago/modos');
             }
         } else {
-            header('Location: ' . URL . 'pago/modos');
+            echo "Error";
+            //header('Location: ' . URL . 'pago/modos');
         }
     }
 
     function /* void */ finalizar() {
-        if (isset($_POST['metodosFIN']) && $_POST['prodFIN']) {
+        if (isset($_POST['metodosFIN']) && $_POST['prodFIN'] && isset($_COOKIE['carritoCod']) && !empty($_COOKIE['carritoCod'])) {
             $metodosPago = json_decode($_POST['metodosFIN']);
             $productos = json_decode($_POST['prodFIN']);
-            if (count($metodosPago) > 1 && count($productos) > 1) {
+            if (count($metodosPago) > 1 && count($productos) > 0) {
                 $metodosPago = array_slice($metodosPago, 1, count($metodosPago));
-                $productos = array_slice($productos, 1, count($productos));
                 $modelpago = $this->loadModel("modelPago");
                 // 1. valido los productos y sus cantidades
                 $this->validarProductos($productos);
@@ -158,6 +158,7 @@ class Pago extends Controlador {
                 return false;
             }
         }
+        return true;
     }
 
     function validarPagos($metodosPago) {
@@ -187,6 +188,7 @@ class Pago extends Controlador {
                 return false;
             }
         }
+        return true;
     }
 
 }
