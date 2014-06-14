@@ -87,6 +87,7 @@ if (isset($_POST["arreglo"])) {
                 $data = array('f_inicio' => $fecha_inicial,
                     'f_finalizacion' => $fecha_final,
                     'precio' => $valor);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_URL, URL . 'precios/agregarprecio/' . $id_prod);
                 curl_setopt($ch, CURLOPT_POST, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);

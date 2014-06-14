@@ -5,9 +5,15 @@
  */
 class Pago extends Controlador {
 
+    private $listaProductos, $listaCantidadProductos;
+    private $costoTotalUsuario;
+
     // Constructor clase Pago
     function __construct() {
         parent::__construct();
+        $this->listaProductos = array();
+        $this->listaCantidadProductos = array();
+        $this->costoTotalUsuario = 0;
     }
 
     /*
@@ -19,7 +25,7 @@ class Pago extends Controlador {
         if (isset($_COOKIE['carritoCod']) && !empty($_COOKIE['carritoCod'])) {
             $modelprod = $this->loadModel("modelProd");
             $str = str_replace("\"", "", $_COOKIE['carritoCod']);
-            $articulos = explode(' ', $str);
+            $articulos = explode(' ', $str); //Los código de los articulos
             $cantidadInit = $modelprod->cantidadInicial($articulos);
             $detallesProductos = $modelprod->infoProductos($articulos);
             require('aplicacion/vista/Pagos/header.php');
@@ -44,9 +50,11 @@ class Pago extends Controlador {
             $modelprod = $this->loadModel("modelProd");
             $ids = array();
             $cantidades = array();
-            for ($i = 0; $i < count($_POST) - 1; $i+=2) {
-                $ids[] = $_POST[$i];
-                $cantidades[] = $_POST[$i + 1];
+            foreach ($_POST as $key => $value) {
+                if ($key % 2 == 0)
+                    $ids[] = $value;
+                else
+                    $cantidades[] = $value;
             }
             if (count($ids) > 0) {
                 $detallesProductos = $modelprod->infoProductos($ids);
@@ -61,7 +69,7 @@ class Pago extends Controlador {
                 require('aplicacion/vista/Pagos/modo.php');
                 require('aplicacion/vista/Pagos/footer.php');
             } else {
-                header('Location: ' . URL);
+                print_r($_POST);
             }
         } else {
             header('Location: ' . URL);
@@ -73,27 +81,42 @@ class Pago extends Controlador {
         if (isset($_POST['metodosFIN']) && isset($_POST['prodFIN']) && isset($_COOKIE['carritoCod']) && !empty($_COOKIE['carritoCod'])) {
             $metodosPago = json_decode($_POST['metodosFIN']);
             $productos = json_decode($_POST['prodFIN']);
-            if (count($metodosPago) > 3 && count($productos) > 1) {
-                require('validadorB.php');
-                $metodosPago = array_slice($metodosPago, 3, count($metodosPago));
-                $productos = array_slice($productos, 1, count($productos));
-                echo "Validando los productos";
-                if(!$this->validarProductos($productos)){
-                    echo "Error al validar productos";
-                    //header('Location: ' . URL . 'pago/modos');
+            if (count($metodosPago) > 3) {
+                if (count($productos) > 1) {
+                    require('validadorB.php');
+                    $metodosPago = array_slice($metodosPago, 3, count($metodosPago));
+                    $productos = array_slice($productos, 1, count($productos));
+                    //echo "Validando los productos";
+                    if (!$this->validarProductos($productos)) {
+                        echo "Error al validar productos";
+                        return;
+                        //header('Location: ' . URL . 'pago/modos');
+                    }
+                    if (!$this->validarPagos($metodosPago)) {
+                        echo "Error al validar métodos de pago";
+                        return;
+                        //header('Location: ' . URL . 'pago/modos');
+                    }
+
+                    $costoReal = refrendarCostos();
+
+                    if ($this->costoTotalUsuario != $costoReal) {
+                        echo "Error en la suma de los pagos ";
+                        echo $this->costoTotalUsuario;
+                        echo " != ";
+                        echo $costoReal;
+                        return;
+                    }
+
+                    require('aplicacion/vista/Pagos/header.php');
+                    require('aplicacion/vista/Pagos/confirmar.php');
+                    require('aplicacion/vista/Pagos/footer.php');
+                } else {
+                    echo "Error, cantidad de productos";
                 }
-                if(!$this->validarPagos($metodosPago)){
-                    echo "Error al validar métodos de pago";
-                    //header('Location: ' . URL . 'pago/modos');
-                }
-                
-                require('aplicacion/vista/Pagos/header.php');
-                require('aplicacion/vista/Pagos/confirmar.php');
-                require('aplicacion/vista/Pagos/footer.php');
-            }
-            else {
-                echo "Error, cantidad de productos";
-            //header('Location: ' . URL . 'pago/modos');
+            } else {
+                echo "Error, cantidad métodos de pago";
+                //header('Location: ' . URL . 'pago/modos');
             }
         } else {
             echo "Error";
@@ -153,6 +176,9 @@ class Pago extends Controlador {
                 echo "Error id: " . $prod->id;
                 return false;
             }
+            array_push($this->listaProductos, $prod->id);
+            array_push($this->listaCantidadProductos, intval($prod->Cantidad));
+
             if (!Validador::createBuilder($prod->Nombre)->esCadena()->tieneLongitud(1, 30)->build()->isValid()) {
                 echo "Error Nombre: " . $prod->Nombre;
                 return false;
@@ -183,12 +209,25 @@ class Pago extends Controlador {
                         return false;
                     }
                 }
+                $this->costoTotalUsuario += floatval($metodo->Monto);
             } else {
                 echo "Error en el medio de pago: " . $metodo->Medio_de_pago;
                 return false;
             }
         }
         return true;
+    }
+
+    function refrendarCostos() {
+        $modelprod = $this->loadModel("modelProd");
+        $detallesProductos = $modelprod->infoProductos($this->listaProductos);
+        $costoReal = 0;
+        for ($i = 0; $i < count($detallesProductos); $i++) {
+            $costoReal += $this->listaCantidadProductos[$i] *
+                    $detallesProductos[$i]->precio *
+                    (1 - ($detallesProductos[$i]->descuento / 100));
+        }
+        return $costoReal;
     }
 
 }
