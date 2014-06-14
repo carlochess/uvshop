@@ -2,7 +2,7 @@
 date_default_timezone_set('America/Bogota');
  error_reporting(E_ALL);
  ini_set('display_errors', 1);
-// Carga la configuración
+// Carga la configuración, 
 require 'aplicacion/cfg/config.php';
 
 // Carga el controlador de la aplicación (CGI)
@@ -22,7 +22,7 @@ require 'aplicacion/libs/orm/vendor/autoload.php';
 require 'aplicacion/libs/orm/generated-conf/config.php';
 
 require  'aplicacion/libs/easyphpthumbnail.class.php';
-
+echo "logrado";
 // iniciar la tienda virtual
 $app = new Uvshop();
 ?>
