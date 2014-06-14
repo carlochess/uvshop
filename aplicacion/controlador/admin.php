@@ -15,11 +15,7 @@ class Admin extends Controlador {
     function /* void */ index() {
         $this->categoria = "informacion";
         require('aplicacion/vista/Admin/header.php');
-        echo '<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-			<h1 class="page-header">Dashboard</h1>
-			<div class="row placeholders"></div>
-			<h2 class="sub-header">Estas en el index</h2>
-			</div>';
+        require('aplicacion/vista/Admin/index.php');
         require('aplicacion/vista/Admin/footer.php');
     }
 
@@ -105,87 +101,5 @@ class Admin extends Controlador {
         require('aplicacion/vista/Admin/reportes.php');
         require('aplicacion/vista/Admin/footer.php');
     }
-
-    /**
-      TODO
-     */
-    function /* void */ generarReporte() {
-        if (isset($_POST) && count($_POST) > 1) {
-            require('aplicacion/libs/pdf/fpdf.php');
-            require 'aplicacion/controlador/reporte.php';
-            $pdf = new FPDF();
-            $reporte = new Reporte();
-            $pdf->SetTitle("Reporte");
-            //--
-            $arreglo = array("top20mas", "topClientes", "top20menos", "totalVentasProd", "totalVentasFab", "clientesCumpleanno", "bajasExistencias", "recaudoIva");
-            $n = count($arreglo);
-
-            for ($i = 0; $i < $n; $i++) {
-                if (isset($_POST[$arreglo[$i]]) && $_POST[$arreglo[$i]] == "on") {
-                    $arr = $reporte->$arreglo[$i]();
-                    if ($arr != NULL) {
-                        $pdf->AddPage();
-                        $pdf->SetFont('Arial', 'B', 16);
-                        if (isset($arr['titulo']) && !empty($arr['titulo'])) {
-                            // Movernos a la derecha
-                            $pdf->Cell(80);
-                            // Título
-                            $pdf->Cell(20, 10, $arr['titulo']);
-                            $pdf->Ln(20);
-                        }
-                        // Imagen
-                        if (isset($arr['imagen']) && !empty($arr['imagen'])) {
-                            $pdf->Image($arr['imagen']);
-                            $pdf->Ln(20);
-                        } else if (isset($arr['tabla']) && $arr['tabla'] != NULL) {
-                            $header = $arr['titulos_tabla'];
-                            $data = $arr['tabla'];
-
-                            // Colores, ancho de línea y fuente en negrita
-                            $pdf->SetFillColor(255, 140, 0);
-                            $pdf->SetTextColor(255);
-                            $pdf->SetDrawColor(128, 0, 0);
-                            $pdf->SetLineWidth(.3);
-                            $pdf->SetFont('', 'B');
-                            // Cabecera
-
-                            $w = array(50, 55, 50);
-                            $pdf->Cell(50, 7, $header[0], 1, 0, 'C', true);
-                            $pdf->Cell(55, 7, $header[1], 1, 0, 'C', true);
-                            $pdf->Cell(50, 7, $header[2], 1, 0, 'C', true);
-                            $pdf->Ln();
-
-                            // Restauración de colores y fuentes
-                            $pdf->SetFillColor(224, 235, 255);
-                            $pdf->SetTextColor(0);
-                            $pdf->SetFont('');
-                            // Datos
-                            $fill = false;
-                            foreach ($data as $row) {
-                                $pdf->Cell($w[0], 6, number_format($row->id_prod), 'LR', 0, 'R', $fill);
-                                $pdf->Cell($w[1], 6, $row->nombre, 'LR', 0, 'R', $fill);
-                                $pdf->Cell($w[2], 6, number_format($row->unidades), 'LR', 0, 'R', $fill);
-                                $pdf->Ln();
-                                $fill = !$fill;
-                            }
-                            // Línea de cierre
-                            $pdf->Cell(array_sum($w), 0, '', 'T');
-                            $pdf->Ln(20);
-                        }
-                        // descripción
-                        if (isset($arr['descripcion']) && !empty($arr['descripcion'])) {
-                            $pdf->SetFont('');
-                            $pdf->Cell(10, 0, $arr['descripcion']);
-                        }
-                        $pdf->Ln(20);
-                    }
-                }
-            }
-            $reporte->terminar();
-            $pdf->Output();
-        } else {
-            header("Location: " . URL . "admin/reportes");
-        }
-    }
-
+    
 }

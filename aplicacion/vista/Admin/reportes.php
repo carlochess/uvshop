@@ -8,7 +8,7 @@
 				</div>
 			</div>
 			<div class="container">
-				<form method="post" action="<?php echo URL.'admin/generarReporte';?>">
+				<form method="post" action="<?php echo URL.'reporte/generarReporte';?>">
 					<h1 class="page-header">Visuales</h1>
 					<div class="checkbox">
 						<label>
