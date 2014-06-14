@@ -3,10 +3,13 @@
 class Productos extends Controlador {
 
     public $categoria = "productos";
-
+    private $categorias;
     // Constructor clase producto
     function __construct() {
         parent::__construct();
+        $this->home = $this->loadModel("modelHome");
+        // recibe las super-categorias
+        $this->categorias = $this->home->getCategorias();
     }
 
     // 

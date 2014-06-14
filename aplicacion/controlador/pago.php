@@ -146,17 +146,41 @@ class Pago extends Controlador {
                     return;
                 }
                 // 3. Inserto un registro en 'factura'
-                $modelpago->agregarFactura('01', date("Y/m/d"), count($productos));
+                try{
+                    $modelpago->agregarFactura('01', date("Y/m/d"), count($productos));
+                }  catch (Exception $ex)
+                {
+                    echo "Error en el proceso de facturacion";
+                    return;
+                }
                 // 4. recibo el id de la factura
-                $id_factura = intval($modelpago->getIDfactura());
-                echo $id_factura;
+                try
+                {
+                    $id_factura = $modelpago->getIDfactura();
+                } catch (Exception $ex)
+                {
+                    echo "Error desconocido";
+                    return;
+                }
+                $id_factura = intval($id_factura);
+                //echo $id_factura;
                 // 5. inserto los productos (como compras) en la base de datos
                 foreach ($productos as $producto) {
-                    $modelpago->agregarCompra($producto->id, $id_factura, $producto->Cantidad);
+                    try{
+                        $modelpago->agregarCompra($producto->id, $id_factura, $producto->Cantidad);
+                    }  catch (Exception $e)
+                    {
+                        return ;
+                    }
                 }
                 // 6. inserto los métodos de pago 
                 foreach ($metodosPago as $metododePago) {
-                    $modelpago->agregarMetodo($id_factura, $metododePago->Medio_de_pago, $metododePago->Numero_de_cuotas, $metododePago->Monto);
+                    try{
+                        $modelpago->agregarMetodo($id_factura, $metododePago->Medio_de_pago, $metododePago->Numero_de_cuotas, $metododePago->Monto);
+                    }  catch (Exception $e)
+                    {
+                        return ;
+                    }
                 }
                 $modelpago->terminarConexion();
                 unset($_COOKIE['carritoCod']);
