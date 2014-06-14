@@ -1,36 +1,28 @@
 <?php
 date_default_timezone_set('America/Bogota');
-// Carga la configuración
-//require 'aplicacion/cfg/config.php';
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
+// Carga la configuración, 
+require 'aplicacion/cfg/config.php';
 
 // Carga el controlador de la aplicación (CGI)
-//require 'aplicacion/libs/uvshop.php';
+require 'aplicacion/libs/uvshop.php';
 
-//require 'aplicacion/libs/login.php';
+
+// Carga el controlador de la aplicación (CGI)
+require 'aplicacion/libs/vendor/autoload.php';
 
 // Carga el controlador 
-//require 'aplicacion/libs/controlador.php';
-/*
-if (file_exists('vendor/autoload.php')) {
-    require 'vendor/autoload.php';
-}*/
+require 'aplicacion/libs/controlador.php';
 
 // configurar autoloading
-require_once 'aplicacion/libs/vendor/autoload.php';
+require 'aplicacion/libs/orm/vendor/autoload.php';
 
 // configurar Propel
-require_once 'aplicacion/libs/generated-conf/config.php';
+require 'aplicacion/libs/orm/generated-conf/config.php';
 
-$producto = new Producto();
-$producto->setIdProd('Field');
-$producto->setNombre('Cristian'); // empresa_fab,descripcion,iva,categoria,unidades
-$producto->setEmpresaFab('Hola');
-$producto->setDescripcion('Ninguna');
-$producto->setIva(20);
-$producto->setCategoria('Idiotas');
-$producto->setUnidades(1);
-$producto->save();
-
+require  'aplicacion/libs/easyphpthumbnail.class.php';
+echo "logrado";
 // iniciar la tienda virtual
-//$app = new Uvshop();
+$app = new Uvshop();
 ?>

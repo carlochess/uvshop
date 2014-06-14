@@ -22,7 +22,7 @@ require 'aplicacion/libs/orm/vendor/autoload.php';
 require 'aplicacion/libs/orm/generated-conf/config.php';
 
 require  'aplicacion/libs/easyphpthumbnail.class.php';
-echo "logrado";
+
 // iniciar la tienda virtual
 $app = new Uvshop();
 ?>
