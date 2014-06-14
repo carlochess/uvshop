@@ -136,7 +136,7 @@ class Pago extends Controlador {
                 // 2. valido los métodos de pago
                 $this->validarPagos($metodosPago);
                 // 2.1 Verifica que los items esten en su lugar y 
-                $costoReal = refrendarCostos();
+                $costoReal = $this->refrendarCostos();
 
                 if ($this->costoTotalUsuario != $costoReal) {
                     echo "Error en la suma de los pagos ";
