@@ -98,7 +98,7 @@ class Pago extends Controlador {
                         //header('Location: ' . URL . 'pago/modos');
                     }
 
-                    $costoReal = refrendarCostos();
+                    $costoReal = $this->refrendarCostos();
 
                     if ($this->costoTotalUsuario != $costoReal) {
                         echo "Error en la suma de los pagos ";
@@ -135,6 +135,16 @@ class Pago extends Controlador {
                 $this->validarProductos($productos);
                 // 2. valido los métodos de pago
                 $this->validarPagos($metodosPago);
+                // 2.1 Verifica que los items esten en su lugar y 
+                $costoReal = refrendarCostos();
+
+                if ($this->costoTotalUsuario != $costoReal) {
+                    echo "Error en la suma de los pagos ";
+                    echo $this->costoTotalUsuario;
+                    echo " != ";
+                    echo $costoReal;
+                    return;
+                }
                 // 3. Inserto un registro en 'factura'
                 $modelpago->agregarFactura('01', date("Y/m/d"), count($productos));
                 // 4. recibo el id de la factura
