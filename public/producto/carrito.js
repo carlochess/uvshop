@@ -14,7 +14,6 @@ $(function() {
     function rederCarrito()
     {
         $codigos = $.trim(JSON.parse($.cookie("carritoCod"))).split(" ");
-        console.log($codigos);
 
         var $numeroDeElementos = $codigos.length;
         $("#carrito").html('');
