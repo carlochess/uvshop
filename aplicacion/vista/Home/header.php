@@ -47,6 +47,7 @@
 
                             <ul class="nav navbar-nav">
                                 
+<<<<<<< HEAD
                             </ul>
                             <ul class="nav navbar-nav pull-right">
                                 <li class="dropdown">
@@ -64,6 +65,15 @@
                                     </ul>
                                 </li>
                                 <!----	<li><a href="/users/sign_up">Registrarse</a></li> --->
+                                <ul class="navbar-form navbar-left">
+                                        <form action="<?php echo URL; ?>buscador/buscar" method="post">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="nombre">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Buscar</button>
+                                        </form>
+                                </ul>
+		            	<!----	<li><a href="/users/sign_up">Registrarse</a></li> --->
                                 <li> <a href="<?php echo URL; ?>users/registro">Registrarse</a></li>
                                 <li class="divider-vertical"></li>
                                 <li class="dropdown" id="loggin">
