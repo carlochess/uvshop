@@ -46,21 +46,6 @@
     <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
 
-<!-- ==================================================   buscador  ================================================== input-medium search-query-->
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-        <form action="<?php echo URL; ?>buscador/buscar" method="post">
-            <div class="input-group">
-                <input type="text" class="form-control" name="nombre">
-                <div class="input-group-btn">
-                    <button type="submit" class="btn btn-info">Buscar</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="col-md-3"></div>
-</div>
 
 <div class="container marketing">
 
