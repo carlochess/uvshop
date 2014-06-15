@@ -45,10 +45,6 @@
                                 </li>
                             </ul>
 
-                            <ul class="nav navbar-nav">
-                                
-<<<<<<< HEAD
-                            </ul>
                             <ul class="nav navbar-nav pull-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
