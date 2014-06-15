@@ -37,12 +37,12 @@
 					</li>
 				</ul>
                                 
-                                <ul class="nav navbar-nav">
+                                <ul class="navbar-form navbar-left">
                                         <form action="<?php echo URL; ?>buscador/buscar" method="post">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="nombre">
-                                                <button type="submit" class="from btn btn-default">Buscar</button>
-                                            </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Buscar</button>
                                         </form>
                                 </ul>
 				<ul class="nav navbar-nav pull-right">
