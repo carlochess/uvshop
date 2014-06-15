@@ -22,6 +22,15 @@
                         <div class="navbar-header">
                             <a class="navbar-brand" href="<?php echo URL; ?>">UvShop</a>
                         </div>
+                        
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>  
+                           <span class="icon-bar"></span>       
+                        </button>
+                        </div>
+                        
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
@@ -36,7 +45,16 @@
                                     </ul>
                                 </li>
                             </ul>
-
+                            
+                            <ul class="navbar-form navbar-left">
+                                        <form action="<?php echo URL; ?>buscador/buscar" method="post">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="nombre">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Buscar</button>
+                                        </form>
+                            </ul>
+                            
                             <ul class="nav navbar-nav pull-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -52,15 +70,7 @@
                                         <li><a href="#">Comprar</a></li>
                                     </ul>
                                 </li>
-                                <!----	<li><a href="/users/sign_up">Registrarse</a></li> --->
-                                <ul class="navbar-form navbar-left">
-                                        <form action="<?php echo URL; ?>buscador/buscar" method="post">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="nombre">
-                                                </div>
-                                                <button type="submit" class="btn btn-default">Buscar</button>
-                                        </form>
-                                </ul>
+                                
 		            	<!----	<li><a href="/users/sign_up">Registrarse</a></li> --->
                                 <li> <a href="<?php echo URL; ?>users/registro">Registrarse</a></li>
                                 <li class="divider-vertical"></li>
