@@ -35,14 +35,6 @@
                                         <?php } ?>
                                     </ul>
                                 </li>
-                                <li>
-                                    <form action="<?php echo URL; ?>buscador/buscar" method="post">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="nombre">
-                                            <button type="submit" class="from btn btn-default">Buscar</button>
-                                        </div>
-                                    </form>
-                                </li>
                             </ul>
 
                             <ul class="nav navbar-nav pull-right">
