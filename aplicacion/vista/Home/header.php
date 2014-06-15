@@ -1,51 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-	<title>Index</title> <!-- Variable titulos -->
-	
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href="<?php echo URL; ?>public/producto/carrito.css" rel="stylesheet">
-	<link href="<?php echo URL; ?>public/carousel.css" rel="stylesheet">
-  </head>
-<!-- NAVBAR ================================================== -->
-  <body>
-    <div class="navbar">
-      <div class="container">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="<?php echo URL;?>">UvShop</a>
-            </div>
-            <div class="navbar-header">
-	     	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>  
-               <span class="icon-bar"></span>       
-            </button>
-	    </div>
-            <div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="<?php echo URL;?>">Home</a></li>
-					<li><a href="<?php echo URL.'home/about';?>">Acerca de</a></li>
-					<li><a href="<?php echo URL.'admin';?>">Admin</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<?php foreach($categorias as $cat){ ?>
-								<li><a href="<?php echo URL.'buscador/categoria/'.str_replace(' ','_',$cat);?>"><?php echo $cat; ?> </a></li>
-							<?php } ?>
-						</ul>
-					</li>
-				</ul>
-=======
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,62 +37,6 @@
                                 </li>
                             </ul>
 
-<<<<<<< HEAD
-                            <ul class="nav navbar-nav">
->>>>>>> origin/master
-=======
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Index</title> <!-- Variable titulos -->
-
-        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link href="<?php echo URL; ?>public/producto/carrito.css" rel="stylesheet">
-        <link href="<?php echo URL; ?>public/carousel.css" rel="stylesheet">
-    </head>
-    <!-- NAVBAR ================================================== -->
-    <body>
-        <div class="navbar">
-            <div class="container">
-                <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="<?php echo URL; ?>">UvShop</a>
-                        </div>
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
-                                <li><a href="<?php echo URL . 'home/about'; ?>">Acerca de</a></li>
-                                <li><a href="<?php echo URL . 'admin'; ?>">Admin</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <?php foreach ($categorias as $cat) { ?>
-                                            <li><a href="<?php echo URL . 'buscador/categoria/' . str_replace(' ', '_', $cat); ?>"><?php echo $cat; ?> </a></li>
-                                        <?php } ?>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <form action="<?php echo URL; ?>buscador/buscar" method="post">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="nombre">
-                                            <button type="submit" class="from btn btn-default">Buscar</button>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
-
-                            <ul class="nav navbar-nav">
->>>>>>> origin/master
-                                
-<<<<<<< HEAD
-                            </ul>
-=======
->>>>>>> origin/master
                             <ul class="nav navbar-nav pull-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
