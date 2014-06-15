@@ -14,7 +14,7 @@ Options -MultiViews
 RewriteEngine On
 Options -Indexes
 
-RewriteBase /uvshop
+RewriteBase /
 
 # General rewrite rules
 RewriteCond %{REQUEST_FILENAME} !-d
