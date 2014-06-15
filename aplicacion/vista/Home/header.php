@@ -15,9 +15,9 @@
   </head>
 <!-- NAVBAR ================================================== -->
   <body>
-    <div class="navbar-wrapper">
+    <div class="navbar">
       <div class="container">
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container">
             <div class="navbar-header">
               <a class="navbar-brand" href="<?php echo URL;?>">UvShop</a>
@@ -36,7 +36,16 @@
 						</ul>
 					</li>
 				</ul>
-				<ul class="nav navbar-nav pull-right" style="padding-right:20px;">
+                                
+                                <ul class="nav navbar-nav">
+                                        <form action="<?php echo URL; ?>buscador/buscar" method="post">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="nombre">
+                                                <button type="submit" class="from btn btn-default">Buscar</button>
+                                            </div>
+                                        </form>
+                                </ul>
+				<ul class="nav navbar-nav pull-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<ul>

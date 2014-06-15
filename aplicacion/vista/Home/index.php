@@ -9,34 +9,34 @@
 
         <!-- Primer item -->
         <div class="item active">
-            <img src="http://www.nicolasdory.com/wp-content/uploads/2011/02/2011_02_20_BennettLakePano.jpg" alt="First slide">
+            <img src="imagenes/UV3.png" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Uv shop.</h1>
                     <p>Aquí encontraras los mejores precios y productos que ningun otro sitio puede ofrecerte.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Registrate</a></p>
+                    <p><a class="btn btn-lg btn-default" href="#" role="button">Registrate</a></p>
                 </div>
             </div>
         </div>
         <!-- Segundo item -->
         <div class="item">
-            <img src=<?php echo URL . "imagenes/aaserver/10291505.jpg"; ?> alt="Second slide">
+            <img src=<?php echo URL . "imagenes/UV3.png"; ?> alt="Second slide">
                  <div class="container">
                 <div class="carousel-caption">
                     <h1>¿quieres ver nuestras promociones?.</h1>
                     <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Ver</a></p>
+                    <p><a class="btn btn-lg btn-default" href="#" role="button">Ver</a></p>
                 </div>
             </div>
         </div>
         <!-- Tercer item -->
         <div class="item">
-            <img src=<?php echo URL . "imagenes/aaserver/10291506.jpg"; ?> alt="Third slide">
+            <img src=<?php echo URL . "imagenes/UV3.png"; ?> alt="Third slide">
                  <div class="container">
                 <div class="carousel-caption">
                     <h1>Busca por categorias.</h1>
                     <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Buscar</a></p>
+                    <p><a class="btn btn-lg btn-default" href="#" role="button">Buscar</a></p>
                 </div>
             </div>
         </div>
@@ -101,21 +101,4 @@
             </div>
         </div>
     <?php } ?>
-
-    <hr class="featurette-divider">
-    <!-- ==================================================   Footer  ================================================== -->
-    <h1 class="page-header">Los mas vendidos</h1>
-    <table class="table">
-        <tr>
-            <td> id_Producto </td>
-            <td> veces comprado en Facturas </td>
-            <td> veces comprado </td>
-        </tr>
-        <?php foreach ($masVendidos as $vendidos) { ?>
-            <tr>
-                <td>  <?php echo $vendidos->id_prod; ?></td>
-                <td>  <?php echo $vendidos->veces; ?></td>
-                <td>  <?php echo $vendidos->cantidad; ?></td>
-            </tr>
-        <?php } ?>
-    </table>
+  
