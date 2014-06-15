@@ -32,7 +32,7 @@ $(function() {
             {
 
                 $("#carrito").append('<li class="producto">' + (i + 1) + ': Producto ' + $codigos[i] + '</li>');
-                $("#carrito li:last-child").css("background", "url('http://localhost/uvshop/imagenes/" + $codigos[i] + "x50.jpg" + "') no-repeat left center");
+                $("#carrito li:last-child").css("background", "url('http://uvshop.co/imagenes/" + $codigos[i] + "x50.jpg" + "') no-repeat left center");
                 $("#carrito").append('<li class="divider"></li>');
             }
             actualizarContador($numeroDeElementos);
@@ -44,7 +44,7 @@ $(function() {
         }
 
         $("#carrito").append('<li class="divider"></li>');
-        $("#carrito").append('<li class="verMas"><a href="http://localhost/uvshop/pago/">Pagar</a></li>');
+        $("#carrito").append('<li class="verMas"><a href="http://uvshop.co/pago/">Pagar</a></li>');
 
     }
 

@@ -1,0 +1,42 @@
+<?php
+
+$provider = new League\OAuth2\Client\Provider\Facebook(array(
+    'clientId'  =>  '526791157424846',
+    'clientSecret'  =>  '9e91996a32f9262e2ac9457b65883efd',
+    'redirectUri'   =>  'http://uvshop.co/users/facebook/'
+));
+
+if ( ! isset($_GET['code'])) {
+
+    header('Location: '.$provider->getAuthorizationUrl());
+    exit;
+
+} else {
+    //echo "Codigo: ".$_GET['code'].'<br/>';
+    try{
+    $token = $provider->getAccessToken('AuthorizationCode', [
+        'code' => $_GET['code']
+    ]);
+}catch(Exception $e)
+{
+        echo "Error: ".$e;
+}
+
+    try {
+
+        $userDetails = $provider->getUserDetails($token);
+	print_r($userDetails);
+	echo '<p><img src="'.$userDetails->imageUrl.'" />'. $userDetails->firstName .'</p>';
+	
+    } catch (Exception $e) {
+
+        // Failed to get user details
+        exit('Dios...');
+    }
+
+        // usado para conseguir un nuevo token
+    //echo $token->refreshToken;
+
+    // Numero de segundos antes de que el token expire y necesite ser refrescado	
+    echo 'expira en: '.$token->expires;
+}
