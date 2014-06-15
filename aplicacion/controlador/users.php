@@ -22,10 +22,37 @@ Class Users extends Controlador {
     }
 
     public function registrarse() {
-        $error = "Esta mal";
-        require('aplicacion/vista/Usuarios/header.php');
-        require('aplicacion/vista/Usuarios/registro.php');
-        require('aplicacion/vista/Usuarios/footer.php');
+        
+         $error;
+        try{
+            $nombreU=$_POST['nombreUsuario'];
+            $apellidoU=$_POST['apellidoUsuario'];
+            $tipoIDU=$_POST['tipoIDUsuario'];
+            $idU=$_POST['idUsuario'];
+            $telefonoU=$_POST['telefonoUsuario'];
+            $fechaNacU=$_POST['fechaNUsuario'];
+            $correoU=$_POST['correoUsuario'];
+            
+            $this->establecerDatos($nombreU,$apellidoU,$tipoIDU,$idU,$telefonoU,$fechaNacU,$correoU);
+            $this->modelUsuario=$this->loadModel("modeloRegistroUsuario");
+            $flag=$this->modelUsuario->existsUser($idU);
+            if($flag){
+                throw new Exception("Usuario Existente");
+            } 
+            $this->modelUsuario->createUser($nombreU,$apellidoU,$tipoIDU,$idU,$telefonoU,$fechaNacU,$correoU);
+            $error="exito";
+            require('aplicacion/vista/Usuarios/header.php');
+            require('aplicacion/vista/Usuarios/registro.php');
+            require('aplicacion/vista/Usuarios/footer.php');
+            
+        } catch (Exception $ex) {
+            $error=$ex->getMessage();
+       
+            require('aplicacion/vista/Usuarios/header.php');
+            require('aplicacion/vista/Usuarios/registro.php');
+            require('aplicacion/vista/Usuarios/footer.php');
+        } 
+        
     }
 
     public function facebook() {
